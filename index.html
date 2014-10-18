@@ -1,29 +1,269 @@
 <!DOCTYPE html>
-<html lang="en-au" class="tumblrthemr-start">
-  <head>
-    <title>Tumblr Themr</title>
-    <link rel="stylesheet" href="app/stylesheets/tumblrthemr.css" type="text/css" media="screen"/>
-  </head>
-  <body>
-    <div id="tumblrthemr-target">
-      <!-- Repeated in intro.tumblr -->
-      <div id="tumblrthemr-intro">Set your configuration</div>
-    </div>
-    <div id="tumblrthemr-loading">Loading</div>
-    <form id="tumblrthemr-config">
-      <div id="tumblrthemr-error"></div>
-      <label id="tumblrthemr-label-url">
-        Source URL:
-        <span>http://<input name="url" type="text" placeholder="tumblrthemr.tumblr.com" value="tumblrthemr.tumblr.com"/></span>
-      </label>
-      <label id="tumblrthemr-label-theme">
-        Theme file:
-        <span>themes/<input name="theme" type="text" placeholder="demo" value="demo"/>.tumblr</span>
-      </label>
-      <button type="submit">Save settings</button>
-      <div id="tumblrthemr-config-hide">or <a href="#hide-config" class="tumblrthemr">cancel</a></div>
-    </form>
-    <a href="#show-config" id="tumblrthemr-config-show" class="tumblrthemr">Show config</a>
-    <script src="app/javascripts/tumblr-themr-1.0.min.js"></script>
-  </body>
+<html lang="{block:English}en{/block:English}{block:French}fr{/block:French}{block:German}de{/block:German}{block:Japanese}ja{/block:Japanese}{block:Italian}it{/block:Italian}{block:Spanish}es{/block:Spanish}{block:Polish}pl{/block:Polish}">
+    <head>
+        <title>{Title}{block:PostSummary} &mdash; {PostSummary}{/block:PostSummary}{block:SearchPage} &mdash; Search results for {SearchQuery}{/block:SearchPage}</title>
+        <link rel="shortcut icon" href="{Favicon}">
+        <link rel="apple-touch-icon" href="{PortraitURL-128}">
+        <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/normalize/3.0.1/normalize.min.css" type="text/css" media="all">
+        <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/prettify/r298/prettify.min.css"
+        <link rel="alternate" type="application/rss+xml" href="{RSS}">
+        <link rel="canonical" href="{block:IndexPage}{BlogURL}{/block:IndexPage}{block:PermalinkPage}{Permalink}{/block:PermalinkPage}">
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+        <meta http-equiv="Content-Type" content="text/html"/>
+        <meta name="viewport" content="width=device-width, initial-scale=1"/>
+        <meta name="robots" content="index,follow" />
+
+        <meta name="title" content="{Title}{block:PostSummary} &mdash; {PostSummary}{/block:PostSummary}{block:SearchPage} &mdash; Search results for {SearchQuery}{/block:SearchPage}"/>
+        <meta name="keywords" content="{block:Permalink}{block:Posts}{block:Tags}{Tag}, {/block:Tags}{/block:Posts}{/block:Permalink}" />
+        {block:Description}
+            <meta name="description" content="{MetaDescription}" />
+        {/block:Description}
+        <meta name="revisit-after" content="2 days" />
+
+        <meta property="og:title" content="{Title}{block:PostSummary} &mdash; {PostSummary}{/block:PostSummary}{block:SearchPage} &mdash; Search results for {SearchQuery}{/block:SearchPage}"/>
+        <meta property="og:image" content="{PortraitURL-48}"/>
+        <meta property="og:site_name" content="{Title}"/>
+
+        {block:IndexPage}
+        <meta property="og:description" content="{MetaDescription}"/>
+        <meta property="og:type" content="blog"/>
+        {/block:IndexPage}
+        {block:PermalinkPage}
+            <meta property="og:description" content="{block:PostSummary}{PostSummary}{/block:PostSummary}"/>
+            <meta property="og:type" content="{block:Posts}{block:Text}article{/block:Text}{block:Video}video.other{/block:Video}{block:Audio}music.song{/block:Audio}{block:Link}website{/block:Link}{block:Quote}article{/block:Quote}{block:Photoset}article{/block:Photoset}{block:Panorama}article{/block:Panorama}{block:Photo}article{/block:Photo}{block:Chat}article{/block:Chat}{block:Answer}article{/block:Answer}{/block:Posts}"/>
+            {block:Posts}
+                {block:Audio}
+                    <meta property="og:type" content="music.song"/>
+                    {block:ExternalAudio}<meta property="og:audio" content="{ExternalAudioURL}"/>{/block:ExternalAudio}
+                    {block:TrackName}<meta property="og:audio:title" content="{TrackName}"/>{/block:TrackName}
+                    {block:Artist}<meta property="og:audio:artist" content="{Artist}"/>{/block:Artist}
+                    {block:Album}<meta property="og:audio:album" content="{Album}"/>{/block:Album}
+                {/block:Audio}
+                {block:Text}
+                    <meta property="og:type" content="article"/>
+                    <meta property="og:article:tag" content="{TagsAsClasses}"/>
+                {/block:Text}
+                {block:Link}
+                    <meta property="og:type" content="website"/>
+                {/block:Link}
+                {block:Quote}
+                    <meta property="og:type" content="article"/>
+                    <meta property="og:article:tag" content="{TagsAsClasses}"/>
+                {/block:Quote}
+                {block:Photoset}
+                    <meta property="og:type" content="article"/>
+                    <meta property="og:article:tag" content="{TagsAsClasses}"/>
+                {/block:Photoset}
+                {block:Panorama}
+                    <meta property="og:type" content="article"/>
+                    <meta property="og:article:tag" content="{TagsAsClasses}"/>
+                {/block:Panorama}
+                {block:Photo}
+                    <meta property="og:type" content="article"/>
+                    <meta property="og:article:tag" content="{TagsAsClasses}"/>
+                {/block:Photo}
+                {block:Chat}
+                    <meta property="og:type" content="article"/>
+                    <meta property="og:article:tag" content="{TagsAsClasses}"/>
+                {/block:Chat}
+                {block:Answer}
+                    <meta property="og:type" content="article"/>
+                    <meta property="og:article:tag" content="{TagsAsClasses}"/>
+                {/block:Answer}
+                {block:Video}
+                    <meta property="og:type" content="video.other"/>
+                    <meta property="og:video" content="{VideoEmbed-700}"/>
+                    <meta property="og:video:width" content="700"/>
+                    <meta property="og:video:tag" content="{TagsAsClasses}"/>
+                {/block:Video}
+            {/block:Posts}
+        {/block:PermalinkPage}
+        <meta property="og:url" content="{Permalink}"/>
+        <meta property="fb:admins" content="{text:FacebookAdmins}"/>
+        <meta property='og:locale' content="en_US"/>
+
+        <!-- Custom variables -->
+        <meta name="text:FacebookAdmins" content=""/>
+        <meta name="image:BackgroundImage" content=""/>
+
+        <style>
+            /* Theme styles */
+            body {
+                background:url({image:BackgroundImage}){BackgroundColor};
+            }
+            h1 > a {color:{TitleColor};}
+            a {color:{AccentColor}}
+            /* End theme styles */
+
+            {CustomCSS}
+        </style>
+    </head>
+    <body>
+        <header class="header">
+            {block:ShowTitle}<h1 id="logo"><a href="/">{Title}</a></h1>{/block:ShowTitle}
+            {block:ShowDescription}{block:Description}<div class="description">{Description}</div>{/block:Description}{/block:ShowDescription}
+            {block:ShowHeaderImage}<img src="{HeaderImage}">{/block:ShowHeaderImage}
+            {block:ShowAvatar}<img src="{PortraitURL-128}">{/block:ShowAvatar}
+            <ul class="nav">
+                {block:HasPages}{block:Pages}<li><a href="{URL}">{Label}</a></li>{/block:Pages}{/block:HasPages}
+                <li><a href="/archive">{lang:Archive}</a></li>
+                {block:AskEnabled}<li><a href="/ask">{AskLabel}</a></li>{/block:AskEnabled}
+            </ul>
+            <form id="search" action="/search" method="get">
+                <input type="search" placeholder="{lang:Search}" name="q" value="{SearchQuery}">
+                <input type="submit" value="{lang:Search}">
+            </form>
+        </header>
+        {block:Posts}
+        <section class="posts">
+                {block:Text}
+                        <article>
+                            {block:Title}
+                                <h3><a href="{Permalink}">{Title}</a></h3>
+                            {/block:Title}{Body}
+                        </article>
+                {/block:Text}
+                {block:Photo}
+                        <article>
+                            <img src="{PhotoURL-500}" alt="{PhotoAlt}"/>
+
+                            {block:Caption}
+                                <div class="caption">{Caption}</div>
+                            {/block:Caption}
+                        </article>
+                {/block:Photo}
+                {block:Panorama}
+                        <article>
+                            {LinkOpenTag}
+                                <img src="{PhotoURL-Panorama}" alt="{PhotoAlt}"/>
+                            {LinkCloseTag}{block:Caption}
+                                <div class="caption">{Caption}</div>
+                            {/block:Caption}
+                        </article>
+                {/block:Panorama}
+                {block:Photoset}
+                        <article>
+                            {Photoset-500}{block:Caption}
+                                <div class="caption">{Caption}</div>
+                            {/block:Caption}
+                        </article>
+                {/block:Photoset}
+                {block:Quote}
+                        <article>
+                            &ldquo;{Quote}&rdquo;
+
+                            {block:Source}
+                                <div class="source">{Source}</div>
+                            {/block:Source}
+                        </article>
+                {/block:Quote}
+                {block:Link}
+                        <article>
+                            <a href="{URL}" class="link" {Target}>{Name}</a>
+
+                            {block:Description}
+                                <div class="description">{Description}</div>
+                            {/block:Description}
+                        </article>
+                {/block:Link}
+                {block:Chat}
+                        <article>
+                            {block:Title}
+                                <h3><a href="{Permalink}">{Title}</a></h3>
+                            {/block:Title}
+
+                            <ul class="chat">
+                                {block:Lines}
+
+                                        {block:Label}
+                                            <span class="label">{Label}</span>
+                                        {/block:Label}{Line}
+                                    </li>
+                                {/block:Lines}
+                            </ul>
+                        </article>
+                {/block:Chat}
+                {block:Answer}
+                    <article>
+                        <div class="question"><div class="asker">{Asker}</div><div class="asker-question">{Question}</div><img class="asker-avatar" src="{AskerPortraitURL-96}" alt=""></div>
+
+                        {block:Answerer}
+                            <div class="answer"><div class="answerer">{Answerer}</div><div class="answerer-answer">{Answer}</div><img class="answerer-avatar" src="{AnswererPortraitURL-96}" alt=""></div>
+                        {/block:Answerer}
+
+                        <div class="replies">
+                            {Replies}
+                        </div>
+                    </article>
+                {/block:Answer}
+                {block:Video}
+                        <article>
+                            {Video-500}{block:Caption}
+                                <div class="caption">{Caption}</div>
+                            {/block:Caption}
+                        </article>
+                {/block:Video}
+                {block:Audio}
+                        <article>
+                            {AudioEmbed}{block:Caption}
+                                <div class="caption">{Caption}</div>
+                            {/block:Caption}
+                        </article>
+                {/block:Audio}
+                {/block:Posts}
+                {block:HasTags}
+                    <ul class="tags">
+                        {block:Tags}
+                            <li>
+                                <a href="{TagURL}">{Tag}</a>
+                            </li>
+                        {/block:Tags}
+                    </ul>
+                {/block:HasTags}
+            {block:PermalinkPagination}
+            <div class="pagination">
+                {block:PreviousPost}<a class="prev"href="{PreviousPost}">{lang:Previous post}</a>{/block:PreviousPost}
+                {block:NextPost}<a class="next" href="{NextPost}">{lang:Next post}</a>{/block:NextPost}
+            </div>
+            {/block:PermalinkPagination}
+
+            {block:Pagination}
+            <div class="pagination">
+                {block:PreviousPage}<a class="prev" href="{PreviousPage}">{lang:Previous}</a>{/block:PreviousPage}
+
+                {block:JumpPagination length="5"}
+                    {block:CurrentPage}<span class="current-page">{PageNumber}</span>{/block:CurrentPage}
+                    {block:JumpPage}<a class="jump-page" href="{URL}">{PageNumber}</a>{/block:JumpPage}
+                {/block:JumpPagination}
+
+                {block:NextPage}<a class="next" href="{NextPage}">{lang:Next}</a>{/block:NextPage}
+            </div>
+            {/block:Pagination}
+        </section>
+        <footer class="footer">
+            <small>{block:ShowTitle}{Title} {/block:ShowTitle}&copy; {CopyrightYears}</small>
+        </footer>
+
+        <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+        <script src="//cdnjs.cloudflare.com/ajax/libs/prettify/r298/prettify.min.js"></script>
+        <script>
+            function styleCode() {
+                if (typeof disableStyleCode != 'undefined') { return; }
+
+                var a = false;
+
+                $('code').each(function() {
+                    if (!$(this).hasClass('prettyprint')) {
+                        $(this).addClass('prettyprint');
+                        a = true;
+                    }
+                });
+
+                if (a) { prettyPrint(); }
+            }
+
+            $(function() {styleCode();});
+        </script>
+    </body>
 </html>
