@@ -1,4 +1,5 @@
 {block:tumblrThemr}
+{block:tumblrThemr}
 <!DOCTYPE html>
 <html lang="{block:English}en{/block:English}{block:French}fr{/block:French}{block:German}de{/block:German}{block:Japanese}ja{/block:Japanese}{block:Italian}it{/block:Italian}{block:Spanish}es{/block:Spanish}{block:Polish}pl{/block:Polish}">
     <head>
@@ -182,6 +183,19 @@
                             </ul>
                         </article>
                 {/block:Chat}
+                {block:Answer}
+                    <article>
+                        <div class="question"><div class="asker">{Asker}</div><div class="asker-question">{Question}</div><img class="asker-avatar" src="{AskerPortraitURL-96}" alt=""></div>
+
+                        {block:Answerer}
+                            <div class="answer"><div class="answerer">{Answerer}</div><div class="answerer-answer">{Answer}</div><img class="answerer-avatar" src="{AnswererPortraitURL-96}" alt=""></div>
+                        {/block:Answerer}
+
+                        <div class="replies">
+                            {Replies}
+                        </div>
+                    </article>
+                {/block:Answer}
                 {block:Video}
                         <article>
                             {Video-500}{block:Caption}
@@ -197,6 +211,15 @@
                         </article>
                 {/block:Audio}
                 {/block:Posts}
+                {block:HasTags}
+                    <ul class="tags">
+                        {block:Tags}
+                            <li>
+                                <a href="{TagURL}">{Tag}</a>
+                            </li>
+                        {/block:Tags}
+                    </ul>
+                {/block:HasTags}
             {block:PermalinkPagination}
             <div class="pagination">
                 {block:PreviousPost}<a class="prev"href="{PreviousPost}">{lang:Previous post}</a>{/block:PreviousPost}
@@ -222,4 +245,5 @@
             </footer>
     </body>
 </html>
+{/block:tumblrThemr}
 {/block:tumblrThemr}
