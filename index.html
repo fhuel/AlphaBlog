@@ -155,7 +155,13 @@
             <form id="search" action="/search" method="get">
                 <input type="search" placeholder="{lang:Search}" name="q" value="{SearchQuery}">
                 <input type="submit" value="{lang:Search}">
-            </form>
+            </form>-->
+            <div class="info-container">
+                <div class="info">
+                    {block:ShowTitle}<h1><a href="/">{Title}</a></h1>{/block:ShowTitle}
+                    {block:ShowDescription}{block:Description}<div class="description">{Description}</div>{/block:Description}{/block:ShowDescription}
+                </div>
+            </div>
         </header>
         <section class="posts">
         {block:Posts}
