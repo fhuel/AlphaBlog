@@ -96,6 +96,47 @@
             }
             h1 > a {color:{TitleColor};}
             a {color:{AccentColor}}
+
+            /* Header styles */
+            header {
+                position: relative;
+                overflow: hidden;
+                height: 100vh;
+            }
+
+            .header-image {
+                position: absolute;
+                left: -9999px;
+                top: -9999px;
+                bottom: -9999px;
+                right: -9999px;
+                min-width: 100%;
+                min-height: 100%;
+                margin: auto;
+                z-index: -1;
+            }
+
+            .info-container {
+                position: absolute;
+                bottom: 0;
+                padding-bottom: 4em ;
+                width: 100%;
+                display: flex;
+                justify-content: center;
+            }
+            .info {
+                background: rgba(0,0,0,0.5);
+                padding: 1em;
+                display: inline-block;
+                width: 80%;
+                text-align: center;
+            }
+
+            .avatar {
+                display: none;
+            }
+            /* Header styles end */
+
             /* End theme styles */
 
             {CustomCSS}
