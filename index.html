@@ -117,8 +117,8 @@
                 <input type="submit" value="{lang:Search}">
             </form>
         </header>
-        {block:Posts}
         <section class="posts">
+        {block:Posts}
                 {block:Text}
                         <article>
                             {block:Title}
@@ -226,6 +226,7 @@
                 </script>
                 {/block:IndexPage}
                 {/block:Posts}
+                </section>
 
                 <!-- Comments -->
                 {block:IfDisqusShortname}
@@ -277,7 +278,6 @@
                 {block:NextPage}<a class="next" href="{NextPage}">{lang:Next}</a>{/block:NextPage}
             </div>
             {/block:Pagination}
-        </section>
         <footer class="footer">
             <small>{block:ShowTitle}{Title} {/block:ShowTitle}&copy; {CopyrightYears}</small>
         </footer>
