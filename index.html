@@ -229,6 +229,7 @@
                 </section>
 
                 <!-- Comments -->
+                {block:Posts}{block:Permalink}{block:Date}
                 {block:IfDisqusShortname}
 
                 <div id="disqus_thread"></div>
@@ -248,6 +249,7 @@
                 <a href="http://disqus.com" class="dsq-brlink">blog comments powered by <span class="logo-disqus">Disqus</span></a>
 
                 {/block:IfDisqusShortname}
+                {/block:Date}{/block:Permalink}{/block:Posts}
                 <!-- End comments -->
 
                 {block:HasTags}
