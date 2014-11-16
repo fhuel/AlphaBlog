@@ -100,7 +100,7 @@
         <style>
             /* Theme styles */
             body {
-                background:url({image:Background Image}) {BackgroundColor};
+                background: url({image:Background Image}) {BackgroundColor};
             }
             h1 > a {color:{TitleColor};}
             a {color:{AccentColor}}
@@ -111,18 +111,10 @@
                 overflow: hidden;
                 height: 100%;
                 height: 100vh;
-            }
-
-            .header-image {
-                position: absolute;
-                left: -9999px;
-                top: -9999px;
-                bottom: -9999px;
-                right: -9999px;
-                min-width: 100%;
-                min-height: 100%;
-                margin: auto;
-                z-index: -1;
+                {block:ShowHeaderImage}
+                background: url({HeaderImage}) center center / cover no-repeat;
+                background-size: cover;
+                {/block:ShowHeaderImage}
             }
 
             .info-container {
@@ -204,8 +196,6 @@
     </head>
     <body>
         <header>
-            {block:ShowHeaderImage}<img src="{HeaderImage}" class="header-image">{/block:ShowHeaderImage}
-            {block:ShowAvatar}<img src="{PortraitURL-128}" class="avatar">{/block:ShowAvatar}
             <!-- Navigation and search will live somewhere else, but I'm not sure where yet.
             <ul class="nav">
                 {block:HasPages}{block:Pages}<li><a href="{URL}">{Label}</a></li>{/block:Pages}{/block:HasPages}
