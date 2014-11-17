@@ -9,9 +9,6 @@
         <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/normalize/3.0.1/normalize.min.css" type="text/css" media="all">
         <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/prettify/r298/prettify.min.css">
 
-        <!-- Google Fonts -->
-        <link href='http://fonts.googleapis.com/css?family=Source+Sans+Pro:400,600,400italic,600italic' rel='stylesheet' type='text/css'>
-
         <link rel="alternate" type="application/rss+xml" href="{RSS}">
 
         <link rel="canonical" href="{block:IndexPage}{BlogURL}{/block:IndexPage}{block:PermalinkPage}{Permalink}{/block:PermalinkPage}">
@@ -93,9 +90,66 @@
 
         <!-- Custom variables -->
         <meta name="image:Background Image" content=""/>
+
+        <!-- Body font selection -->
+        <meta name="select:Body Font" content="Source Sans Pro">
+        <meta name="select:Body Font" content="Open Sans">
+        <meta name="select:Body Font" content="Roboto">
+        <meta name="select:Body Font" content="PT Sans">
+        <meta name="select:Body Font" content="Dosis">
+        <meta name="select:Body Font" content="Titillium Web">
+        <meta name="select:Body Font" content="PT Serif">
+        <meta name="select:Body Font" content="Playfair">
+        <meta name="select:Body Font" content="PT Serif">
+        <meta name="select:Body Font" content="Old Standard TT">
+        <meta name="select:Body Font" content="Merriweather">
+        <meta name="select:Body Font" content="Roboto Slab">
+        <meta name="select:Body Font" content="Arvo">
+
+        <!-- Heading font selection -->
+        <meta name="select:Heading Font" content="Source Sans Pro">
+        <meta name="select:Heading Font" content="Open Sans">
+        <meta name="select:Heading Font" content="Roboto">
+        <meta name="select:Heading Font" content="PT Sans">
+        <meta name="select:Heading Font" content="Dosis">
+        <meta name="select:Heading Font" content="Titillium Web">
+        <meta name="select:Heading Font" content="PT Serif">
+        <meta name="select:Heading Font" content="Playfair">
+        <meta name="select:Heading Font" content="PT Serif">
+        <meta name="select:Heading Font" content="Old Standard TT">
+        <meta name="select:Heading Font" content="Merriweather">
+        <meta name="select:Heading Font" content="Roboto Slab">
+        <meta name="select:Heading Font" content="Arvo">
+
+        <!-- Code font selection -->
+        <meta name="select:Code Font" content="Inconsolata">
+        <meta name="select:Code Font" content="Anonymous Pro">
+
         <meta name="text:Facebook Admins" content=""/>
         <meta name="text:Disqus Shortname" content="" />
         <meta name="text:Google Analytics ID" content="" />
+
+        <!-- Google Fonts -->
+        <script type="text/javascript">
+          var bodyFont = encodeURIComponent('{select:Body Font}');
+          var headingFont = encodeURIComponent('{select:Heading Font}');
+          var codeFont = encodeURIComponent('{select:Code Font}');
+          WebFontConfig = {
+            google: { families: [
+                bodyFont + ':400italic,600italic,400,600:latin',
+                headingFont + '::latin',
+                codeFont + '::latin',
+                ] }
+          };
+          (function() {
+            var wf = document.createElement('script');
+            wf.src = ('https:' == document.location.protocol ? 'https' : 'http') +
+              '://ajax.googleapis.com/ajax/libs/webfont/1/webfont.js';
+            wf.type = 'text/javascript';
+            wf.async = 'true';
+            var s = document.getElementsByTagName('script')[0];
+            s.parentNode.insertBefore(wf, s);
+          })(); </script>
 
         <style>
             /* Theme styles */
@@ -157,7 +211,7 @@
 
             /* Font styles */
             body {
-                font-family: 'Source Sans Pro', sans-serif;
+                font-family: '{select:Body Font}', sans-serif;
             }
             b, strong {
                 font-weight: 600;
@@ -166,10 +220,14 @@
                 font-style: italic;
             }
             h1, h2, h3, h4, h5, h6 {
+                font-family: '{select:Heading Font}';
                 font-weight: 400;
             }
             h1 {
                 font-size: 2.35em;
+            }
+            code {
+                font-family: '{select:Code Font}';
             }
             /* Font styles end */
 
