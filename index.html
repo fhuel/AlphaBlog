@@ -105,6 +105,19 @@
         <meta name="select:Body Font" content="Merriweather">
         <meta name="select:Body Font" content="Roboto Slab">
         <meta name="select:Body Font" content="Arvo">
+        <meta name="select:Body Font" content="Inconsolata">
+        <meta name="select:Body Font" content="Anonymous Pro">
+
+        <!-- Body font weight -->
+        <meta name="select:Body Font Weight" content="200" title="200 (default)">
+        <meta name="select:Body Font Weight" content="100">
+        <meta name="select:Body Font Weight" content="300">
+        <meta name="select:Body Font Weight" content="400">
+        <meta name="select:Body Font Weight" content="500">
+        <meta name="select:Body Font Weight" content="600">
+        <meta name="select:Body Font Weight" content="700">
+        <meta name="select:Body Font Weight" content="800">
+        <meta name="select:Body Font Weight" content="900">
 
         <!-- Heading font selection -->
         <meta name="select:Heading Font" content="Source Sans Pro">
@@ -120,6 +133,19 @@
         <meta name="select:Heading Font" content="Merriweather">
         <meta name="select:Heading Font" content="Roboto Slab">
         <meta name="select:Heading Font" content="Arvo">
+        <meta name="select:Heading Font" content="Inconsolata">
+        <meta name="select:Heading Font" content="Anonymous Pro">
+
+        <!-- Heading font weight -->
+        <meta name="select:Heading Font Weight" content="400" title="400 (default)">
+        <meta name="select:Heading Font Weight" content="100">
+        <meta name="select:Heading Font Weight" content="200">
+        <meta name="select:Heading Font Weight" content="300">
+        <meta name="select:Heading Font Weight" content="500">
+        <meta name="select:Heading Font Weight" content="600">
+        <meta name="select:Heading Font Weight" content="700">
+        <meta name="select:Heading Font Weight" content="800">
+        <meta name="select:Heading Font Weight" content="900">
 
         <!-- Code font selection -->
         <meta name="select:Code Font" content="Inconsolata">
@@ -134,11 +160,12 @@
           var bodyFont = encodeURIComponent('{select:Body Font}');
           var headingFont = encodeURIComponent('{select:Heading Font}');
           var codeFont = encodeURIComponent('{select:Code Font}');
+          var boldWeight = {select:Body Font Weight} + 200;
           WebFontConfig = {
             google: { families: [
-                bodyFont + ':400italic,600italic,400,600:latin',
-                headingFont + '::latin',
-                codeFont + '::latin',
+                bodyFont + ':{select:Body Font Weight}italic,' + boldWeight + 'italic,{select:Body Font Weight},' + boldWeight + ':latin',
+                headingFont + ':{select:Heading Font Weight}:latin',
+                codeFont + ':400:latin',
                 ] }
           };
           (function() {
@@ -214,24 +241,23 @@
             }
             body {
                 font-family: '{select:Body Font}', sans-serif;
-                font-weight: 400;
+                font-weight: {select:Body Font Weight};
             }
             b, strong {
-                font-weight: 600;
+                font-weight: {select:Heading Font Weight};
             }
             i, em {
                 font-style: italic;
             }
             h1, h2, h3, h4, h5, h6 {
                 font-family: '{select:Heading Font}', sans-serif;
-                font-weight: 400;
+                font-weight: {select:Heading Font Weight};
             }
             h1 {
                 font-size: 2rem;
             }
             h3 {
                 font-size: 1.2rem;
-                font-weight: 600;
             }
             h3 a {
                 color: #4A4A4A;
