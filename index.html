@@ -179,6 +179,10 @@
           })(); </script>
 
         <style>
+            /* PureDrawer responsive menu */
+            .pure-container{position:relative;height:100%;-webkit-overflow-scrolling:touch}.pure-toggle{left:-9999px;position:absolute;top:-9999px}.pure-toggle:focus~.pure-toggle-label{border-color:#1fc08e;color:#1fc08e}.pure-toggle-label{cursor:pointer;display:block;position:fixed;top:15px;z-index:99;color:#5d819d;font-size:rem-calc(70);width:56px;height:56px;line-height:44px;text-align:center;font-weight:300;transition:all 400ms ease-in-out;border:2px solid #5d819d;border-radius:50%;-webkit-user-select:none;-moz-user-select:none;-ms-user-select:none;-o-user-select:none;user-select:none;-webkit-tap-highlight-color:rgba(0,0,0,0)}.pure-toggle-label:hover{border-color:#1fc08e;color:#1fc08e}.pure-toggle-label:active{-webkit-tap-highlight-color:rgba(0,0,0,0)}.pure-toggle-label[data-toggle-label=left]{left:15px;right:auto}.pure-toggle-label[data-toggle-label=right]{right:28px;left:auto}.pure-toggle-label[data-toggle-label=top]{left:50%;-webkit-transform:translate3d(-50%,0,0);transform:translate3d(-50%,0,0)}.pure-toggle[data-toggle=left]:checked~.pure-toggle-label:not([data-toggle-label=left]),.pure-toggle[data-toggle=right]:checked~.pure-toggle-label:not([data-toggle-label=right]),.pure-toggle[data-toggle=top]:checked~.pure-toggle-label:not([data-toggle-label=top]){opacity:0;z-index:-1}.pure-toggle[data-toggle=left]:checked~.pure-toggle-label[data-toggle-label=left]{-webkit-transform:translate3d(0,0,0) rotate(-45deg);transform:translate3d(0,0,0) rotate(-45deg);border-color:#1fc08e;color:#1fc08e}.pure-toggle[data-toggle=right]:checked~.pure-toggle-label[data-toggle-label=right]{-webkit-transform:rotate(-45deg);transform:rotate(-45deg)}.pure-toggle[data-toggle=top]:checked~.pure-toggle-label[data-toggle-label=top]{-webkit-transform:rotate(-45deg) translate3d(-20px,-20px,0);transform:rotate(-45deg) translate3d(-20px,-20px,0)}.pure-drawer{position:fixed;top:0;left:0;z-index:1;height:100%;background-color:#00ab66;-webkit-transition:all .5s;transition:all .5s;visibility:hidden;width:100%;overflow-y:auto;}@media only screen and (min-width:40.063em){.pure-drawer{width:300px}}@media only screen and (min-width:64.063em){.pure-drawer{width:300px}}.pure-drawer[data-position=right]{left:auto;right:0}.pure-drawer[data-position=top]{height:100%;width:100%}@media only screen and (min-width:40.063em){.pure-drawer[data-position=top]{height:100%}}@media only screen and (min-width:64.063em){.pure-drawer[data-position=top]{height:100px}}.pure-pusher-container{position:relative;height:100%;overflow:hidden}.pure-pusher{position:relative;height:100%;overflow-y:auto;left:0;z-index:2;-webkit-transition:-webkit-transform .5s;transition:transform .5s;background-color:#fff}.pure-overlay{position:fixed;top:0;bottom:0;right:0;width:0;height:0;opacity:0;background-color:rgba(0,0,0,.4);-webkit-transition:opacity .5s .3s;transition:opacity .5s .3s}.pure-toggle[data-toggle=left]:checked~.pure-overlay[data-overlay=left]{left:100%}@media only screen and (min-width:40.063em){.pure-toggle[data-toggle=left]:checked~.pure-overlay[data-overlay=left]{left:300px}}@media only screen and (min-width:64.063em){.pure-toggle[data-toggle=left]:checked~.pure-overlay[data-overlay=left]{left:300px}}.pure-toggle[data-toggle=right]:checked~.pure-overlay[data-overlay=right]{right:100%}@media only screen and (min-width:40.063em){.pure-toggle[data-toggle=right]:checked~.pure-overlay[data-overlay=right]{right:300px}}@media only screen and (min-width:64.063em){.pure-toggle[data-toggle=right]:checked~.pure-overlay[data-overlay=right]{right:300px}}.pure-toggle[data-toggle=top]:checked~.pure-overlay[data-overlay=top]{top:100%}@media only screen and (min-width:40.063em){.pure-toggle[data-toggle=top]:checked~.pure-overlay[data-overlay=top]{top:100%}}@media only screen and (min-width:64.063em){.pure-toggle[data-toggle=top]:checked~.pure-overlay[data-overlay=top]{top:100px}}.pure-toggle[data-toggle=left]:checked~.pure-overlay[data-overlay=left],.pure-toggle[data-toggle=right]:checked~.pure-overlay[data-overlay=right],.pure-toggle[data-toggle=top]:checked~.pure-overlay[data-overlay=top]{width:100%;height:100%;opacity:1;z-index:2;-webkit-transition:opacity .5s .3s;transition:opacity .5s .3s}.no-csstransforms3d .pure-toggle[data-toggle=left]:checked~.pure-pusher-container .pure-pusher{left:100%}@media only screen and (min-width:40.063em){.no-csstransforms3d .pure-toggle[data-toggle=left]:checked~.pure-pusher-container .pure-pusher{left:300px}}@media only screen and (min-width:64.063em){.no-csstransforms3d .pure-toggle[data-toggle=left]:checked~.pure-pusher-container .pure-pusher{left:300px}}.no-csstransforms3d .pure-toggle[data-toggle=right]:checked~.pure-pusher-container .pure-pusher{left:-100%}@media only screen and (min-width:40.063em){.no-csstransforms3d .pure-toggle[data-toggle=right]:checked~.pure-pusher-container .pure-pusher{left:-300px}}@media only screen and (min-width:64.063em){.no-csstransforms3d .pure-toggle[data-toggle=right]:checked~.pure-pusher-container .pure-pusher{left:-300px}}.no-csstransforms3d .pure-toggle[data-toggle=top]:checked~.pure-pusher-container .pure-pusher{top:100%}@media only screen and (min-width:40.063em){.no-csstransforms3d .pure-toggle[data-toggle=top]:checked~.pure-pusher-container .pure-pusher{top:100%}}@media only screen and (min-width:64.063em){.no-csstransforms3d .pure-toggle[data-toggle=top]:checked~.pure-pusher-container .pure-pusher{top:100px}}[data-effect=pure-effect-3] .pure-drawer[data-position=left]{-webkit-transform:translate3d(-50%,0,0);transform:translate3d(-50%,0,0)}[data-effect=pure-effect-3] .pure-drawer[data-position=right]{-webkit-transform:translate3d(50%,0,0);transform:translate3d(50%,0,0)}[data-effect=pure-effect-3] .pure-drawer[data-position=top]{-webkit-transform:translate3d(0,-50%,0);transform:translate3d(0,-50%,0)}[data-effect=pure-effect-3] .pure-toggle[data-toggle=left]:checked~.pure-drawer[data-position=left],[data-effect=pure-effect-3] .pure-toggle[data-toggle=right]:checked~.pure-drawer[data-position=right],[data-effect=pure-effect-3] .pure-toggle[data-toggle=top]:checked~.pure-drawer[data-position=top]{visibility:visible;-webkit-transform:translate3d(0,0,0);transform:translate3d(0,0,0)}[data-effect=pure-effect-3] .pure-toggle[data-toggle=left]:checked~.pure-pusher-container .pure-pusher{-webkit-transform:translate3d(100%,0,0);transform:translate3d(100%,0,0)}@media only screen and (min-width:40.063em){[data-effect=pure-effect-3] .pure-toggle[data-toggle=left]:checked~.pure-pusher-container .pure-pusher{-webkit-transform:translate3d(300px,0,0);transform:translate3d(300px,0,0)}}@media only screen and (min-width:64.063em){[data-effect=pure-effect-3] .pure-toggle[data-toggle=left]:checked~.pure-pusher-container .pure-pusher{-webkit-transform:translate3d(300px,0,0);transform:translate3d(300px,0,0)}}[data-effect=pure-effect-3] .pure-toggle[data-toggle=right]:checked~.pure-pusher-container .pure-pusher{-webkit-transform:translate3d(-100%,0,0);transform:translate3d(-100%,0,0)}@media only screen and (min-width:40.063em){[data-effect=pure-effect-3] .pure-toggle[data-toggle=right]:checked~.pure-pusher-container .pure-pusher{-webkit-transform:translate3d(-300px,0,0);transform:translate3d(-300px,0,0)}}@media only screen and (min-width:64.063em){[data-effect=pure-effect-3] .pure-toggle[data-toggle=right]:checked~.pure-pusher-container .pure-pusher{-webkit-transform:translate3d(-300px,0,0);transform:translate3d(-300px,0,0)}}[data-effect=pure-effect-3] .pure-toggle[data-toggle=top]:checked~.pure-pusher-container .pure-pusher{-webkit-transform:translate3d(0,100%,0);transform:translate3d(0,100%,0)}@media only screen and (min-width:40.063em){[data-effect=pure-effect-3] .pure-toggle[data-toggle=top]:checked~.pure-pusher-container .pure-pusher{-webkit-transform:translate3d(0,100%,0);transform:translate3d(0,100%,0)}}@media only screen and (min-width:64.063em){[data-effect=pure-effect-3] .pure-toggle[data-toggle=top]:checked~.pure-pusher-container .pure-pusher{-webkit-transform:translate3d(0,100px,0);transform:translate3d(0,100px,0)}}
+            /* End PureDrawer responsive menu */
+
             /* Theme styles */
             body {
                 background: url({image:Background Image}) {BackgroundColor};
@@ -469,277 +473,289 @@
         </style>
     </head>
     <body>
-        <header>
-            {block:ShowAvatar}<img src="{PortraitURL-128}" class="avatar">{/block:ShowAvatar}
-            <!-- Navigation and search will live somewhere else, but I'm not sure where yet.
-            <ul class="nav">
-                {block:HasPages}{block:Pages}<li><a href="{URL}">{Label}</a></li>{/block:Pages}{/block:HasPages}
-                <li><a href="/archive">{lang:Archive}</a></li>
-                {block:AskEnabled}<li><a href="/ask">{AskLabel}</a></li>{/block:AskEnabled}
-            </ul>
-            <form id="search" action="/search" method="get">
-                <input type="search" placeholder="{lang:Search}" name="q" value="{SearchQuery}">
-                <input type="submit" value="{lang:Search}">
-            </form>-->
-            <div class="info-container">
-                <div class="info">
-                    {block:ShowTitle}<h1><a href="/">{Title}</a></h1>{/block:ShowTitle}
-                    {block:ShowDescription}{block:Description}<div class="description">{Description}</div>{/block:Description}{/block:ShowDescription}
+        <div class="pure-container" data-effect="pure-effect-3">
+            <input type="checkbox" id="pure-toggle-left" class="pure-toggle" data-toggle="left">
+            <label class="pure-toggle-label" for="pure-toggle-left" data-toggle-label="left">+</label>
+            <div class="pure-drawer" data-position="left">
+                Test drawer content
+            </div>
+            <div class="pure-pusher-container">
+                <div class="pure-pusher">
+                    <header>
+                        {block:ShowAvatar}<img src="{PortraitURL-128}" class="avatar">{/block:ShowAvatar}
+                        <!-- Navigation and search will live somewhere else, but I'm not sure where yet.
+                        <ul class="nav">
+                            {block:HasPages}{block:Pages}<li><a href="{URL}">{Label}</a></li>{/block:Pages}{/block:HasPages}
+                            <li><a href="/archive">{lang:Archive}</a></li>
+                            {block:AskEnabled}<li><a href="/ask">{AskLabel}</a></li>{/block:AskEnabled}
+                        </ul>
+                        <form id="search" action="/search" method="get">
+                            <input type="search" placeholder="{lang:Search}" name="q" value="{SearchQuery}">
+                            <input type="submit" value="{lang:Search}">
+                        </form>-->
+                        <div class="info-container">
+                            <div class="info">
+                                {block:ShowTitle}<h1><a href="/">{Title}</a></h1>{/block:ShowTitle}
+                                {block:ShowDescription}{block:Description}<div class="description">{Description}</div>{/block:Description}{/block:ShowDescription}
+                            </div>
+                        </div>
+                    </header>
+                    <section class="posts">
+                    {block:Posts}
+                            {block:Text}
+                                    <article>
+                                        {block:Title}
+                                            <h3><a href="{Permalink}">{Title}</a></h3>
+                                        {/block:Title}
+                                        <div class="authorship">
+                                            <img src="{PostAuthorPortraitURL-30}" alt="Post author avatar" class="author-avatar">
+                                            <p>
+                                                {block:Date}
+                                                    {Month} {DayOfMonth}, {Year} {PostAuthorName}
+                                                {/block:Date}
+                                            </p>
+                                        </div>
+                                        {Body}
+                                    </article>
+                            {/block:Text}
+                            {block:Photo}
+                                    <article>
+                                        <div class="authorship">
+                                            <img src="{PostAuthorPortraitURL-30}" alt="Post author avatar" class="author-avatar">
+                                            <p>
+                                                {block:Date}
+                                                    {Month} {DayOfMonth}, {Year} {PostAuthorName}
+                                                {/block:Date}
+                                            </p>
+                                        </div>
+                                        <img src="{PhotoURL-500}" alt="{PhotoAlt}"/>
+
+                                        {block:Caption}
+                                            <div class="caption">{Caption}</div>
+                                        {/block:Caption}
+                                    </article>
+                            {/block:Photo}
+                            {block:Panorama}
+                                    <article>
+                                        <div class="authorship">
+                                            <img src="{PostAuthorPortraitURL-30}" alt="Post author avatar" class="author-avatar">
+                                            <p>
+                                                {block:Date}
+                                                    {Month} {DayOfMonth}, {Year} {PostAuthorName}
+                                                {/block:Date}
+                                            </p>
+                                        </div>
+                                        {LinkOpenTag}
+                                            <img src="{PhotoURL-Panorama}" alt="{PhotoAlt}"/>
+                                        {LinkCloseTag}{block:Caption}
+                                            <div class="caption">{Caption}</div>
+                                        {/block:Caption}
+                                    </article>
+                            {/block:Panorama}
+                            {block:Photoset}
+                                    <article>
+                                        <div class="authorship">
+                                            <img src="{PostAuthorPortraitURL-30}" alt="Post author avatar" class="author-avatar">
+                                            <p>
+                                                {block:Date}
+                                                    {Month} {DayOfMonth}, {Year} {PostAuthorName}
+                                                {/block:Date}
+                                            </p>
+                                        </div>
+                                        {Photoset-500}{block:Caption}
+                                            <div class="caption">{Caption}</div>
+                                        {/block:Caption}
+                                    </article>
+                            {/block:Photoset}
+                            {block:Quote}
+                                    <article>
+                                        <div class="authorship">
+                                            <img src="{PostAuthorPortraitURL-30}" alt="Post author avatar" class="author-avatar">
+                                            <p>
+                                                {block:Date}
+                                                    {Month} {DayOfMonth}, {Year} {PostAuthorName}
+                                                {/block:Date}
+                                            </p>
+                                        </div>
+                                        &ldquo;{Quote}&rdquo;
+
+                                        {block:Source}
+                                            <div class="source">{Source}</div>
+                                        {/block:Source}
+                                    </article>
+                            {/block:Quote}
+                            {block:Link}
+                                    <article>
+                                        <div class="authorship">
+                                            <img src="{PostAuthorPortraitURL-30}" alt="Post author avatar" class="author-avatar">
+                                            <p>
+                                                {block:Date}
+                                                    {Month} {DayOfMonth}, {Year} {PostAuthorName}
+                                                {/block:Date}
+                                            </p>
+                                        </div>
+                                        <a href="{URL}" class="link" {Target}>{Name}</a>
+
+                                        {block:Description}
+                                            <div class="description">{Description}</div>
+                                        {/block:Description}
+                                    </article>
+                            {/block:Link}
+                            {block:Chat}
+                                    <article>
+                                        {block:Title}
+                                            <h3><a href="{Permalink}">{Title}</a></h3>
+                                        {/block:Title}
+                                        <div class="authorship">
+                                            <img src="{PostAuthorPortraitURL-30}" alt="Post author avatar" class="author-avatar">
+                                            <p>
+                                                {block:Date}
+                                                    {Month} {DayOfMonth}, {Year} {PostAuthorName}
+                                                {/block:Date}
+                                            </p>
+                                        </div>
+
+                                        <ul class="chat">
+                                            {block:Lines}
+
+                                                    {block:Label}
+                                                        <span class="label">{Label}</span>
+                                                    {/block:Label}{Line}
+                                                </li>
+                                            {/block:Lines}
+                                        </ul>
+                                    </article>
+                            {/block:Chat}
+                            {block:Answer}
+                                <article>
+                                    <div class="authorship">
+                                        <img src="{PostAuthorPortraitURL-30}" alt="Post author avatar" class="author-avatar">
+                                        <p>
+                                            {block:Date}
+                                                {Month} {DayOfMonth}, {Year} {PostAuthorName}
+                                            {/block:Date}
+                                        </p>
+                                    </div>
+                                    <div class="question"><div class="asker">{Asker}</div><div class="asker-question">{Question}</div><img class="asker-avatar" src="{AskerPortraitURL-96}" alt=""></div>
+
+                                    {block:Answerer}
+                                        <div class="answer"><div class="answerer">{Answerer}</div><div class="answerer-answer">{Answer}</div><img class="answerer-avatar" src="{AnswererPortraitURL-96}" alt=""></div>
+                                    {/block:Answerer}
+
+                                    <div class="replies">
+                                        {Replies}
+                                    </div>
+                                </article>
+                            {/block:Answer}
+                            {block:Video}
+                                    <article>
+                                        <div class="authorship">
+                                            <img src="{PostAuthorPortraitURL-30}" alt="Post author avatar" class="author-avatar">
+                                            <p>
+                                                {block:Date}
+                                                    {Month} {DayOfMonth}, {Year} {PostAuthorName}
+                                                {/block:Date}
+                                            </p>
+                                        </div>
+                                        <div class="video">{Video-500}</div>
+                                        {block:Caption}
+                                            <div class="caption">{Caption}</div>
+                                        {/block:Caption}
+                                    </article>
+                            {/block:Video}
+                            {block:Audio}
+                                    <article>
+                                        <div class="authorship">
+                                            <img src="{PostAuthorPortraitURL-30}" alt="Post author avatar" class="author-avatar">
+                                            <p>
+                                                {block:Date}
+                                                    {Month} {DayOfMonth}, {Year} {PostAuthorName}
+                                                {/block:Date}
+                                            </p>
+                                        </div>
+                                        {AudioEmbed}{block:Caption}
+                                            <div class="caption">{Caption}</div>
+                                        {/block:Caption}
+                                    </article>
+                            {/block:Audio}
+                            {block:IndexPage}
+                                <aside>
+                                    <a class="dsq-comment-count" href="{Permalink}#disqus_thread">Comments</a>
+                                    <script type="text/javascript">
+                                        var disqus_shortname = '{text:Disqus Shortname}';
+
+                                        (function () {
+                                            var s = document.createElement('script'); s.async = true;
+                                            s.type = 'text/javascript';
+                                            s.src = '//' + disqus_shortname + '.disqus.com/count.js';
+                                            (document.getElementsByTagName('HEAD')[0] || document.getElementsByTagName('BODY')[0]).appendChild(s);
+                                        }());
+                                    </script>
+                                </aside>
+                            {/block:IndexPage}
+                            {/block:Posts}
+                            </section>
+
+                            <!-- Comments -->
+                            {block:Posts}{block:Permalink}{block:Date}
+                            {block:IfDisqusShortname}
+                            <aside>
+                                <div id="disqus_thread"></div>
+                                <script type="text/javascript">
+                                    /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
+                                    var disqus_shortname = '{text:Disqus Shortname}'; // Required - Replace <example> with your forum shortname
+                                    var disqus_url = '{Permalink}';
+
+                                    /* * * DON'T EDIT BELOW THIS LINE * * */
+                                    (function() {
+                                        var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+                                        dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+                                        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+                                    })();
+                                </script>
+                                <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+                                <a href="http://disqus.com" class="dsq-brlink">blog comments powered by <span class="logo-disqus">Disqus</span></a>
+                            </aside>
+
+                            {/block:IfDisqusShortname}
+                            {/block:Date}{/block:Permalink}{/block:Posts}
+                            <!-- End comments -->
+
+                            {block:HasTags}
+                                <ul class="tags">
+                                    {block:Tags}
+                                        <li>
+                                            <a href="{TagURL}">{Tag}</a>
+                                        </li>
+                                    {/block:Tags}
+                                </ul>
+                            {/block:HasTags}
+                        {block:PermalinkPagination}
+                        <div class="pagination">
+                            {block:PreviousPost}<a class="prev"href="{PreviousPost}">{lang:Previous post}</a>{/block:PreviousPost}
+                            {block:NextPost}<a class="next" href="{NextPost}">{lang:Next post}</a>{/block:NextPost}
+                        </div>
+                        {/block:PermalinkPagination}
+
+                        {block:Pagination}
+                        <div class="pagination">
+                            {block:PreviousPage}<a class="prev" href="{PreviousPage}">{lang:Previous}</a>{/block:PreviousPage}
+
+                            {block:JumpPagination length="5"}
+                                {block:CurrentPage}<span class="current-page">{PageNumber}</span>{/block:CurrentPage}
+                                {block:JumpPage}<a class="jump-page" href="{URL}">{PageNumber}</a>{/block:JumpPage}
+                            {/block:JumpPagination}
+
+                            {block:NextPage}<a class="next" href="{NextPage}">{lang:Next}</a>{/block:NextPage}
+                        </div>
+                        {/block:Pagination}
+                    <footer class="footer">
+                        <small>{block:ShowTitle}{Title} {/block:ShowTitle}&copy; {CopyrightYears}</small>
+                    </footer>
                 </div>
             </div>
-        </header>
-        <section class="posts">
-        {block:Posts}
-                {block:Text}
-                        <article>
-                            {block:Title}
-                                <h3><a href="{Permalink}">{Title}</a></h3>
-                            {/block:Title}
-                            <div class="authorship">
-                                <img src="{PostAuthorPortraitURL-30}" alt="Post author avatar" class="author-avatar">
-                                <p>
-                                    {block:Date}
-                                        {Month} {DayOfMonth}, {Year} {PostAuthorName}
-                                    {/block:Date}
-                                </p>
-                            </div>
-                            {Body}
-                        </article>
-                {/block:Text}
-                {block:Photo}
-                        <article>
-                            <div class="authorship">
-                                <img src="{PostAuthorPortraitURL-30}" alt="Post author avatar" class="author-avatar">
-                                <p>
-                                    {block:Date}
-                                        {Month} {DayOfMonth}, {Year} {PostAuthorName}
-                                    {/block:Date}
-                                </p>
-                            </div>
-                            <img src="{PhotoURL-500}" alt="{PhotoAlt}"/>
-
-                            {block:Caption}
-                                <div class="caption">{Caption}</div>
-                            {/block:Caption}
-                        </article>
-                {/block:Photo}
-                {block:Panorama}
-                        <article>
-                            <div class="authorship">
-                                <img src="{PostAuthorPortraitURL-30}" alt="Post author avatar" class="author-avatar">
-                                <p>
-                                    {block:Date}
-                                        {Month} {DayOfMonth}, {Year} {PostAuthorName}
-                                    {/block:Date}
-                                </p>
-                            </div>
-                            {LinkOpenTag}
-                                <img src="{PhotoURL-Panorama}" alt="{PhotoAlt}"/>
-                            {LinkCloseTag}{block:Caption}
-                                <div class="caption">{Caption}</div>
-                            {/block:Caption}
-                        </article>
-                {/block:Panorama}
-                {block:Photoset}
-                        <article>
-                            <div class="authorship">
-                                <img src="{PostAuthorPortraitURL-30}" alt="Post author avatar" class="author-avatar">
-                                <p>
-                                    {block:Date}
-                                        {Month} {DayOfMonth}, {Year} {PostAuthorName}
-                                    {/block:Date}
-                                </p>
-                            </div>
-                            {Photoset-500}{block:Caption}
-                                <div class="caption">{Caption}</div>
-                            {/block:Caption}
-                        </article>
-                {/block:Photoset}
-                {block:Quote}
-                        <article>
-                            <div class="authorship">
-                                <img src="{PostAuthorPortraitURL-30}" alt="Post author avatar" class="author-avatar">
-                                <p>
-                                    {block:Date}
-                                        {Month} {DayOfMonth}, {Year} {PostAuthorName}
-                                    {/block:Date}
-                                </p>
-                            </div>
-                            &ldquo;{Quote}&rdquo;
-
-                            {block:Source}
-                                <div class="source">{Source}</div>
-                            {/block:Source}
-                        </article>
-                {/block:Quote}
-                {block:Link}
-                        <article>
-                            <div class="authorship">
-                                <img src="{PostAuthorPortraitURL-30}" alt="Post author avatar" class="author-avatar">
-                                <p>
-                                    {block:Date}
-                                        {Month} {DayOfMonth}, {Year} {PostAuthorName}
-                                    {/block:Date}
-                                </p>
-                            </div>
-                            <a href="{URL}" class="link" {Target}>{Name}</a>
-
-                            {block:Description}
-                                <div class="description">{Description}</div>
-                            {/block:Description}
-                        </article>
-                {/block:Link}
-                {block:Chat}
-                        <article>
-                            {block:Title}
-                                <h3><a href="{Permalink}">{Title}</a></h3>
-                            {/block:Title}
-                            <div class="authorship">
-                                <img src="{PostAuthorPortraitURL-30}" alt="Post author avatar" class="author-avatar">
-                                <p>
-                                    {block:Date}
-                                        {Month} {DayOfMonth}, {Year} {PostAuthorName}
-                                    {/block:Date}
-                                </p>
-                            </div>
-
-                            <ul class="chat">
-                                {block:Lines}
-
-                                        {block:Label}
-                                            <span class="label">{Label}</span>
-                                        {/block:Label}{Line}
-                                    </li>
-                                {/block:Lines}
-                            </ul>
-                        </article>
-                {/block:Chat}
-                {block:Answer}
-                    <article>
-                        <div class="authorship">
-                            <img src="{PostAuthorPortraitURL-30}" alt="Post author avatar" class="author-avatar">
-                            <p>
-                                {block:Date}
-                                    {Month} {DayOfMonth}, {Year} {PostAuthorName}
-                                {/block:Date}
-                            </p>
-                        </div>
-                        <div class="question"><div class="asker">{Asker}</div><div class="asker-question">{Question}</div><img class="asker-avatar" src="{AskerPortraitURL-96}" alt=""></div>
-
-                        {block:Answerer}
-                            <div class="answer"><div class="answerer">{Answerer}</div><div class="answerer-answer">{Answer}</div><img class="answerer-avatar" src="{AnswererPortraitURL-96}" alt=""></div>
-                        {/block:Answerer}
-
-                        <div class="replies">
-                            {Replies}
-                        </div>
-                    </article>
-                {/block:Answer}
-                {block:Video}
-                        <article>
-                            <div class="authorship">
-                                <img src="{PostAuthorPortraitURL-30}" alt="Post author avatar" class="author-avatar">
-                                <p>
-                                    {block:Date}
-                                        {Month} {DayOfMonth}, {Year} {PostAuthorName}
-                                    {/block:Date}
-                                </p>
-                            </div>
-                            <div class="video">{Video-500}</div>
-                            {block:Caption}
-                                <div class="caption">{Caption}</div>
-                            {/block:Caption}
-                        </article>
-                {/block:Video}
-                {block:Audio}
-                        <article>
-                            <div class="authorship">
-                                <img src="{PostAuthorPortraitURL-30}" alt="Post author avatar" class="author-avatar">
-                                <p>
-                                    {block:Date}
-                                        {Month} {DayOfMonth}, {Year} {PostAuthorName}
-                                    {/block:Date}
-                                </p>
-                            </div>
-                            {AudioEmbed}{block:Caption}
-                                <div class="caption">{Caption}</div>
-                            {/block:Caption}
-                        </article>
-                {/block:Audio}
-                {block:IndexPage}
-                    <aside>
-                        <a class="dsq-comment-count" href="{Permalink}#disqus_thread">Comments</a>
-                        <script type="text/javascript">
-                            var disqus_shortname = '{text:Disqus Shortname}';
-
-                            (function () {
-                                var s = document.createElement('script'); s.async = true;
-                                s.type = 'text/javascript';
-                                s.src = '//' + disqus_shortname + '.disqus.com/count.js';
-                                (document.getElementsByTagName('HEAD')[0] || document.getElementsByTagName('BODY')[0]).appendChild(s);
-                            }());
-                        </script>
-                    </aside>
-                {/block:IndexPage}
-                {/block:Posts}
-                </section>
-
-                <!-- Comments -->
-                {block:Posts}{block:Permalink}{block:Date}
-                {block:IfDisqusShortname}
-                <aside>
-                    <div id="disqus_thread"></div>
-                    <script type="text/javascript">
-                        /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
-                        var disqus_shortname = '{text:Disqus Shortname}'; // Required - Replace <example> with your forum shortname
-                        var disqus_url = '{Permalink}';
-
-                        /* * * DON'T EDIT BELOW THIS LINE * * */
-                        (function() {
-                            var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
-                            dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
-                            (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
-                        })();
-                    </script>
-                    <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
-                    <a href="http://disqus.com" class="dsq-brlink">blog comments powered by <span class="logo-disqus">Disqus</span></a>
-                </aside>
-
-                {/block:IfDisqusShortname}
-                {/block:Date}{/block:Permalink}{/block:Posts}
-                <!-- End comments -->
-
-                {block:HasTags}
-                    <ul class="tags">
-                        {block:Tags}
-                            <li>
-                                <a href="{TagURL}">{Tag}</a>
-                            </li>
-                        {/block:Tags}
-                    </ul>
-                {/block:HasTags}
-            {block:PermalinkPagination}
-            <div class="pagination">
-                {block:PreviousPost}<a class="prev"href="{PreviousPost}">{lang:Previous post}</a>{/block:PreviousPost}
-                {block:NextPost}<a class="next" href="{NextPost}">{lang:Next post}</a>{/block:NextPost}
-            </div>
-            {/block:PermalinkPagination}
-
-            {block:Pagination}
-            <div class="pagination">
-                {block:PreviousPage}<a class="prev" href="{PreviousPage}">{lang:Previous}</a>{/block:PreviousPage}
-
-                {block:JumpPagination length="5"}
-                    {block:CurrentPage}<span class="current-page">{PageNumber}</span>{/block:CurrentPage}
-                    {block:JumpPage}<a class="jump-page" href="{URL}">{PageNumber}</a>{/block:JumpPage}
-                {/block:JumpPagination}
-
-                {block:NextPage}<a class="next" href="{NextPage}">{lang:Next}</a>{/block:NextPage}
-            </div>
-            {/block:Pagination}
-        <footer class="footer">
-            <small>{block:ShowTitle}{Title} {/block:ShowTitle}&copy; {CopyrightYears}</small>
-        </footer>
+            <label for="pure-toggle-left" class="pure-overlay" data-overlay="left"></label>
+        </div>
 
         <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
 
