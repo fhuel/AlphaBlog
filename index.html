@@ -189,6 +189,55 @@
           })(); </script>
 
         <style>
+            /* Icon font */
+            @font-face {
+                font-family: 'PowerUp Tumblr';
+                src:url('http://static.tumblr.com/vz1s3fz/lC0nfro22/powerup-tumblr.eot?jmd7h7');
+                src:url('http://static.tumblr.com/vz1s3fz/lC0nfro22/powerup-tumblr.eot?jmd7h7') format('embedded-opentype'),
+                    url('data:application/x-font-woff;charset=utf-8;base64,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') format('woff'),
+                    url('http://static.tumblr.com/vz1s3fz/fojnfro2b/powerup-tumblr.ttf?jmd7h7') format('truetype'),
+                    url('http://static.tumblr.com/vz1s3fz/18fnfro3a/powerup-tumblr.svg?jmd7h7#icomoon') format('svg');
+                font-weight: normal;
+                font-style: normal;
+            }
+
+            [class^="icon-"], [class*=" icon-"] {
+                font-family: 'PowerUp Tumblr';
+                speak: none;
+                font-style: normal;
+                font-weight: normal;
+                font-variant: normal;
+                text-transform: none;
+                line-height: 1;
+
+                /* Better Font Rendering =========== */
+                -webkit-font-smoothing: antialiased;
+                -moz-osx-font-smoothing: grayscale;
+            }
+
+            .icon-photo:before {
+                content: "\e600";
+            }
+            .icon-audio:before {
+                content: "\e601";
+            }
+            .icon-question:before {
+                content: "\e602";
+            }
+            .icon-quote:before {
+                content: "\e603";
+            }
+            .icon-text:before {
+                content: "\e604";
+            }
+            .icon-video:before {
+                content: "\e605";
+            }
+            .icon-link:before {
+                content: "\e606";
+            }
+
+            /* End icon font*/
             /* PureDrawer responsive menu */
             html,body{height: 100%;}.pure-container{position:relative;height:100%;-webkit-overflow-scrolling:touch}.pure-toggle{left:-9999px;position:absolute;top:-9999px}.pure-toggle:focus~.pure-toggle-label{color:#fff}.pure-toggle-label{cursor:pointer;display:block;position:fixed;top:15px;z-index:99;color:#fff;font-size:2rem;width:58px;padding:5px;line-height:44px;text-align:center;font-weight:300;transition:all 200ms ease-in-out;-webkit-user-select:none;-moz-user-select:none;-ms-user-select:none;-o-user-select:none;user-select:none;-webkit-tap-highlight-color:rgba(0,0,0,0);text-rendering:geometricPrecision;background:rgba(0,0,0,0.5)}.pure-toggle-label:hover{color:#fff;background:rgba(0,0,0,0.7)}.pure-toggle-label:active{-webkit-tap-highlight-color:rgba(0,0,0,0)}.pure-toggle-label[data-toggle-label=left]{left:15px;right:auto}.pure-toggle-label[data-toggle-label=right]{right:28px;left:auto}.pure-toggle-label[data-toggle-label=top]{}.pure-toggle[data-toggle=left]:checked~.pure-toggle-label:not([data-toggle-label=left]),.pure-toggle[data-toggle=right]:checked~.pure-toggle-label:not([data-toggle-label=right]),.pure-toggle[data-toggle=top]:checked~.pure-toggle-label:not([data-toggle-label=top]){opacity:0;z-index:-1}.pure-toggle[data-toggle=left]:checked~.pure-toggle-label[data-toggle-label=left]{}.pure-toggle[data-toggle=right]:checked~.pure-toggle-label[data-toggle-label=right]{}.pure-toggle[data-toggle=top]:checked~.pure-toggle-label[data-toggle-label=top]{}.pure-drawer{position:fixed;top:0;left:0;z-index:1;height:100%;padding:4em 0.5em 1em;background-color:#10100F;color:#fff;-webkit-transition:all .5s;transition:all .5s;visibility:hidden;width:100%;overflow-y:auto;}@media only screen and (min-width:40.063em){.pure-drawer{width:300px}}@media only screen and (min-width:64.063em){.pure-drawer{width:300px}}.pure-drawer[data-position=right]{left:auto;right:0}.pure-drawer[data-position=top]{height:100%;width:100%}@media only screen and (min-width:40.063em){.pure-drawer[data-position=top]{height:100%}}@media only screen and (min-width:64.063em){.pure-drawer[data-position=top]{height:100px}}.pure-pusher-container{position:relative;height:100%;overflow:hidden}.pure-pusher{position:relative;height:100%;overflow-y:auto;left:0;z-index:2;-webkit-transition:-webkit-transform .5s;transition:transform .5s}.pure-overlay{position:fixed;top:0;bottom:0;right:0;width:0;height:0;opacity:0;background-color:rgba(0,0,0,.4);-webkit-transition:opacity .5s .3s;transition:opacity .5s .3s}.pure-toggle[data-toggle=left]:checked~.pure-overlay[data-overlay=left]{left:100%}@media only screen and (min-width:40.063em){.pure-toggle[data-toggle=left]:checked~.pure-overlay[data-overlay=left]{left:300px}}@media only screen and (min-width:64.063em){.pure-toggle[data-toggle=left]:checked~.pure-overlay[data-overlay=left]{left:300px}}.pure-toggle[data-toggle=right]:checked~.pure-overlay[data-overlay=right]{right:100%}@media only screen and (min-width:40.063em){.pure-toggle[data-toggle=right]:checked~.pure-overlay[data-overlay=right]{right:300px}}@media only screen and (min-width:64.063em){.pure-toggle[data-toggle=right]:checked~.pure-overlay[data-overlay=right]{right:300px}}.pure-toggle[data-toggle=top]:checked~.pure-overlay[data-overlay=top]{top:100%}@media only screen and (min-width:40.063em){.pure-toggle[data-toggle=top]:checked~.pure-overlay[data-overlay=top]{top:100%}}@media only screen and (min-width:64.063em){.pure-toggle[data-toggle=top]:checked~.pure-overlay[data-overlay=top]{top:100px}}.pure-toggle[data-toggle=left]:checked~.pure-overlay[data-overlay=left],.pure-toggle[data-toggle=right]:checked~.pure-overlay[data-overlay=right],.pure-toggle[data-toggle=top]:checked~.pure-overlay[data-overlay=top]{width:100%;height:100%;opacity:1;z-index:2;-webkit-transition:opacity .5s .3s;transition:opacity .5s .3s}.no-csstransforms3d .pure-toggle[data-toggle=left]:checked~.pure-pusher-container .pure-pusher{left:100%}@media only screen and (min-width:40.063em){.no-csstransforms3d .pure-toggle[data-toggle=left]:checked~.pure-pusher-container .pure-pusher{left:300px}}@media only screen and (min-width:64.063em){.no-csstransforms3d .pure-toggle[data-toggle=left]:checked~.pure-pusher-container .pure-pusher{left:300px}}.no-csstransforms3d .pure-toggle[data-toggle=right]:checked~.pure-pusher-container .pure-pusher{left:-100%}@media only screen and (min-width:40.063em){.no-csstransforms3d .pure-toggle[data-toggle=right]:checked~.pure-pusher-container .pure-pusher{left:-300px}}@media only screen and (min-width:64.063em){.no-csstransforms3d .pure-toggle[data-toggle=right]:checked~.pure-pusher-container .pure-pusher{left:-300px}}.no-csstransforms3d .pure-toggle[data-toggle=top]:checked~.pure-pusher-container .pure-pusher{top:100%}@media only screen and (min-width:40.063em){.no-csstransforms3d .pure-toggle[data-toggle=top]:checked~.pure-pusher-container .pure-pusher{top:100%}}@media only screen and (min-width:64.063em){.no-csstransforms3d .pure-toggle[data-toggle=top]:checked~.pure-pusher-container .pure-pusher{top:100px}}[data-effect=pure-effect-3] .pure-drawer[data-position=left]{-webkit-transform:translate3d(-50%,0,0);transform:translate3d(-50%,0,0)}[data-effect=pure-effect-3] .pure-drawer[data-position=right]{-webkit-transform:translate3d(50%,0,0);transform:translate3d(50%,0,0)}[data-effect=pure-effect-3] .pure-drawer[data-position=top]{-webkit-transform:translate3d(0,-50%,0);transform:translate3d(0,-50%,0)}[data-effect=pure-effect-3] .pure-toggle[data-toggle=left]:checked~.pure-drawer[data-position=left],[data-effect=pure-effect-3] .pure-toggle[data-toggle=right]:checked~.pure-drawer[data-position=right],[data-effect=pure-effect-3] .pure-toggle[data-toggle=top]:checked~.pure-drawer[data-position=top]{visibility:visible;-webkit-transform:translate3d(0,0,0);transform:translate3d(0,0,0)}[data-effect=pure-effect-3] .pure-toggle[data-toggle=left]:checked~.pure-pusher-container .pure-pusher{-webkit-transform:translate3d(100%,0,0);transform:translate3d(100%,0,0)}@media only screen and (min-width:40.063em){[data-effect=pure-effect-3] .pure-toggle[data-toggle=left]:checked~.pure-pusher-container .pure-pusher{-webkit-transform:translate3d(300px,0,0);transform:translate3d(300px,0,0)}}@media only screen and (min-width:64.063em){[data-effect=pure-effect-3] .pure-toggle[data-toggle=left]:checked~.pure-pusher-container .pure-pusher{-webkit-transform:translate3d(300px,0,0);transform:translate3d(300px,0,0)}}[data-effect=pure-effect-3] .pure-toggle[data-toggle=right]:checked~.pure-pusher-container .pure-pusher{-webkit-transform:translate3d(-100%,0,0);transform:translate3d(-100%,0,0)}@media only screen and (min-width:40.063em){[data-effect=pure-effect-3] .pure-toggle[data-toggle=right]:checked~.pure-pusher-container .pure-pusher{-webkit-transform:translate3d(-300px,0,0);transform:translate3d(-300px,0,0)}}@media only screen and (min-width:64.063em){[data-effect=pure-effect-3] .pure-toggle[data-toggle=right]:checked~.pure-pusher-container .pure-pusher{-webkit-transform:translate3d(-300px,0,0);transform:translate3d(-300px,0,0)}}[data-effect=pure-effect-3] .pure-toggle[data-toggle=top]:checked~.pure-pusher-container .pure-pusher{-webkit-transform:translate3d(0,100%,0);transform:translate3d(0,100%,0)}@media only screen and (min-width:40.063em){[data-effect=pure-effect-3] .pure-toggle[data-toggle=top]:checked~.pure-pusher-container .pure-pusher{-webkit-transform:translate3d(0,100%,0);transform:translate3d(0,100%,0)}}@media only screen and (min-width:64.063em){[data-effect=pure-effect-3] .pure-toggle[data-toggle=top]:checked~.pure-pusher-container .pure-pusher{-webkit-transform:translate3d(0,100px,0);transform:translate3d(0,100px,0)}}
             /* End PureDrawer responsive menu */
@@ -480,9 +529,13 @@
                 position: relative;
                 top: 0.1em;
             }
-            .post-icon {
+            article [class^="icon-"]:first-of-type, article [class*=" icon-"]:first-of-type {
                 margin: 1.2em auto 0;
+                text-align: center;
                 display: block;
+            }
+            article [class^="icon-"]:first-of-type:before, article [class*=" icon-"]:first-of-type:before {
+                color: {TitleColor};
             }
             a.link {
                 background-color: {AccentColor};
@@ -534,7 +587,7 @@
                     {block:Posts}
                             {block:Text}
                                     <article>
-                                        <img src="http://static.tumblr.com/vz1s3fz/xl1nfq655/text.svg" onerror="this.src=http://static.tumblr.com/vz1s3fz/9Vbnfq655/text.png" class="post-icon" alt="Text post icon">
+                                        <span class="icon-text"></span>
                                         {block:Title}
                                             <h3><a href="{Permalink}">{Title}</a></h3>
                                         {/block:Title}
@@ -551,7 +604,7 @@
                             {/block:Text}
                             {block:Photo}
                                     <article>
-                                        <img src="http://static.tumblr.com/vz1s3fz/ACFnfq654/photo.svg" onerror="this.src=http://static.tumblr.com/vz1s3fz/12snfq654/photo.png" class="post-icon" alt="Photo post icon">
+                                        <span class="icon-photo"></span>
                                         <div class="authorship">
                                             <img src="{PostAuthorPortraitURL-30}" alt="Post author avatar" class="author-avatar">
                                             <p>
@@ -569,7 +622,7 @@
                             {/block:Photo}
                             {block:Panorama}
                                     <article>
-                                        <img src="http://static.tumblr.com/vz1s3fz/ACFnfq654/photo.svg" onerror="this.src=http://static.tumblr.com/vz1s3fz/12snfq654/photo.png" class="post-icon" alt="Panorama post icon">
+                                        <span class="icon-photo"></span>
                                         <div class="authorship">
                                             <img src="{PostAuthorPortraitURL-30}" alt="Post author avatar" class="author-avatar">
                                             <p>
@@ -587,7 +640,7 @@
                             {/block:Panorama}
                             {block:Photoset}
                                     <article>
-                                        <img src="http://static.tumblr.com/vz1s3fz/ACFnfq654/photo.svg" onerror="this.src=http://static.tumblr.com/vz1s3fz/12snfq654/photo.png" class="post-icon" alt="Photoset post icon">
+                                        <span class="icon-photo"></span>
                                         <div class="authorship">
                                             <img src="{PostAuthorPortraitURL-30}" alt="Post author avatar" class="author-avatar">
                                             <p>
@@ -603,7 +656,7 @@
                             {/block:Photoset}
                             {block:Quote}
                                     <article>
-                                        <img src="http://static.tumblr.com/vz1s3fz/xl1nfq655/text.svg" onerror="this.src=http://static.tumblr.com/vz1s3fz/9Vbnfq655/text.png" class="post-icon" alt="Quote post icon">
+                                        <span class="icon-quote"></span>
                                         <div class="authorship">
                                             <img src="{PostAuthorPortraitURL-30}" alt="Post author avatar" class="author-avatar">
                                             <p>
@@ -621,7 +674,7 @@
                             {/block:Quote}
                             {block:Link}
                                     <article>
-                                        <img src="http://static.tumblr.com/vz1s3fz/cZPnfq653/link.svg" onerror="this.src=http://static.tumblr.com/vz1s3fz/7khnfq653/link.png" class="post-icon" alt="Link post icon">
+                                        <span class="icon-link"></span>
                                         <div class="authorship">
                                             <img src="{PostAuthorPortraitURL-30}" alt="Post author avatar" class="author-avatar">
                                             <p>
@@ -639,7 +692,7 @@
                             {/block:Link}
                             {block:Chat}
                                     <article>
-                                        <img src="http://static.tumblr.com/vz1s3fz/2pBnfq653/chat.svg" onerror="this.src=http://static.tumblr.com/vz1s3fz/7vZnfq652/chat.png" class="post-icon" alt="Chat post icon">
+                                        <span class="icon-quote"></span>
                                         {block:Title}
                                             <h3><a href="{Permalink}">{Title}</a></h3>
                                         {/block:Title}
@@ -665,7 +718,7 @@
                             {/block:Chat}
                             {block:Answer}
                                 <article>
-                                        <img src="http://static.tumblr.com/vz1s3fz/sZdnfq655/question.svg" onerror="this.src=http://static.tumblr.com/vz1s3fz/yWNnfq654/question.png" class="post-icon" alt="Answer post icon">
+                                    <span class="icon-question"></span>
                                     <div class="authorship">
                                         <img src="{PostAuthorPortraitURL-30}" alt="Post author avatar" class="author-avatar">
                                         <p>
@@ -687,7 +740,7 @@
                             {/block:Answer}
                             {block:Video}
                                     <article>
-                                        <img src="http://static.tumblr.com/vz1s3fz/D2Nnfq656/video.svg" onerror="this.src=http://static.tumblr.com/vz1s3fz/Xblnfq655/video.png" class="post-icon" alt="Video post icon">
+                                        <span class="icon-video"></span>
                                         <div class="authorship">
                                             <img src="{PostAuthorPortraitURL-30}" alt="Post author avatar" class="author-avatar">
                                             <p>
@@ -704,7 +757,7 @@
                             {/block:Video}
                             {block:Audio}
                                     <article>
-                                        <img src="http://static.tumblr.com/vz1s3fz/zDnnfq652/audio.svg" onerror="this.src=http://static.tumblr.com/vz1s3fz/Q3Nnfq652/audio.png" class="post-icon" alt="Audio post icon">
+                                        <span class="icon-audio"></span>
                                         <div class="authorship">
                                             <img src="{PostAuthorPortraitURL-30}" alt="Post author avatar" class="author-avatar">
                                             <p>
