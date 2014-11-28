@@ -166,6 +166,9 @@
         <meta name="text:Disqus Shortname" content="" />
         <meta name="text:Google Analytics ID" content="" />
 
+        <meta name="text:Tagline" content="" />
+
+
         <!-- Google Fonts -->
         <script type="text/javascript">
           var bodyFont = encodeURIComponent('{select:Body Font}');
@@ -303,7 +306,7 @@
             html {
                 font-size: 20px;
             }
-            .description {
+            .tagline {
                 font-size: 1.3rem;
             }
             body {
@@ -554,6 +557,18 @@
                 background: #fff;
                 padding: 0.5em;
             }
+            #search-form input {
+                border-radius: 25px;
+                color: #000;
+                border: 0;
+                -webkit-box-shadow: none;
+                -moz-box-shadow: none;
+                box-shadow: none;
+                padding: 0.1em 0.75em;
+            }
+            #search-form input:focus {
+                outline: 0;
+            }
             /* End theme styles */
 
             {CustomCSS}
@@ -564,7 +579,10 @@
             <input type="checkbox" id="pure-toggle-left" class="pure-toggle" data-toggle="left">
             <label class="pure-toggle-label" for="pure-toggle-left" data-toggle-label="left">&#9776;</label>
             <div class="pure-drawer" data-position="left">
-                Test drawer content
+                <form action="/search" method="get" id="search-form">
+                    <input type="text" name="q" value="{SearchQuery}" placeholder="Search"/>
+                </form>
+                {block:ShowDescription}{block:Description}<p>{Description}</p>{/block:Description}{/block:ShowDescription}
             </div>
             <div class="pure-pusher-container">
                 <div class="pure-pusher">
@@ -583,11 +601,12 @@
                         <div class="info-container">
                             <div class="info">
                                 {block:ShowTitle}<h1><a href="/">{Title}</a></h1>{/block:ShowTitle}
-                                {block:ShowDescription}{block:Description}<div class="description">{Description}</div>{/block:Description}{/block:ShowDescription}
+                                <div class="tagline">{text:Tagline}</div>
                             </div>
                         </div>
                     </header>
                     <section class="posts">
+                    {block:NoSearchResults}<h2>No posts match the query {SearchQuery}</h2>{/block:NoSearchResults}
                     {block:Posts}
                             {block:Text}
                                     <article>
@@ -855,6 +874,15 @@
         </div>
 
         <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+
+        <script>
+            // Enter/return to submit search form
+            $('#search-form input').keydown(function(e) {
+                if (e.keyCode == 13) {
+                    $('#search-form').submit();
+                }
+            });
+        </script>
 
         <!-- Google Prettify -->
         <script src="//cdnjs.cloudflare.com/ajax/libs/prettify/r298/prettify.min.js"></script>
