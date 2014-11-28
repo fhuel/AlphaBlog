@@ -188,8 +188,8 @@
                 box-sizing: border-box;
             }
             body {
-                background: url({image:Background Image}) {BackgroundColor};
-                color: #4A4A4A;
+                background: {BackgroundColor} url({image:Background Image});
+                color: {TitleColor};
             }
             h1 > a {color:{TitleColor};}
             a {color:{AccentColor}}
@@ -268,7 +268,7 @@
                 font-size: 1.2rem;
             }
             h3 a {
-                color: #4A4A4A;
+                color: {TitleColor};
                 text-decoration: none;
             }
             article, aside {
@@ -280,7 +280,7 @@
             .dsq-comment-count {
                 text-transform: uppercase;
                 text-decoration: none;
-                color: #F79600;
+                color: {AccentColor};
                 float: right;
             }
             /* Font styles end */
@@ -812,7 +812,14 @@
 
         <!-- Viewport units buggyfill -->
         <script>
-            !function(a,b){"use strict";"function"==typeof define&&define.amd?define([],b):"object"==typeof exports?module.exports=b():a.viewportUnitsBuggyfill=b()}(this,function(){"use strict";function j(a,b){var c;return function(){var d=this,e=arguments,f=function(){a.apply(d,e)};clearTimeout(c),c=setTimeout(f,b)}}function k(){try{return window.self!==window.top}catch(a){return!0}}function l(d){a||(d===!0&&(d={force:!0}),b=d||{},b.isMobileSafari=c,(b.force||c||i||b.hacks&&b.hacks.required(b))&&(b.hacks&&b.hacks.initialize(b),a=!0,h=document.createElement("style"),h.id="patched-viewport",document.head.appendChild(h),u(function(){var a=j(n,b.refreshDebounceWait||100);window.addEventListener("orientationchange",a,!0),window.addEventListener("pageshow",a,!0),(b.force||i||k())&&(window.addEventListener("resize",a,!0),b._listeningToResize=!0),b.hacks&&b.hacks.initializeEvents(b,n,a),n()})))}function m(){h.textContent=q()}function n(){a&&(o(),setTimeout(function(){m()},1))}function o(){return g=[],e.call(document.styleSheets,function(a){"patched-viewport"!==a.ownerNode.id&&a.cssRules&&(a.media&&a.media.mediaText&&window.matchMedia&&!window.matchMedia(a.media.mediaText).matches||e.call(a.cssRules,p))}),g}function p(a){if(7===a.type){var c=a.cssText;return d.lastIndex=0,d.test(c)&&(g.push([a,null,c]),b.hacks&&b.hacks.findDeclarations(g,a,null,c)),void 0}if(!a.style){if(!a.cssRules)return;return e.call(a.cssRules,function(a){p(a)}),void 0}e.call(a.style,function(c){var e=a.style.getPropertyValue(c);d.lastIndex=0,d.test(e)&&(g.push([a,c,e]),b.hacks&&b.hacks.findDeclarations(g,a,c,e))})}function q(){f=t();var c,d,a=[],b=[];return g.forEach(function(e){var f=r.apply(null,e),g=f.selector.length?f.selector.join(" {\n")+" {\n":"",h=new Array(f.selector.length+1).join("\n}");return g&&g===c?(g&&!c&&(c=g,d=h),b.push(f.content),void 0):(b.length&&(a.push(c+b.join("\n")+d),b.length=0),g?(c=g,d=h,b.push(f.content)):(a.push(f.content),c=null,d=null),void 0)}),b.length&&a.push(c+b.join("\n")+d),a.join("\n\n")}function r(a,c,e){var f=e.replace(d,s),g=[];b.hacks&&(f=b.hacks.overwriteDeclaration(a,c,f)),c&&(g.push(a.selectorText),f=c+": "+f+";");for(var h=a.parentRule;h;)g.unshift("@media "+h.media.mediaText),h=h.parentRule;return{selector:g,content:f}}function s(a,b,c){var d=f[c],e=parseFloat(b)/100;return e*d+"px"}function t(){var a=window.innerHeight,b=window.innerWidth;return{vh:a,vw:b,vmax:Math.max(b,a),vmin:Math.min(b,a)}}function u(a){var b=0,c=function(){b--,b||a()};e.call(document.styleSheets,function(a){a.href&&v(a.href)!==v(location.href)&&(b++,w(a.ownerNode,c))}),b||a()}function v(a){return a.slice(0,a.indexOf("/",a.indexOf("://")+3))}function w(a,b){x(a.href,function(){var c=document.createElement("style");c.media=a.media,c.setAttribute("data-href",a.href),c.textContent=this.responseText,a.parentNode.replaceChild(c,a),b()},b)}function x(a,b,c){var d=new XMLHttpRequest;if("withCredentials"in d)d.open("GET",a,!0);else{if("undefined"==typeof XDomainRequest)throw new Error("cross-domain XHR not supported");d=new XDomainRequest,d.open("GET",a)}return d.onload=b,d.onerror=c,d.send(),d}var b,f,g,h,a=!1,c=/(iPhone|iPod|iPad).+AppleWebKit/i.test(window.navigator.userAgent),d=/([+-]?[0-9.]+)(vh|vw|vmin|vmax)/g,e=[].forEach,i=!1;return{version:"0.4.1",findProperties:o,getCss:q,init:l,refresh:n}});
+            !function(a,b){"use strict";"function"==typeof define&&define.amd?define([],b):"object"==typeof exports?module.exports=b():a.viewportUnitsBuggyfill=b()}(this,function(){"use strict";function j(a,b){var c;return function(){var d=this,e=arguments,f=function(){a.apply(d,e)};clearTimeout(c),c=setTimeout(f,b)}}function k(){try{return window.self!==window.top}catch(a){return!0}}function l(d){a||(d===!0&&(d={force:!0}),b=d||{},b.isMobileSafari=c,(b.force||c||i||b.hacks&&b.hacks.required(b))&&(b.hacks&&b.hacks.initialize(b),a=!0,h=document.createElement("style"),h.id="patched-viewport",document.head.appendChild(h),u(function(){var a=j(n,b.refreshDebounceWait||100);window.addEventListener("orientationchange",a,!0),window.addEventListener("pageshow",a,!0),(b.force||i||k())&&(window.addEventListener("resize",a,!0),b._listeningToResize=!0),b.hacks&&b.hacks.initializeEvents(b,n,a),n()})))}function m(){h.textContent=q()}function n(){a&&(o(),setTimeout(function(){m()},1))}function o(){return g=[],e.call(document.styleSheets,function(a){"patched-viewport"!==a.ownerNode.id&&a.cssRules&&(a.media&&a.media.mediaText&&window.matchMedia&&!window.matchMedia(a.media.mediaText).matches||e.call(a.cssRules,p))}),g}function p(a){if(7===a.type){var c=a.cssText;return d.lastIndex=0,d.test(c)&&(g.push([a,null,c]),b.hacks&&b.hacks.findDeclarations(g,a,null,c)),void 0}if(!a.style){if(!a.cssRules)return;return e.call(a.cssRules,function(a){p(a)}),void 0}e.call(a.style,function(c){var e=a.style.getPropertyValue(c);d.lastIndex=0,d.test(e)&&(g.push([a,c,e]),b.hacks&&b.hacks.findDeclarations(g,a,c,e))})}function q(){f=t();var c,d,a=[],b=[];return g.forEach(function(e){var f=r.apply(null,e),g=f.selector.length?f.selector.join(" {
+")+" {
+":"",h=new Array(f.selector.length+1).join("
+}");return g&&g===c?(g&&!c&&(c=g,d=h),b.push(f.content),void 0):(b.length&&(a.push(c+b.join("
+")+d),b.length=0),g?(c=g,d=h,b.push(f.content)):(a.push(f.content),c=null,d=null),void 0)}),b.length&&a.push(c+b.join("
+")+d),a.join("
+
+")}function r(a,c,e){var f=e.replace(d,s),g=[];b.hacks&&(f=b.hacks.overwriteDeclaration(a,c,f)),c&&(g.push(a.selectorText),f=c+": "+f+";");for(var h=a.parentRule;h;)g.unshift("@media "+h.media.mediaText),h=h.parentRule;return{selector:g,content:f}}function s(a,b,c){var d=f[c],e=parseFloat(b)/100;return e*d+"px"}function t(){var a=window.innerHeight,b=window.innerWidth;return{vh:a,vw:b,vmax:Math.max(b,a),vmin:Math.min(b,a)}}function u(a){var b=0,c=function(){b--,b||a()};e.call(document.styleSheets,function(a){a.href&&v(a.href)!==v(location.href)&&(b++,w(a.ownerNode,c))}),b||a()}function v(a){return a.slice(0,a.indexOf("/",a.indexOf("://")+3))}function w(a,b){x(a.href,function(){var c=document.createElement("style");c.media=a.media,c.setAttribute("data-href",a.href),c.textContent=this.responseText,a.parentNode.replaceChild(c,a),b()},b)}function x(a,b,c){var d=new XMLHttpRequest;if("withCredentials"in d)d.open("GET",a,!0);else{if("undefined"==typeof XDomainRequest)throw new Error("cross-domain XHR not supported");d=new XDomainRequest,d.open("GET",a)}return d.onload=b,d.onerror=c,d.send(),d}var b,f,g,h,a=!1,c=/(iPhone|iPod|iPad).+AppleWebKit/i.test(window.navigator.userAgent),d=/([+-]?[0-9.]+)(vh|vw|vmin|vmax)/g,e=[].forEach,i=!1;return{version:"0.4.1",findProperties:o,getCss:q,init:l,refresh:n}});
             window.viewportUnitsBuggyfill.init();
         </script>
     </body>
