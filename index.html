@@ -119,6 +119,17 @@
         <meta name="select:Body Font Weight" content="800">
         <meta name="select:Body Font Weight" content="900">
 
+        <!-- Bold font weight -->
+        <meta name="select:Bold Font Weight" content="400" title="400 (default)">
+        <meta name="select:Bold Font Weight" content="100">
+        <meta name="select:Bold Font Weight" content="200">
+        <meta name="select:Bold Font Weight" content="300">
+        <meta name="select:Bold Font Weight" content="500">
+        <meta name="select:Bold Font Weight" content="600">
+        <meta name="select:Bold Font Weight" content="700">
+        <meta name="select:Bold Font Weight" content="800">
+        <meta name="select:Bold Font Weight" content="900">
+
         <!-- Heading font selection -->
         <meta name="select:Heading Font" content="Source Sans Pro">
         <meta name="select:Heading Font" content="Open Sans">
@@ -160,10 +171,9 @@
           var bodyFont = encodeURIComponent('{select:Body Font}');
           var headingFont = encodeURIComponent('{select:Heading Font}');
           var codeFont = encodeURIComponent('{select:Code Font}');
-          var boldWeight = {select:Body Font Weight} + 200;
           WebFontConfig = {
             google: { families: [
-                bodyFont + ':{select:Body Font Weight}italic,' + boldWeight + 'italic,{select:Body Font Weight},' + boldWeight + ':latin',
+                bodyFont + ':{select:Body Font Weight}italic,{select:Bold Font Weight}italic,{select:Body Font Weight},{select:Bold Font Weight}:latin',
                 headingFont + ':{select:Heading Font Weight}:latin',
                 codeFont + ':400:latin',
                 ] }
@@ -252,7 +262,7 @@
                 font-weight: {select:Body Font Weight};
             }
             b, strong {
-                font-weight: {select:Heading Font Weight};
+                font-weight: {select:Bold Font Weight};
             }
             i, em {
                 font-style: italic;
