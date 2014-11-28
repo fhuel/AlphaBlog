@@ -484,6 +484,19 @@
                 margin: 1.2em auto 0;
                 display: block;
             }
+            a.link {
+                background-color: {AccentColor};
+                color: {BackgroundColor};
+                text-decoration: none;
+                padding: 0.75em 1em;
+                display: block;
+                font-weight: {select:Bold Font Weight};
+            }
+            a.link:after {
+                content:">";
+                position: absolute;
+                right: 1.5em;
+            }
             /* End theme styles */
 
             {CustomCSS}
