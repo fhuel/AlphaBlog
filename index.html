@@ -563,17 +563,29 @@
                 background: #fff;
                 padding: 0.5em;
             }
-            #search-form input {
+            [type=search] {
                 border-radius: 25px;
                 color: #000;
                 border: 0;
                 -webkit-box-shadow: none;
                 -moz-box-shadow: none;
                 box-shadow: none;
-                padding: 0.1em 0.75em;
+                padding: 0.1em 0.75em 0.1em 1.75em;
             }
-            #search-form input:focus {
+            [type=search]:focus {
                 outline: 0;
+            }
+            #search-form {
+                position: relative;
+            }
+            #search-form .icon-search {
+                position: absolute;
+                left: 0.5em;
+                top: 0.2em;
+                color: #000;
+            }
+            .pure-drawer {
+                display: flex;
             }
             /* End theme styles */
 
@@ -585,8 +597,9 @@
             <input type="checkbox" id="pure-toggle-left" class="pure-toggle" data-toggle="left">
             <label class="pure-toggle-label" for="pure-toggle-left" data-toggle-label="left">&#9776;</label>
             <div class="pure-drawer" data-position="left">
-                <form action="/search" method="get" id="search-form">
-                    <input type="text" name="q" value="{SearchQuery}" placeholder="Search"/>
+                <form action="/search" method="get" id="search-form" class="group">
+                    <span class="icon-search"></span>
+                    <input type="search" name="q" value="{SearchQuery}" placeholder="Search"/>
                 </form>
                 {block:ShowDescription}{block:Description}<p>{Description}</p>{/block:Description}{/block:ShowDescription}
             </div>
