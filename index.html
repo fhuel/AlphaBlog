@@ -582,6 +582,7 @@
             }
             #search-form {
                 position: relative;
+                margin-bottom: 2em;
             }
             #search-form .icon-search {
                 position: absolute;
@@ -591,6 +592,14 @@
             }
             .pure-drawer {
                 display: flex;
+                flex-direction: column;
+                justify-content: flex-start;
+            }
+            .pure-drawer p {
+                margin: 1em 0;
+            }
+            hr {
+                width: 100%;
             }
             /* End theme styles */
 
@@ -606,7 +615,12 @@
                     <span class="icon-search"></span>
                     <input type="search" name="q" value="{SearchQuery}" placeholder="Search"/>
                 </form>
-                {block:ShowDescription}{block:Description}<p>{Description}</p>{/block:Description}{/block:ShowDescription}
+                {block:ShowDescription}{block:Description}
+                    <hr>
+                    <p>{Description}</p>
+                {/block:Description}{/block:ShowDescription}
+                <hr>
+
             </div>
             <div class="pure-pusher-container">
                 <div class="pure-pusher">
