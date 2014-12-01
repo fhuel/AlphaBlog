@@ -626,6 +626,52 @@
             .share a:first-child {
                 margin-left: 0;
             }
+
+            /* Workaround for custom Tumblr like button */
+            /* http://stackoverflow.com/a/21715659/800492 */
+            .custom-like-button {
+                position: relative;
+                display: block;
+                float: left;
+                width: 22px;
+                height: 20px;
+                cursor: pointer;
+                top: 3px;
+              }
+            .like_button {
+                position: absolute;
+                top: 0;
+                left: 0;
+                right: 0;
+                bottom: 0;
+                width: 100%;
+                height: 100%;
+                opacity: 0;
+                z-index: 10;
+            }
+            .like_button iframe {
+                width: 100% !important;
+                height: 100% !important;
+            }
+            .custom-button {
+                position: absolute;
+                top: 0;
+                left: 0;
+                right: 0;
+                bottom: 0;
+                width: 100%;
+                height: 100%;
+                z-index: 1;
+            }
+            .like_button:hover + .custom-button:before {
+                color: {AccentColor};
+                opacity: 0.75;
+            }
+            /* Liked State */
+            .like_button.liked + .custom-button:before, .like_button:hover.liked + .custom-button:before {
+                color: {AccentColor};
+                opacity: 1;
+            }
             /* End theme styles */
 
             {CustomCSS}
@@ -645,22 +691,19 @@
                 <p>{Description}</p>
                 {/block:Description}{/block:ShowDescription}
                 <hr>
+                <nav>
+                    <ul>
+                        {block:HasPages}{block:Pages}<li><a href="{URL}">{Label}</a></li>{/block:Pages}{/block:HasPages}
+                        <li><a href="/archive">{lang:Archive}</a></li>
+                        {block:AskEnabled}<li><a href="/ask">{AskLabel}</a></li>{/block:AskEnabled}
+                    </ul>
+                </nav>
 
             </div>
             <div class="pure-pusher-container">
                 <div class="pure-pusher">
                     <header>
                         {block:ShowAvatar}<img src="{PortraitURL-128}" class="avatar">{/block:ShowAvatar}
-                        <!-- Navigation and search will live somewhere else, but I'm not sure where yet.
-                        <ul class="nav">
-                            {block:HasPages}{block:Pages}<li><a href="{URL}">{Label}</a></li>{/block:Pages}{/block:HasPages}
-                            <li><a href="/archive">{lang:Archive}</a></li>
-                            {block:AskEnabled}<li><a href="/ask">{AskLabel}</a></li>{/block:AskEnabled}
-                        </ul>
-                        <form id="search" action="/search" method="get">
-                            <input type="search" placeholder="{lang:Search}" name="q" value="{SearchQuery}">
-                            <input type="submit" value="{lang:Search}">
-                        </form>-->
                         <div class="info-container">
                             <div class="info">
                                 {block:ShowTitle}<h1><a href="/">{Title}</a></h1>{/block:ShowTitle}
@@ -881,7 +924,10 @@
                                                                                                 {block:IndexPage}
                                                                                                 <aside class="row">
                                                                                                     <div class="col share">
-                                                                                                        <a href="{LikeURL}"><span class="icon-like"></span></a>
+                                                                                                        <div class="custom-like-button">
+                                                                                                            {LikeButton}
+                                                                                                            <span class="custom-button icon-like"></span>
+                                                                                                        </div>
                                                                                                         <a href="{ReblogURL}"><span class="icon-reblog"></span></a>
                                                                                                         <a href="#"><span class="icon-share"></span></a>
                                                                                                         <a href="{Permalink}#disqus_thread"><span class="icon-comments"></span></a>
@@ -921,7 +967,10 @@
                             {/block:IfDisqusShortname}
                             <aside class="row">
                                 <div class="col share">
-                                    <a href="{LikeURL}"><span class="icon-like"></span></a>
+                                    <div class="custom-like-button">
+                                        {LikeButton}
+                                        <span class="custom-button icon-like"></span>
+                                    </div>
                                     <a href="{ReblogURL}"><span class="icon-reblog"></span></a>
                                     <a href="#"><span class="icon-share"></span></a>
                                     <a href="{Permalink}#disqus_thread"><span class="icon-comments"></span></a>
