@@ -399,7 +399,7 @@
                 .span_3 {
                     width:75.0%;
                 }
-                .span_4, article {
+                .span_4, .main, .row [class^="icon-"], .row [class*=" icon-"] {
                     margin-left:0;
                     width:100%;
                 }
@@ -543,12 +543,12 @@
                 position: relative;
                 top: 0.1em;
             }
-            article [class^="icon-"]:first-of-type, article [class*=" icon-"]:first-of-type {
+            .row [class^="icon-"]:first-of-type, .row [class*=" icon-"]:first-of-type {
                 margin: 1.2em auto 0;
                 text-align: center;
                 display: block;
             }
-            article [class^="icon-"]:first-of-type:before, article [class*=" icon-"]:first-of-type:before {
+            .row [class^="icon-"]:first-of-type:before, .row [class*=" icon-"]:first-of-type:before {
                 color: {TitleColor};
             }
             a.link {
@@ -618,7 +618,7 @@
             <label class="pure-toggle-label" for="pure-toggle-left" data-toggle-label="left">&#9776;</label>
             <div class="pure-drawer" data-position="left">
                 <form action="/search" method="get" id="search-form" class="group">
-                    <span class="icon-search"></span>
+                    <span class="icon-search col"></span>
                     <input type="search" name="q" value="{SearchQuery}" placeholder="Search"/>
                 </form>
                 {block:ShowDescription}{block:Description}
@@ -649,194 +649,215 @@
                             </div>
                         </div>
                     </header>
-                    <section class="posts">
+                    {block:IndexPage}<section class="posts">{/block:IndexPage}
                     {block:NoSearchResults}<h2>No posts match the query {SearchQuery}</h2>{/block:NoSearchResults}
                     {block:Posts}
                             {block:Text}
-                                    <article>
-                                        <span class="icon-text"></span>
-                                        {block:Title}
-                                            <h3><a href="{Permalink}">{Title}</a></h3>
-                                        {/block:Title}
-                                        <div class="authorship">
-                                            <img src="{PostAuthorPortraitURL-30}" alt="Post author avatar" class="author-avatar">
-                                            <p>
-                                                {block:Date}
-                                                    {Month} {DayOfMonth}, {Year} {PostAuthorName}
-                                                {/block:Date}
-                                            </p>
-                                        </div>
-                                        {Body}
-                                    </article>
+                                <div class="row">
+                                    <span class="icon-text col"></span>
+                                    <div class="col main">
+                                        <article>
+                                            {block:Title}
+                                                <h3><a href="{Permalink}">{Title}</a></h3>
+                                            {/block:Title}
+                                                <div class="authorship">
+                                                    <img src="{PostAuthorPortraitURL-30}" alt="Post author avatar" class="author-avatar">
+                                                    <p>
+                                                        {block:Date}
+                                                            {Month} {DayOfMonth}, {Year} {PostAuthorName}
+                                                        {/block:Date}
+                                                    </p>
+                                                </div>
+                                                {Body}
+                                            </article>
                             {/block:Text}
                             {block:Photo}
-                                    <article>
-                                        <span class="icon-photo"></span>
-                                        <div class="authorship">
-                                            <img src="{PostAuthorPortraitURL-30}" alt="Post author avatar" class="author-avatar">
-                                            <p>
-                                                {block:Date}
-                                                    {Month} {DayOfMonth}, {Year} {PostAuthorName}
-                                                {/block:Date}
-                                            </p>
-                                        </div>
-                                        <img src="{PhotoURL-500}" alt="{PhotoAlt}"/>
+                                    <div class="row">
+                                        <span class="icon-photo col"></span>
+                                        <div class="col main">
+                                            <article>
+                                                <div class="authorship">
+                                                    <img src="{PostAuthorPortraitURL-30}" alt="Post author avatar" class="author-avatar">
+                                                    <p>
+                                                        {block:Date}
+                                                            {Month} {DayOfMonth}, {Year} {PostAuthorName}
+                                                        {/block:Date}
+                                                    </p>
+                                                </div>
+                                                <img src="{PhotoURL-500}" alt="{PhotoAlt}"/>
 
-                                        {block:Caption}
-                                            <div class="caption">{Caption}</div>
-                                        {/block:Caption}
-                                    </article>
+                                                {block:Caption}
+                                                    <div class="caption">{Caption}</div>
+                                                {/block:Caption}
+                                            </article>
                             {/block:Photo}
                             {block:Panorama}
-                                    <article>
-                                        <span class="icon-photo"></span>
-                                        <div class="authorship">
-                                            <img src="{PostAuthorPortraitURL-30}" alt="Post author avatar" class="author-avatar">
-                                            <p>
-                                                {block:Date}
-                                                    {Month} {DayOfMonth}, {Year} {PostAuthorName}
-                                                {/block:Date}
-                                            </p>
-                                        </div>
-                                        {LinkOpenTag}
-                                            <img src="{PhotoURL-Panorama}" alt="{PhotoAlt}"/>
-                                        {LinkCloseTag}{block:Caption}
-                                            <div class="caption">{Caption}</div>
-                                        {/block:Caption}
-                                    </article>
+                                    <div class="row">
+                                        <span class="icon-photo col"></span>
+                                        <div class="col main">
+                                            <article>
+                                                <div class="authorship">
+                                                    <img src="{PostAuthorPortraitURL-30}" alt="Post author avatar" class="author-avatar">
+                                                    <p>
+                                                        {block:Date}
+                                                            {Month} {DayOfMonth}, {Year} {PostAuthorName}
+                                                        {/block:Date}
+                                                    </p>
+                                                </div>
+                                                {LinkOpenTag}
+                                                    <img src="{PhotoURL-Panorama}" alt="{PhotoAlt}"/>
+                                                {LinkCloseTag}{block:Caption}
+                                                    <div class="caption">{Caption}</div>
+                                                {/block:Caption}
+                                            </article>
                             {/block:Panorama}
                             {block:Photoset}
-                                    <article>
-                                        <span class="icon-photo"></span>
-                                        <div class="authorship">
-                                            <img src="{PostAuthorPortraitURL-30}" alt="Post author avatar" class="author-avatar">
-                                            <p>
-                                                {block:Date}
-                                                    {Month} {DayOfMonth}, {Year} {PostAuthorName}
-                                                {/block:Date}
-                                            </p>
-                                        </div>
-                                        {Photoset-500}{block:Caption}
-                                            <div class="caption">{Caption}</div>
-                                        {/block:Caption}
-                                    </article>
+                                    <div class="row">
+                                        <span class="icon-photo col"></span>
+                                        <div class="col main">
+                                            <article>
+                                                <div class="authorship">
+                                                    <img src="{PostAuthorPortraitURL-30}" alt="Post author avatar" class="author-avatar">
+                                                    <p>
+                                                        {block:Date}
+                                                            {Month} {DayOfMonth}, {Year} {PostAuthorName}
+                                                        {/block:Date}
+                                                    </p>
+                                                </div>
+                                                {Photoset-500}{block:Caption}
+                                                    <div class="caption">{Caption}</div>
+                                                {/block:Caption}
+                                            </article>
                             {/block:Photoset}
                             {block:Quote}
-                                    <article>
-                                        <span class="icon-quote"></span>
-                                        <div class="authorship">
-                                            <img src="{PostAuthorPortraitURL-30}" alt="Post author avatar" class="author-avatar">
-                                            <p>
-                                                {block:Date}
-                                                    {Month} {DayOfMonth}, {Year} {PostAuthorName}
-                                                {/block:Date}
-                                            </p>
-                                        </div>
-                                        &ldquo;{Quote}&rdquo;
+                                <div class="row">
+                                        <span class="icon-quote col"></span>
+                                        <div class="col main">
+                                            <article>
+                                                <div class="authorship">
+                                                    <img src="{PostAuthorPortraitURL-30}" alt="Post author avatar" class="author-avatar">
+                                                    <p>
+                                                        {block:Date}
+                                                            {Month} {DayOfMonth}, {Year} {PostAuthorName}
+                                                        {/block:Date}
+                                                    </p>
+                                                </div>
+                                                &ldquo;{Quote}&rdquo;
 
-                                        {block:Source}
-                                            <div class="source">{Source}</div>
-                                        {/block:Source}
-                                    </article>
+                                                {block:Source}
+                                                    <div class="source">{Source}</div>
+                                                {/block:Source}
+                                            </article>
                             {/block:Quote}
                             {block:Link}
-                                    <article>
-                                        <span class="icon-link"></span>
-                                        <div class="authorship">
-                                            <img src="{PostAuthorPortraitURL-30}" alt="Post author avatar" class="author-avatar">
-                                            <p>
-                                                {block:Date}
-                                                    {Month} {DayOfMonth}, {Year} {PostAuthorName}
-                                                {/block:Date}
-                                            </p>
-                                        </div>
-                                        <a href="{URL}" class="link" {Target}>{Name}</a>
+                            <!-- Links are not taking the full width of the row. -->
+                                <div class="row">
+                                        <span class="icon-link col"></span>
+                                        <div class="col main">
+                                            <article>
+                                                <div class="authorship">
+                                                    <img src="{PostAuthorPortraitURL-30}" alt="Post author avatar" class="author-avatar">
+                                                    <p>
+                                                        {block:Date}
+                                                            {Month} {DayOfMonth}, {Year} {PostAuthorName}
+                                                        {/block:Date}
+                                                    </p>
+                                                </div>
+                                                <a href="{URL}" class="link" {Target}>{Name}</a>
 
-                                        {block:Description}
-                                            <div class="description">{Description}</div>
-                                        {/block:Description}
-                                    </article>
+                                                {block:Description}
+                                                    <div class="description">{Description}</div>
+                                                {/block:Description}
+                                            </article>
                             {/block:Link}
                             {block:Chat}
-                                    <article>
-                                        <span class="icon-quote"></span>
-                                        {block:Title}
-                                            <h3><a href="{Permalink}">{Title}</a></h3>
-                                        {/block:Title}
-                                        <div class="authorship">
-                                            <img src="{PostAuthorPortraitURL-30}" alt="Post author avatar" class="author-avatar">
-                                            <p>
-                                                {block:Date}
-                                                    {Month} {DayOfMonth}, {Year} {PostAuthorName}
-                                                {/block:Date}
-                                            </p>
-                                        </div>
+                                <div class="row">
+                                        <span class="icon-quote col"></span>
+                                        <div class="col main">
+                                            <article>
+                                                {block:Title}
+                                                    <h3><a href="{Permalink}">{Title}</a></h3>
+                                                {/block:Title}
+                                                <div class="authorship">
+                                                    <img src="{PostAuthorPortraitURL-30}" alt="Post author avatar" class="author-avatar">
+                                                    <p>
+                                                        {block:Date}
+                                                            {Month} {DayOfMonth}, {Year} {PostAuthorName}
+                                                        {/block:Date}
+                                                    </p>
+                                                </div>
 
-                                        <ul class="chat">
-                                            {block:Lines}
+                                                <ul class="chat">
+                                                    {block:Lines}
 
-                                                    {block:Label}
-                                                        <span class="label">{Label}</span>
-                                                    {/block:Label}{Line}
-                                                </li>
-                                            {/block:Lines}
-                                        </ul>
-                                    </article>
+                                                            {block:Label}
+                                                                <span class="label">{Label}</span>
+                                                            {/block:Label}{Line}
+                                                        </li>
+                                                    {/block:Lines}
+                                                </ul>
+                                            </article>
                             {/block:Chat}
                             {block:Answer}
-                                <article>
-                                    <span class="icon-question"></span>
-                                    <div class="authorship">
-                                        <img src="{PostAuthorPortraitURL-30}" alt="Post author avatar" class="author-avatar">
-                                        <p>
-                                            {block:Date}
-                                                {Month} {DayOfMonth}, {Year} {PostAuthorName}
-                                            {/block:Date}
-                                        </p>
-                                    </div>
-                                    <div class="question"><div class="asker">{Asker}</div><div class="asker-question">{Question}</div><img class="asker-avatar" src="{AskerPortraitURL-96}" alt=""></div>
+                                <div class="row">
+                                    <span class="icon-question col"></span>
+                                    <div class="col main">
+                                        <article>
+                                            <div class="authorship">
+                                                <img src="{PostAuthorPortraitURL-30}" alt="Post author avatar" class="author-avatar">
+                                                <p>
+                                                    {block:Date}
+                                                        {Month} {DayOfMonth}, {Year} {PostAuthorName}
+                                                    {/block:Date}
+                                                </p>
+                                            </div>
+                                            <div class="question"><div class="asker">{Asker}</div><div class="asker-question">{Question}</div><img class="asker-avatar" src="{AskerPortraitURL-96}" alt=""></div>
 
-                                    {block:Answerer}
-                                        <div class="answer"><div class="answerer">{Answerer}</div><div class="answerer-answer">{Answer}</div><img class="answerer-avatar" src="{AnswererPortraitURL-96}" alt=""></div>
-                                    {/block:Answerer}
+                                            {block:Answerer}
+                                                <div class="answer"><div class="answerer">{Answerer}</div><div class="answerer-answer">{Answer}</div><img class="answerer-avatar" src="{AnswererPortraitURL-96}" alt=""></div>
+                                            {/block:Answerer}
 
-                                    <div class="replies">
-                                        {Replies}
-                                    </div>
-                                </article>
+                                            <div class="replies">
+                                                {Replies}
+                                            </div>
+                                        </article>
                             {/block:Answer}
                             {block:Video}
-                                    <article>
-                                        <span class="icon-video"></span>
-                                        <div class="authorship">
-                                            <img src="{PostAuthorPortraitURL-30}" alt="Post author avatar" class="author-avatar">
-                                            <p>
-                                                {block:Date}
-                                                    {Month} {DayOfMonth}, {Year} {PostAuthorName}
-                                                {/block:Date}
-                                            </p>
-                                        </div>
-                                        <div class="video">{Video-500}</div>
-                                        {block:Caption}
-                                            <div class="caption">{Caption}</div>
-                                        {/block:Caption}
-                                    </article>
+                                <div class="row">
+                                        <span class="icon-video col"></span>
+                                        <div class="col main">
+                                            <article>
+                                                <div class="authorship">
+                                                    <img src="{PostAuthorPortraitURL-30}" alt="Post author avatar" class="author-avatar">
+                                                    <p>
+                                                        {block:Date}
+                                                            {Month} {DayOfMonth}, {Year} {PostAuthorName}
+                                                        {/block:Date}
+                                                    </p>
+                                                </div>
+                                                <div class="video">{Video-500}</div>
+                                                {block:Caption}
+                                                    <div class="caption">{Caption}</div>
+                                                {/block:Caption}
+                                            </article>
                             {/block:Video}
                             {block:Audio}
-                                    <article>
-                                        <span class="icon-audio"></span>
-                                        <div class="authorship">
-                                            <img src="{PostAuthorPortraitURL-30}" alt="Post author avatar" class="author-avatar">
-                                            <p>
-                                                {block:Date}
-                                                    {Month} {DayOfMonth}, {Year} {PostAuthorName}
-                                                {/block:Date}
-                                            </p>
-                                        </div>
-                                        {AudioEmbed}{block:Caption}
-                                            <div class="caption">{Caption}</div>
-                                        {/block:Caption}
-                                    </article>
+                                <div class="row">
+                                        <span class="icon-audio col"></span>
+                                        <div class="col main">
+                                            <article>
+                                                <div class="authorship">
+                                                    <img src="{PostAuthorPortraitURL-30}" alt="Post author avatar" class="author-avatar">
+                                                    <p>
+                                                        {block:Date}
+                                                            {Month} {DayOfMonth}, {Year} {PostAuthorName}
+                                                        {/block:Date}
+                                                    </p>
+                                                </div>
+                                                {AudioEmbed}{block:Caption}
+                                                    <div class="caption">{Caption}</div>
+                                                {/block:Caption}
+                                            </article>
                             {/block:Audio}
                             {block:IndexPage}
                                 <aside>
@@ -852,9 +873,11 @@
                                         }());
                                     </script>
                                 </aside>
+                                </div>
+                            </div>
+                            </section>
                             {/block:IndexPage}
                             {/block:Posts}
-                            </section>
 
                             <!-- Comments -->
                             {block:Posts}{block:Permalink}{block:Date}
@@ -889,28 +912,35 @@
                                         </li>
                                     {/block:Tags}
                                 </ul>
+                                </div>
+                            </div>
                             {/block:HasTags}
                         {block:PermalinkPagination}
-                        <div class="pagination">
-                            {block:PreviousPost}<a class="prev"href="{PreviousPost}">{lang:Previous post}</a>{/block:PreviousPost}
-                            {block:NextPost}<a class="next" href="{NextPost}">{lang:Next post}</a>{/block:NextPost}
+                        <div class="pagination row">
+                            <div class="col main">
+                                {block:PreviousPost}<a class="prev"href="{PreviousPost}">{lang:Previous post}</a>{/block:PreviousPost}
+                                {block:NextPost}<a class="next" href="{NextPost}">{lang:Next post}</a>{/block:NextPost}
+                            </div>
                         </div>
                         {/block:PermalinkPagination}
-
                         {block:Pagination}
-                        <div class="pagination">
-                            {block:PreviousPage}<a class="prev" href="{PreviousPage}">{lang:Previous}</a>{/block:PreviousPage}
+                        <div class="pagination row">
+                            <div class="col main">
+                                {block:PreviousPage}<a class="prev" href="{PreviousPage}">{lang:Previous}</a>{/block:PreviousPage}
 
-                            {block:JumpPagination length="5"}
-                                {block:CurrentPage}<span class="current-page">{PageNumber}</span>{/block:CurrentPage}
-                                {block:JumpPage}<a class="jump-page" href="{URL}">{PageNumber}</a>{/block:JumpPage}
-                            {/block:JumpPagination}
+                                {block:JumpPagination length="5"}
+                                    {block:CurrentPage}<span class="current-page">{PageNumber}</span>{/block:CurrentPage}
+                                    {block:JumpPage}<a class="jump-page" href="{URL}">{PageNumber}</a>{/block:JumpPage}
+                                {/block:JumpPagination}
 
-                            {block:NextPage}<a class="next" href="{NextPage}">{lang:Next}</a>{/block:NextPage}
+                                {block:NextPage}<a class="next" href="{NextPage}">{lang:Next}</a>{/block:NextPage}
+                            </div>
                         </div>
                         {/block:Pagination}
-                    <footer class="footer">
-                        <small>{block:ShowTitle}{Title} {/block:ShowTitle}&copy; {CopyrightYears}</small>
+                    <footer class="footer row">
+                        <div class="col main">
+                            <small>{block:ShowTitle}{Title} {/block:ShowTitle}&copy; {CopyrightYears}</small>
+                        </div>
                     </footer>
                 </div>
             </div>
