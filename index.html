@@ -414,7 +414,7 @@
             .span_3 {
                 width:75.0%;
             }
-            .span_4, .main, .row [class^="icon-"], .row [class*=" icon-"] {
+            .span_4, .main, .post-icon {
                 margin-left:0;
                 width:100%;
             }
@@ -545,9 +545,6 @@
                 padding: 1em 0 1.1em;
                 border-bottom: 1px solid {TitleColor};
             }
-            .posts {
-                padding: 0.5em;
-            }
             .author-avatar {
                 vertical-align: middle;
                 border-radius: 50%;
@@ -558,12 +555,12 @@
                 position: relative;
                 top: 0.1em;
             }
-            .row [class^="icon-"]:first-of-type, .row [class*=" icon-"]:first-of-type {
+            .post-icon, .post-icon {
                 margin: 2em auto 0.5em;
                 text-align: center;
                 display: block;
             }
-            .row [class^="icon-"]:first-of-type:before, .row [class*=" icon-"]:first-of-type:before {
+            .row [class^="icon-"]:before, .row [class*=" icon-"]:before {
                 color: {TitleColor};
             }
             a.link {
@@ -622,6 +619,12 @@
                 margin: 1em 0;
                 padding: 0;
             }
+            .share span {
+                margin-left: 1em;
+            }
+            .share span:first-child {
+                margin-left: 0;
+            }
             /* End theme styles */
 
             {CustomCSS}
@@ -633,7 +636,7 @@
             <label class="pure-toggle-label" for="pure-toggle-left" data-toggle-label="left">&#9776;</label>
             <div class="pure-drawer" data-position="left">
                 <form action="/search" method="get" id="search-form" class="group">
-                    <span class="icon-search col"></span>
+                    <span class="icon-search col post-icon"></span>
                     <input type="search" name="q" value="{SearchQuery}" placeholder="Search"/>
                 </form>
                 {block:ShowDescription}{block:Description}
@@ -669,7 +672,7 @@
                     {block:Posts}
                     {block:Text}
                     <div class="row">
-                        <span class="icon-text col"></span>
+                        <span class="icon-text col post-icon"></span>
                         <div class="col main">
                             <article>
                                 {block:Title}
@@ -688,7 +691,7 @@
                             {/block:Text}
                             {block:Photo}
                             <div class="row">
-                                <span class="icon-photo col"></span>
+                                <span class="icon-photo col post-icon"></span>
                                 <div class="col main">
                                     <article>
                                         <div class="authorship">
@@ -708,7 +711,7 @@
                                     {/block:Photo}
                                     {block:Panorama}
                                     <div class="row">
-                                        <span class="icon-photo col"></span>
+                                        <span class="icon-photo col post-icon"></span>
                                         <div class="col main">
                                             <article>
                                                 <div class="authorship">
@@ -728,7 +731,7 @@
                                             {/block:Panorama}
                                             {block:Photoset}
                                             <div class="row">
-                                                <span class="icon-photo col"></span>
+                                                <span class="icon-photo col post-icon"></span>
                                                 <div class="col main">
                                                     <article>
                                                         <div class="authorship">
@@ -746,7 +749,7 @@
                                                     {/block:Photoset}
                                                     {block:Quote}
                                                     <div class="row">
-                                                        <span class="icon-quote col"></span>
+                                                        <span class="icon-quote col post-icon"></span>
                                                         <div class="col main">
                                                             <article>
                                                                 <div class="authorship">
@@ -767,7 +770,7 @@
                                                             {block:Link}
                                                             <!-- Links are not taking the full width of the row. -->
                                                             <div class="row">
-                                                                <span class="icon-link col"></span>
+                                                                <span class="icon-link col post-icon"></span>
                                                                 <div class="col main">
                                                                     <article>
                                                                         <div class="authorship">
@@ -787,7 +790,7 @@
                                                                     {/block:Link}
                                                                     {block:Chat}
                                                                     <div class="row">
-                                                                        <span class="icon-quote col"></span>
+                                                                        <span class="icon-quote col post-icon"></span>
                                                                         <div class="col main">
                                                                             <article>
                                                                                 {block:Title}
@@ -815,7 +818,7 @@
                                                                         {/block:Chat}
                                                                         {block:Answer}
                                                                         <div class="row">
-                                                                            <span class="icon-question col"></span>
+                                                                            <span class="icon-question col post-icon"></span>
                                                                             <div class="col main">
                                                                                 <article>
                                                                                     <div class="authorship">
@@ -839,7 +842,7 @@
                                                                                 {/block:Answer}
                                                                                 {block:Video}
                                                                                 <div class="row">
-                                                                                    <span class="icon-video col"></span>
+                                                                                    <span class="icon-video col post-icon"></span>
                                                                                     <div class="col main">
                                                                                         <article>
                                                                                             <div class="authorship">
@@ -858,7 +861,7 @@
                                                                                         {/block:Video}
                                                                                         {block:Audio}
                                                                                         <div class="row">
-                                                                                            <span class="icon-audio col"></span>
+                                                                                            <span class="icon-audio col post-icon"></span>
                                                                                             <div class="col main">
                                                                                                 <article>
                                                                                                     <div class="authorship">
@@ -876,7 +879,12 @@
                                                                                                 {/block:Audio}
                                                                                                 {block:IndexPage}
                                                                                                 <aside class="row">
-                                                                                                    <div class="col share">Sharing links</div>
+                                                                                                    <div class="col share">
+                                                                                                        <span class="icon-like"></span>
+                                                                                                        <span class="icon-reblog"></span>
+                                                                                                        <span class="icon-share"></span>
+                                                                                                        <span class="icon-comments"></span>
+                                                                                                    </div>
                                                                                                     <div class="col comments-link">
                                                                                                         <a class="dsq-comment-count" href="{Permalink}#disqus_thread">Comments</a>
                                                                                                     </div>
@@ -893,10 +901,11 @@
                                                                                             </aside>
                                                                                         </div>
                                                                                     </div>
-                                                                                </section>
                                                                                 {/block:IndexPage}
                                                                                 {/block:Posts}
-
+                                                                                {block:IndexPage}
+                                                                                </section>
+                                                                                {/block:IndexPage}
                                                                                 <!-- Comments -->
                                                                                 {block:Posts}{block:Permalink}{block:Date}
                                                                                 {block:IfDisqusShortname}
