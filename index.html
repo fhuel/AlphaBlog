@@ -1,375 +1,402 @@
 <!DOCTYPE html>
 <html lang="{block:English}en{/block:English}{block:French}fr{/block:French}{block:German}de{/block:German}{block:Japanese}ja{/block:Japanese}{block:Italian}it{/block:Italian}{block:Spanish}es{/block:Spanish}{block:Polish}pl{/block:Polish}">
 <head>
-    <title>{Title}{block:PostSummary} &mdash; {PostSummary}{/block:PostSummary}{block:SearchPage} &mdash; Search results for {SearchQuery}{/block:SearchPage}</title>
+  <title>{Title}{block:PostSummary} &mdash; {PostSummary}{/block:PostSummary}{block:SearchPage} &mdash; Search results for {SearchQuery}{/block:SearchPage}</title>
 
-    <link rel="shortcut icon" href="{Favicon}">
-    <link rel="apple-touch-icon" href="{PortraitURL-128}">
+  <link rel="shortcut icon" href="{Favicon}">
+  <link rel="apple-touch-icon" href="{PortraitURL-128}">
 
-    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/normalize/3.0.1/normalize.min.css" type="text/css" media="all">
-    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/prettify/r298/prettify.min.css">
+  <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/normalize/3.0.1/normalize.min.css" type="text/css" media="all">
+  <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/prettify/r298/prettify.min.css">
 
-    <link rel="alternate" type="application/rss+xml" href="{RSS}">
+  <link rel="alternate" type="application/rss+xml" href="{RSS}">
 
-    <link rel="canonical" href="{block:IndexPage}{BlogURL}{/block:IndexPage}{block:PermalinkPage}{Permalink}{/block:PermalinkPage}">
+  <link rel="canonical" href="{block:IndexPage}{BlogURL}{/block:IndexPage}{block:PermalinkPage}{Permalink}{/block:PermalinkPage}">
 
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
-    <meta http-equiv="Content-Type" content="text/html"/>
-    <meta name="viewport" content="width=device-width, initial-scale=1"/>
-    <meta name="robots" content="index,follow" />
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+  <meta http-equiv="Content-Type" content="text/html"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="robots" content="index,follow" />
 
-    <meta name="title" content="{Title}{block:PostSummary} &mdash; {PostSummary}{/block:PostSummary}{block:SearchPage} &mdash; Search results for {SearchQuery}{/block:SearchPage}"/>
-    <meta name="keywords" content="{block:Permalink}{block:Posts}{block:Tags}{Tag}, {/block:Tags}{/block:Posts}{/block:Permalink}" />
-    {block:Description}
-    <meta name="description" content="{MetaDescription}" />
-    {/block:Description}
-    <meta name="revisit-after" content="2 days" />
+  <meta name="title" content="{Title}{block:PostSummary} &mdash; {PostSummary}{/block:PostSummary}{block:SearchPage} &mdash; Search results for {SearchQuery}{/block:SearchPage}"/>
+  <meta name="keywords" content="{block:Permalink}{block:Posts}{block:Tags}{Tag}, {/block:Tags}{/block:Posts}{/block:Permalink}" />
+  {block:Description}
+  <meta name="description" content="{MetaDescription}" />
+  {/block:Description}
+  <meta name="revisit-after" content="2 days" />
 
-    <meta property="og:title" content="{Title}{block:PostSummary} &mdash; {PostSummary}{/block:PostSummary}{block:SearchPage} &mdash; Search results for {SearchQuery}{/block:SearchPage}"/>
-    <meta property="og:image" content="{PortraitURL-48}"/>
-    <meta property="og:site_name" content="{Title}"/>
+  <meta property="og:title" content="{Title}{block:PostSummary} &mdash; {PostSummary}{/block:PostSummary}{block:SearchPage} &mdash; Search results for {SearchQuery}{/block:SearchPage}"/>
+  <meta property="og:image" content="{PortraitURL-48}"/>
+  <meta property="og:site_name" content="{Title}"/>
 
-    {block:IndexPage}
-    <meta property="og:description" content="{MetaDescription}"/>
-    <meta property="og:type" content="blog"/>
-    {/block:IndexPage}
-    {block:PermalinkPage}
-    <meta property="og:description" content="{block:PostSummary}{PostSummary}{/block:PostSummary}"/>
-    <meta property="og:type" content="{block:Posts}{block:Text}article{/block:Text}{block:Video}video.other{/block:Video}{block:Audio}music.song{/block:Audio}{block:Link}website{/block:Link}{block:Quote}article{/block:Quote}{block:Photoset}article{/block:Photoset}{block:Panorama}article{/block:Panorama}{block:Photo}article{/block:Photo}{block:Chat}article{/block:Chat}{block:Answer}article{/block:Answer}{/block:Posts}"/>
-    {block:Posts}
-    {block:Audio}
-    <meta property="og:type" content="music.song"/>
-    {block:ExternalAudio}<meta property="og:audio" content="{ExternalAudioURL}"/>{/block:ExternalAudio}
-    {block:TrackName}<meta property="og:audio:title" content="{TrackName}"/>{/block:TrackName}
-    {block:Artist}<meta property="og:audio:artist" content="{Artist}"/>{/block:Artist}
-    {block:Album}<meta property="og:audio:album" content="{Album}"/>{/block:Album}
-    {/block:Audio}
-    {block:Text}
-    <meta property="og:type" content="article"/>
-    <meta property="og:article:tag" content="{TagsAsClasses}"/>
-    {/block:Text}
-    {block:Link}
-    <meta property="og:type" content="website"/>
-    {/block:Link}
-    {block:Quote}
-    <meta property="og:type" content="article"/>
-    <meta property="og:article:tag" content="{TagsAsClasses}"/>
-    {/block:Quote}
-    {block:Photoset}
-    <meta property="og:type" content="article"/>
-    <meta property="og:article:tag" content="{TagsAsClasses}"/>
-    {/block:Photoset}
-    {block:Panorama}
-    <meta property="og:type" content="article"/>
-    <meta property="og:article:tag" content="{TagsAsClasses}"/>
-    {/block:Panorama}
-    {block:Photo}
-    <meta property="og:type" content="article"/>
-    <meta property="og:article:tag" content="{TagsAsClasses}"/>
-    {/block:Photo}
-    {block:Chat}
-    <meta property="og:type" content="article"/>
-    <meta property="og:article:tag" content="{TagsAsClasses}"/>
-    {/block:Chat}
-    {block:Answer}
-    <meta property="og:type" content="article"/>
-    <meta property="og:article:tag" content="{TagsAsClasses}"/>
-    {/block:Answer}
-    {block:Video}
-    <meta property="og:type" content="video.other"/>
-    <meta property="og:video" content="{VideoEmbed-700}"/>
-    <meta property="og:video:width" content="700"/>
-    <meta property="og:video:tag" content="{TagsAsClasses}"/>
-    {/block:Video}
-    {/block:Posts}
-    {/block:PermalinkPage}
-    <meta property="og:url" content="{Permalink}"/>
-    <meta property="fb:admins" content="{text:Facebook Admins}"/>
-    <meta property="og:locale" content="en_US"/>
+  {block:IndexPage}
+  <meta property="og:description" content="{MetaDescription}"/>
+  <meta property="og:type" content="blog"/>
+  {/block:IndexPage}
+  {block:PermalinkPage}
+  <meta property="og:description" content="{block:PostSummary}{PostSummary}{/block:PostSummary}"/>
+  <meta property="og:type" content="{block:Posts}{block:Text}article{/block:Text}{block:Video}video.other{/block:Video}{block:Audio}music.song{/block:Audio}{block:Link}website{/block:Link}{block:Quote}article{/block:Quote}{block:Photoset}article{/block:Photoset}{block:Panorama}article{/block:Panorama}{block:Photo}article{/block:Photo}{block:Chat}article{/block:Chat}{block:Answer}article{/block:Answer}{/block:Posts}"/>
+  {block:Posts}
+  {block:Audio}
+  <meta property="og:type" content="music.song"/>
+  {block:ExternalAudio}<meta property="og:audio" content="{ExternalAudioURL}"/>{/block:ExternalAudio}
+  {block:TrackName}<meta property="og:audio:title" content="{TrackName}"/>{/block:TrackName}
+  {block:Artist}<meta property="og:audio:artist" content="{Artist}"/>{/block:Artist}
+  {block:Album}<meta property="og:audio:album" content="{Album}"/>{/block:Album}
+  {/block:Audio}
+  {block:Text}
+  <meta property="og:type" content="article"/>
+  <meta property="og:article:tag" content="{TagsAsClasses}"/>
+  {/block:Text}
+  {block:Link}
+  <meta property="og:type" content="website"/>
+  {/block:Link}
+  {block:Quote}
+  <meta property="og:type" content="article"/>
+  <meta property="og:article:tag" content="{TagsAsClasses}"/>
+  {/block:Quote}
+  {block:Photoset}
+  <meta property="og:type" content="article"/>
+  <meta property="og:article:tag" content="{TagsAsClasses}"/>
+  {/block:Photoset}
+  {block:Panorama}
+  <meta property="og:type" content="article"/>
+  <meta property="og:article:tag" content="{TagsAsClasses}"/>
+  {/block:Panorama}
+  {block:Photo}
+  <meta property="og:type" content="article"/>
+  <meta property="og:article:tag" content="{TagsAsClasses}"/>
+  {/block:Photo}
+  {block:Chat}
+  <meta property="og:type" content="article"/>
+  <meta property="og:article:tag" content="{TagsAsClasses}"/>
+  {/block:Chat}
+  {block:Answer}
+  <meta property="og:type" content="article"/>
+  <meta property="og:article:tag" content="{TagsAsClasses}"/>
+  {/block:Answer}
+  {block:Video}
+  <meta property="og:type" content="video.other"/>
+  <meta property="og:video" content="{VideoEmbed-700}"/>
+  <meta property="og:video:width" content="700"/>
+  <meta property="og:video:tag" content="{TagsAsClasses}"/>
+  {/block:Video}
+  {/block:Posts}
+  {/block:PermalinkPage}
+  <meta property="og:url" content="{Permalink}"/>
+  <meta property="fb:admins" content="{text:Facebook Admins}"/>
+  <meta property="og:locale" content="en_US"/>
 
-    <!-- Custom variables -->
-    <meta name="image:Background Image" content=""/>
+  <!-- Custom variables -->
+  <meta name="image:Background Image" content=""/>
 
-    <!-- Body font selection -->
-    <meta name="select:Body Font" content="Source Sans Pro">
-    <meta name="select:Body Font" content="Open Sans">
-    <meta name="select:Body Font" content="Roboto">
-    <meta name="select:Body Font" content="PT Sans">
-    <meta name="select:Body Font" content="Dosis">
-    <meta name="select:Body Font" content="Titillium Web">
-    <meta name="select:Body Font" content="PT Serif">
-    <meta name="select:Body Font" content="Playfair">
-    <meta name="select:Body Font" content="PT Serif">
-    <meta name="select:Body Font" content="Old Standard TT">
-    <meta name="select:Body Font" content="Merriweather">
-    <meta name="select:Body Font" content="Roboto Slab">
-    <meta name="select:Body Font" content="Arvo">
-    <meta name="select:Body Font" content="Inconsolata">
-    <meta name="select:Body Font" content="Anonymous Pro">
+  <!-- Body font selection -->
+  <meta name="select:Body Font" content="Source Sans Pro">
+  <meta name="select:Body Font" content="Open Sans">
+  <meta name="select:Body Font" content="Roboto">
+  <meta name="select:Body Font" content="PT Sans">
+  <meta name="select:Body Font" content="Dosis">
+  <meta name="select:Body Font" content="Titillium Web">
+  <meta name="select:Body Font" content="PT Serif">
+  <meta name="select:Body Font" content="Playfair">
+  <meta name="select:Body Font" content="PT Serif">
+  <meta name="select:Body Font" content="Old Standard TT">
+  <meta name="select:Body Font" content="Merriweather">
+  <meta name="select:Body Font" content="Roboto Slab">
+  <meta name="select:Body Font" content="Arvo">
+  <meta name="select:Body Font" content="Inconsolata">
+  <meta name="select:Body Font" content="Anonymous Pro">
 
-    <!-- Body font weight -->
-    <meta name="select:Body Font Weight" content="200" title="200 (default)">
-    <meta name="select:Body Font Weight" content="100">
-    <meta name="select:Body Font Weight" content="300">
-    <meta name="select:Body Font Weight" content="400">
-    <meta name="select:Body Font Weight" content="500">
-    <meta name="select:Body Font Weight" content="600">
-    <meta name="select:Body Font Weight" content="700">
-    <meta name="select:Body Font Weight" content="800">
-    <meta name="select:Body Font Weight" content="900">
+  <!-- Body font weight -->
+  <meta name="select:Body Font Weight" content="200" title="200 (default)">
+  <meta name="select:Body Font Weight" content="100">
+  <meta name="select:Body Font Weight" content="300">
+  <meta name="select:Body Font Weight" content="400">
+  <meta name="select:Body Font Weight" content="500">
+  <meta name="select:Body Font Weight" content="600">
+  <meta name="select:Body Font Weight" content="700">
+  <meta name="select:Body Font Weight" content="800">
+  <meta name="select:Body Font Weight" content="900">
 
-    <!-- Bold font weight -->
-    <meta name="select:Bold Font Weight" content="400" title="400 (default)">
-    <meta name="select:Bold Font Weight" content="100">
-    <meta name="select:Bold Font Weight" content="200">
-    <meta name="select:Bold Font Weight" content="300">
-    <meta name="select:Bold Font Weight" content="500">
-    <meta name="select:Bold Font Weight" content="600">
-    <meta name="select:Bold Font Weight" content="700">
-    <meta name="select:Bold Font Weight" content="800">
-    <meta name="select:Bold Font Weight" content="900">
+  <!-- Bold font weight -->
+  <meta name="select:Bold Font Weight" content="400" title="400 (default)">
+  <meta name="select:Bold Font Weight" content="100">
+  <meta name="select:Bold Font Weight" content="200">
+  <meta name="select:Bold Font Weight" content="300">
+  <meta name="select:Bold Font Weight" content="500">
+  <meta name="select:Bold Font Weight" content="600">
+  <meta name="select:Bold Font Weight" content="700">
+  <meta name="select:Bold Font Weight" content="800">
+  <meta name="select:Bold Font Weight" content="900">
 
-    <!-- Heading font selection -->
-    <meta name="select:Heading Font" content="Source Sans Pro">
-    <meta name="select:Heading Font" content="Open Sans">
-    <meta name="select:Heading Font" content="Roboto">
-    <meta name="select:Heading Font" content="PT Sans">
-    <meta name="select:Heading Font" content="Dosis">
-    <meta name="select:Heading Font" content="Titillium Web">
-    <meta name="select:Heading Font" content="PT Serif">
-    <meta name="select:Heading Font" content="Playfair">
-    <meta name="select:Heading Font" content="PT Serif">
-    <meta name="select:Heading Font" content="Old Standard TT">
-    <meta name="select:Heading Font" content="Merriweather">
-    <meta name="select:Heading Font" content="Roboto Slab">
-    <meta name="select:Heading Font" content="Arvo">
-    <meta name="select:Heading Font" content="Inconsolata">
-    <meta name="select:Heading Font" content="Anonymous Pro">
+  <!-- Heading font selection -->
+  <meta name="select:Heading Font" content="Source Sans Pro">
+  <meta name="select:Heading Font" content="Open Sans">
+  <meta name="select:Heading Font" content="Roboto">
+  <meta name="select:Heading Font" content="PT Sans">
+  <meta name="select:Heading Font" content="Dosis">
+  <meta name="select:Heading Font" content="Titillium Web">
+  <meta name="select:Heading Font" content="PT Serif">
+  <meta name="select:Heading Font" content="Playfair">
+  <meta name="select:Heading Font" content="PT Serif">
+  <meta name="select:Heading Font" content="Old Standard TT">
+  <meta name="select:Heading Font" content="Merriweather">
+  <meta name="select:Heading Font" content="Roboto Slab">
+  <meta name="select:Heading Font" content="Arvo">
+  <meta name="select:Heading Font" content="Inconsolata">
+  <meta name="select:Heading Font" content="Anonymous Pro">
 
-    <!-- Heading font weight -->
-    <meta name="select:Heading Font Weight" content="400" title="400 (default)">
-    <meta name="select:Heading Font Weight" content="100">
-    <meta name="select:Heading Font Weight" content="200">
-    <meta name="select:Heading Font Weight" content="300">
-    <meta name="select:Heading Font Weight" content="500">
-    <meta name="select:Heading Font Weight" content="600">
-    <meta name="select:Heading Font Weight" content="700">
-    <meta name="select:Heading Font Weight" content="800">
-    <meta name="select:Heading Font Weight" content="900">
+  <!-- Heading font weight -->
+  <meta name="select:Heading Font Weight" content="400" title="400 (default)">
+  <meta name="select:Heading Font Weight" content="100">
+  <meta name="select:Heading Font Weight" content="200">
+  <meta name="select:Heading Font Weight" content="300">
+  <meta name="select:Heading Font Weight" content="500">
+  <meta name="select:Heading Font Weight" content="600">
+  <meta name="select:Heading Font Weight" content="700">
+  <meta name="select:Heading Font Weight" content="800">
+  <meta name="select:Heading Font Weight" content="900">
 
-    <!-- Code font selection -->
-    <meta name="select:Code Font" content="Inconsolata">
-    <meta name="select:Code Font" content="Anonymous Pro">
+  <!-- Code font selection -->
+  <meta name="select:Code Font" content="Inconsolata">
+  <meta name="select:Code Font" content="Anonymous Pro">
 
-    <meta name="text:Facebook Admins" content=""/>
-    <meta name="text:Disqus Shortname" content="" />
-    <meta name="text:Google Analytics ID" content="" />
+  <meta name="text:Facebook Admins" content=""/>
+  <meta name="text:Disqus Shortname" content="" />
+  <meta name="text:Google Analytics ID" content="" />
 
-    <meta name="text:Tagline" content="" />
+  <meta name="text:Tagline" content="" />
 
 
-    <!-- Google Fonts -->
-    <script type="text/javascript">
-    var bodyFont = encodeURIComponent('{select:Body Font}');
-    var headingFont = encodeURIComponent('{select:Heading Font}');
-    var codeFont = encodeURIComponent('{select:Code Font}');
-    WebFontConfig = {
-        google: { families: [
-            bodyFont + ':{select:Body Font Weight}italic,{select:Bold Font Weight}italic,{select:Body Font Weight},{select:Bold Font Weight}:latin',
-            headingFont + ':{select:Heading Font Weight}:latin',
-            codeFont + ':400:latin',
-            ] }
-        };
-        (function() {
-            var wf = document.createElement('script');
-            wf.src = ('https:' == document.location.protocol ? 'https' : 'http') +
-            '://ajax.googleapis.com/ajax/libs/webfont/1/webfont.js';
-            wf.type = 'text/javascript';
-            wf.async = 'true';
-            var s = document.getElementsByTagName('script')[0];
-            s.parentNode.insertBefore(wf, s);
-        })(); </script>
+  <!-- Google Fonts -->
+  <script type="text/javascript">
+  var bodyFont = encodeURIComponent('{select:Body Font}');
+  var headingFont = encodeURIComponent('{select:Heading Font}');
+  var codeFont = encodeURIComponent('{select:Code Font}');
+  WebFontConfig = {
+    google: { families: [
+      bodyFont + ':{select:Body Font Weight}italic,{select:Bold Font Weight}italic,{select:Body Font Weight},{select:Bold Font Weight}:latin',
+      headingFont + ':{select:Heading Font Weight}:latin',
+      codeFont + ':400:latin',
+      ] }
+    };
+    (function() {
+      var wf = document.createElement('script');
+      wf.src = ('https:' == document.location.protocol ? 'https' : 'http') +
+      '://ajax.googleapis.com/ajax/libs/webfont/1/webfont.js';
+      wf.type = 'text/javascript';
+      wf.async = 'true';
+      var s = document.getElementsByTagName('script')[0];
+      s.parentNode.insertBefore(wf, s);
+    })(); </script>
 
-        <style>
-        /* Icon font */
-        @font-face {
-            font-family: 'PowerUp Tumblr';
-            src:url('http://static.tumblr.com/vz1s3fz/T89nft5on/powerup-tumblr.eot?8adbdn');
-            src:url('http://static.tumblr.com/vz1s3fz/T89nft5on/powerup-tumblr.eot?8adbdn') format('embedded-opentype'),
-            url('data:application/x-font-woff;charset=utf-8;base64,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') format('woff'),
-            url('http://static.tumblr.com/vz1s3fz/jzKnft5os/powerup-tumblr.ttf?8adbdn') format('truetype'),
-            url('http://static.tumblr.com/vz1s3fz/K0gnft5oz/powerup-tumblr.svg?8adbdn#icomoon') format('svg');
-            font-weight: normal;
-            font-style: normal;
-        }
+    <style>
+    /* Icon font */
+    @font-face {
+      font-family: 'PowerUp Tumblr';
+      src:url('http://static.tumblr.com/vz1s3fz/T89nft5on/powerup-tumblr.eot?8adbdn');
+      src:url('http://static.tumblr.com/vz1s3fz/T89nft5on/powerup-tumblr.eot?8adbdn') format('embedded-opentype'),
+      url('data:application/x-font-woff;charset=utf-8;base64,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') format('woff'),
+      url('http://static.tumblr.com/vz1s3fz/jzKnft5os/powerup-tumblr.ttf?8adbdn') format('truetype'),
+      url('http://static.tumblr.com/vz1s3fz/K0gnft5oz/powerup-tumblr.svg?8adbdn#icomoon') format('svg');
+      font-weight: normal;
+      font-style: normal;
+    }
 
-        [class^="icon-"], [class*=" icon-"] {
-            font-family: 'PowerUp Tumblr';
-            speak: none;
-            font-style: normal;
-            font-weight: normal;
-            font-variant: normal;
-            text-transform: none;
-            line-height: 1;
+    [class^="icon-"], [class*=" icon-"] {
+      font-family: 'PowerUp Tumblr';
+      speak: none;
+      font-style: normal;
+      font-weight: normal;
+      font-variant: normal;
+      text-transform: none;
+      line-height: 1;
 
-            /* Better Font Rendering =========== */
-            -webkit-font-smoothing: antialiased;
-            -moz-osx-font-smoothing: grayscale;
-        }
+      /* Better Font Rendering =========== */
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+    }
 
-        .icon-comments:before {
-            content: "\e600";
-        }
-        .icon-like:before {
-            content: "\e601";
-        }
-        .icon-reblog:before {
-            content: "\e602";
-        }
-        .icon-share:before {
-            content: "\e603";
-        }
-        .icon-search:before {
-            content: "\e604";
-        }
-        .icon-chat:before {
-            content: "\e605";
-        }
-        .icon-link:before {
-            content: "\e606";
-        }
-        .icon-photo:before {
-            content: "\e607";
-        }
-        .icon-audio:before {
-            content: "\e608";
-        }
-        .icon-question:before {
-            content: "\e609";
-        }
-        .icon-quote:before {
-            content: "\e60a";
-        }
-        .icon-text:before {
-            content: "\e60b";
-        }
-        .icon-video:before {
-            content: "\e60c";
-        }
-        /* End icon font*/
+    .icon-comments:before {
+      content: "\e600";
+    }
+    .icon-like:before {
+      content: "\e601";
+    }
+    .icon-reblog:before {
+      content: "\e602";
+    }
+    .icon-share:before {
+      content: "\e603";
+    }
+    .icon-search:before {
+      content: "\e604";
+    }
+    .icon-chat:before {
+      content: "\e605";
+    }
+    .icon-link:before {
+      content: "\e606";
+    }
+    .icon-photo:before {
+      content: "\e607";
+    }
+    .icon-audio:before {
+      content: "\e608";
+    }
+    .icon-question:before {
+      content: "\e609";
+    }
+    .icon-quote:before {
+      content: "\e60a";
+    }
+    .icon-text:before {
+      content: "\e60b";
+    }
+    .icon-video:before {
+      content: "\e60c";
+    }
+    /* End icon font*/
 
-        /* PureDrawer responsive menu */
-        html,body{height: 100%;}.pure-container{position:relative;height:100%;-webkit-overflow-scrolling:touch}.pure-toggle{left:-9999px;position:absolute;top:-9999px}.pure-toggle:focus~.pure-toggle-label{color:#fff}.pure-toggle-label{cursor:pointer;display:block;position:fixed;top:15px;z-index:99;color:#fff;font-size:2rem;width:58px;padding:5px;line-height:44px;text-align:center;font-weight:300;transition:all 200ms ease-in-out;-webkit-user-select:none;-moz-user-select:none;-ms-user-select:none;-o-user-select:none;user-select:none;-webkit-tap-highlight-color:rgba(0,0,0,0);text-rendering:geometricPrecision;background:rgba(0,0,0,0.5)}.pure-toggle-label:hover{color:#fff;background:rgba(0,0,0,0.7)}.pure-toggle-label:active{-webkit-tap-highlight-color:rgba(0,0,0,0)}.pure-toggle-label[data-toggle-label=left]{left:15px;right:auto}.pure-toggle-label[data-toggle-label=right]{right:28px;left:auto}.pure-toggle-label[data-toggle-label=top]{}.pure-toggle[data-toggle=left]:checked~.pure-toggle-label:not([data-toggle-label=left]),.pure-toggle[data-toggle=right]:checked~.pure-toggle-label:not([data-toggle-label=right]),.pure-toggle[data-toggle=top]:checked~.pure-toggle-label:not([data-toggle-label=top]){opacity:0;z-index:-1}.pure-toggle[data-toggle=left]:checked~.pure-toggle-label[data-toggle-label=left]{}.pure-toggle[data-toggle=right]:checked~.pure-toggle-label[data-toggle-label=right]{}.pure-toggle[data-toggle=top]:checked~.pure-toggle-label[data-toggle-label=top]{}.pure-drawer{position:fixed;top:0;left:0;z-index:1;height:100%;padding:4em 0.5em 1em;background-color:#10100F;color:#fff;-webkit-transition:all .5s;transition:all .5s;visibility:hidden;width:100%;overflow-y:auto;}@media only screen and (min-width:40.063em){.pure-drawer{width:300px}}@media only screen and (min-width:64.063em){.pure-drawer{width:300px}}.pure-drawer[data-position=right]{left:auto;right:0}.pure-drawer[data-position=top]{height:100%;width:100%}@media only screen and (min-width:40.063em){.pure-drawer[data-position=top]{height:100%}}@media only screen and (min-width:64.063em){.pure-drawer[data-position=top]{height:100px}}.pure-pusher-container{position:relative;height:100%;overflow:hidden}.pure-pusher{background:{BackgroundColor} url({image:Background Image});position:relative;height:100%;overflow-y:auto;left:0;z-index:2;-webkit-transition:-webkit-transform .5s;transition:transform .5s}.pure-overlay{position:fixed;top:0;bottom:0;right:0;width:0;height:0;opacity:0;background-color:rgba(0,0,0,.4);-webkit-transition:opacity .5s .3s;transition:opacity .5s .3s}.pure-toggle[data-toggle=left]:checked~.pure-overlay[data-overlay=left]{left:100%}@media only screen and (min-width:40.063em){.pure-toggle[data-toggle=left]:checked~.pure-overlay[data-overlay=left]{left:300px}}@media only screen and (min-width:64.063em){.pure-toggle[data-toggle=left]:checked~.pure-overlay[data-overlay=left]{left:300px}}.pure-toggle[data-toggle=right]:checked~.pure-overlay[data-overlay=right]{right:100%}@media only screen and (min-width:40.063em){.pure-toggle[data-toggle=right]:checked~.pure-overlay[data-overlay=right]{right:300px}}@media only screen and (min-width:64.063em){.pure-toggle[data-toggle=right]:checked~.pure-overlay[data-overlay=right]{right:300px}}.pure-toggle[data-toggle=top]:checked~.pure-overlay[data-overlay=top]{top:100%}@media only screen and (min-width:40.063em){.pure-toggle[data-toggle=top]:checked~.pure-overlay[data-overlay=top]{top:100%}}@media only screen and (min-width:64.063em){.pure-toggle[data-toggle=top]:checked~.pure-overlay[data-overlay=top]{top:100px}}.pure-toggle[data-toggle=left]:checked~.pure-overlay[data-overlay=left],.pure-toggle[data-toggle=right]:checked~.pure-overlay[data-overlay=right],.pure-toggle[data-toggle=top]:checked~.pure-overlay[data-overlay=top]{width:100%;height:100%;opacity:1;z-index:2;-webkit-transition:opacity .5s .3s;transition:opacity .5s .3s}.no-csstransforms3d .pure-toggle[data-toggle=left]:checked~.pure-pusher-container .pure-pusher{left:100%}@media only screen and (min-width:40.063em){.no-csstransforms3d .pure-toggle[data-toggle=left]:checked~.pure-pusher-container .pure-pusher{left:300px}}@media only screen and (min-width:64.063em){.no-csstransforms3d .pure-toggle[data-toggle=left]:checked~.pure-pusher-container .pure-pusher{left:300px}}.no-csstransforms3d .pure-toggle[data-toggle=right]:checked~.pure-pusher-container .pure-pusher{left:-100%}@media only screen and (min-width:40.063em){.no-csstransforms3d .pure-toggle[data-toggle=right]:checked~.pure-pusher-container .pure-pusher{left:-300px}}@media only screen and (min-width:64.063em){.no-csstransforms3d .pure-toggle[data-toggle=right]:checked~.pure-pusher-container .pure-pusher{left:-300px}}.no-csstransforms3d .pure-toggle[data-toggle=top]:checked~.pure-pusher-container .pure-pusher{top:100%}@media only screen and (min-width:40.063em){.no-csstransforms3d .pure-toggle[data-toggle=top]:checked~.pure-pusher-container .pure-pusher{top:100%}}@media only screen and (min-width:64.063em){.no-csstransforms3d .pure-toggle[data-toggle=top]:checked~.pure-pusher-container .pure-pusher{top:100px}}[data-effect=pure-effect-3] .pure-drawer[data-position=left]{-webkit-transform:translate3d(-50%,0,0);transform:translate3d(-50%,0,0)}[data-effect=pure-effect-3] .pure-drawer[data-position=right]{-webkit-transform:translate3d(50%,0,0);transform:translate3d(50%,0,0)}[data-effect=pure-effect-3] .pure-drawer[data-position=top]{-webkit-transform:translate3d(0,-50%,0);transform:translate3d(0,-50%,0)}[data-effect=pure-effect-3] .pure-toggle[data-toggle=left]:checked~.pure-drawer[data-position=left],[data-effect=pure-effect-3] .pure-toggle[data-toggle=right]:checked~.pure-drawer[data-position=right],[data-effect=pure-effect-3] .pure-toggle[data-toggle=top]:checked~.pure-drawer[data-position=top]{visibility:visible;-webkit-transform:translate3d(0,0,0);transform:translate3d(0,0,0)}[data-effect=pure-effect-3] .pure-toggle[data-toggle=left]:checked~.pure-pusher-container .pure-pusher{-webkit-transform:translate3d(100%,0,0);transform:translate3d(100%,0,0)}@media only screen and (min-width:40.063em){[data-effect=pure-effect-3] .pure-toggle[data-toggle=left]:checked~.pure-pusher-container .pure-pusher{-webkit-transform:translate3d(300px,0,0);transform:translate3d(300px,0,0)}}@media only screen and (min-width:64.063em){[data-effect=pure-effect-3] .pure-toggle[data-toggle=left]:checked~.pure-pusher-container .pure-pusher{-webkit-transform:translate3d(300px,0,0);transform:translate3d(300px,0,0)}}[data-effect=pure-effect-3] .pure-toggle[data-toggle=right]:checked~.pure-pusher-container .pure-pusher{-webkit-transform:translate3d(-100%,0,0);transform:translate3d(-100%,0,0)}@media only screen and (min-width:40.063em){[data-effect=pure-effect-3] .pure-toggle[data-toggle=right]:checked~.pure-pusher-container .pure-pusher{-webkit-transform:translate3d(-300px,0,0);transform:translate3d(-300px,0,0)}}@media only screen and (min-width:64.063em){[data-effect=pure-effect-3] .pure-toggle[data-toggle=right]:checked~.pure-pusher-container .pure-pusher{-webkit-transform:translate3d(-300px,0,0);transform:translate3d(-300px,0,0)}}[data-effect=pure-effect-3] .pure-toggle[data-toggle=top]:checked~.pure-pusher-container .pure-pusher{-webkit-transform:translate3d(0,100%,0);transform:translate3d(0,100%,0)}@media only screen and (min-width:40.063em){[data-effect=pure-effect-3] .pure-toggle[data-toggle=top]:checked~.pure-pusher-container .pure-pusher{-webkit-transform:translate3d(0,100%,0);transform:translate3d(0,100%,0)}}@media only screen and (min-width:64.063em){[data-effect=pure-effect-3] .pure-toggle[data-toggle=top]:checked~.pure-pusher-container .pure-pusher{-webkit-transform:translate3d(0,100px,0);transform:translate3d(0,100px,0)}}
-        /* End PureDrawer responsive menu */
+    /* PureDrawer responsive menu */
+    html,body{height: 100%;}.pure-container{position:relative;height:100%;-webkit-overflow-scrolling:touch}.pure-toggle{left:-9999px;position:absolute;top:-9999px}.pure-toggle:focus~.pure-toggle-label{color:#fff}.pure-toggle-label{cursor:pointer;display:block;position:fixed;top:15px;z-index:99;color:#fff;font-size:2rem;width:58px;padding:5px;line-height:44px;text-align:center;font-weight:300;transition:all 200ms ease-in-out;-webkit-user-select:none;-moz-user-select:none;-ms-user-select:none;-o-user-select:none;user-select:none;-webkit-tap-highlight-color:rgba(0,0,0,0);text-rendering:geometricPrecision;background:rgba(0,0,0,0.5)}.pure-toggle-label:hover{color:#fff;background:rgba(0,0,0,0.7)}.pure-toggle-label:active{-webkit-tap-highlight-color:rgba(0,0,0,0)}.pure-toggle-label[data-toggle-label=left]{left:15px;right:auto}.pure-toggle-label[data-toggle-label=right]{right:28px;left:auto}.pure-toggle-label[data-toggle-label=top]{}.pure-toggle[data-toggle=left]:checked~.pure-toggle-label:not([data-toggle-label=left]),.pure-toggle[data-toggle=right]:checked~.pure-toggle-label:not([data-toggle-label=right]),.pure-toggle[data-toggle=top]:checked~.pure-toggle-label:not([data-toggle-label=top]){opacity:0;z-index:-1}.pure-toggle[data-toggle=left]:checked~.pure-toggle-label[data-toggle-label=left]{}.pure-toggle[data-toggle=right]:checked~.pure-toggle-label[data-toggle-label=right]{}.pure-toggle[data-toggle=top]:checked~.pure-toggle-label[data-toggle-label=top]{}.pure-drawer{position:fixed;top:0;left:0;z-index:1;height:100%;padding:4em 0.5em 1em;background-color:#10100F;color:#fff;-webkit-transition:all .5s;transition:all .5s;visibility:hidden;width:100%;overflow-y:auto;}@media only screen and (min-width:40.063em){.pure-drawer{width:300px}}@media only screen and (min-width:64.063em){.pure-drawer{width:300px}}.pure-drawer[data-position=right]{left:auto;right:0}.pure-drawer[data-position=top]{height:100%;width:100%}@media only screen and (min-width:40.063em){.pure-drawer[data-position=top]{height:100%}}@media only screen and (min-width:64.063em){.pure-drawer[data-position=top]{height:100px}}.pure-pusher-container{position:relative;height:100%;overflow:hidden}.pure-pusher{background:{BackgroundColor} url({image:Background Image});position:relative;height:100%;overflow-y:auto;left:0;z-index:2;-webkit-transition:-webkit-transform .5s;transition:transform .5s}.pure-overlay{position:fixed;top:0;bottom:0;right:0;width:0;height:0;opacity:0;background-color:rgba(0,0,0,.4);-webkit-transition:opacity .5s .3s;transition:opacity .5s .3s}.pure-toggle[data-toggle=left]:checked~.pure-overlay[data-overlay=left]{left:100%}@media only screen and (min-width:40.063em){.pure-toggle[data-toggle=left]:checked~.pure-overlay[data-overlay=left]{left:300px}}@media only screen and (min-width:64.063em){.pure-toggle[data-toggle=left]:checked~.pure-overlay[data-overlay=left]{left:300px}}.pure-toggle[data-toggle=right]:checked~.pure-overlay[data-overlay=right]{right:100%}@media only screen and (min-width:40.063em){.pure-toggle[data-toggle=right]:checked~.pure-overlay[data-overlay=right]{right:300px}}@media only screen and (min-width:64.063em){.pure-toggle[data-toggle=right]:checked~.pure-overlay[data-overlay=right]{right:300px}}.pure-toggle[data-toggle=top]:checked~.pure-overlay[data-overlay=top]{top:100%}@media only screen and (min-width:40.063em){.pure-toggle[data-toggle=top]:checked~.pure-overlay[data-overlay=top]{top:100%}}@media only screen and (min-width:64.063em){.pure-toggle[data-toggle=top]:checked~.pure-overlay[data-overlay=top]{top:100px}}.pure-toggle[data-toggle=left]:checked~.pure-overlay[data-overlay=left],.pure-toggle[data-toggle=right]:checked~.pure-overlay[data-overlay=right],.pure-toggle[data-toggle=top]:checked~.pure-overlay[data-overlay=top]{width:100%;height:100%;opacity:1;z-index:2;-webkit-transition:opacity .5s .3s;transition:opacity .5s .3s}.no-csstransforms3d .pure-toggle[data-toggle=left]:checked~.pure-pusher-container .pure-pusher{left:100%}@media only screen and (min-width:40.063em){.no-csstransforms3d .pure-toggle[data-toggle=left]:checked~.pure-pusher-container .pure-pusher{left:300px}}@media only screen and (min-width:64.063em){.no-csstransforms3d .pure-toggle[data-toggle=left]:checked~.pure-pusher-container .pure-pusher{left:300px}}.no-csstransforms3d .pure-toggle[data-toggle=right]:checked~.pure-pusher-container .pure-pusher{left:-100%}@media only screen and (min-width:40.063em){.no-csstransforms3d .pure-toggle[data-toggle=right]:checked~.pure-pusher-container .pure-pusher{left:-300px}}@media only screen and (min-width:64.063em){.no-csstransforms3d .pure-toggle[data-toggle=right]:checked~.pure-pusher-container .pure-pusher{left:-300px}}.no-csstransforms3d .pure-toggle[data-toggle=top]:checked~.pure-pusher-container .pure-pusher{top:100%}@media only screen and (min-width:40.063em){.no-csstransforms3d .pure-toggle[data-toggle=top]:checked~.pure-pusher-container .pure-pusher{top:100%}}@media only screen and (min-width:64.063em){.no-csstransforms3d .pure-toggle[data-toggle=top]:checked~.pure-pusher-container .pure-pusher{top:100px}}[data-effect=pure-effect-3] .pure-drawer[data-position=left]{-webkit-transform:translate3d(-50%,0,0);transform:translate3d(-50%,0,0)}[data-effect=pure-effect-3] .pure-drawer[data-position=right]{-webkit-transform:translate3d(50%,0,0);transform:translate3d(50%,0,0)}[data-effect=pure-effect-3] .pure-drawer[data-position=top]{-webkit-transform:translate3d(0,-50%,0);transform:translate3d(0,-50%,0)}[data-effect=pure-effect-3] .pure-toggle[data-toggle=left]:checked~.pure-drawer[data-position=left],[data-effect=pure-effect-3] .pure-toggle[data-toggle=right]:checked~.pure-drawer[data-position=right],[data-effect=pure-effect-3] .pure-toggle[data-toggle=top]:checked~.pure-drawer[data-position=top]{visibility:visible;-webkit-transform:translate3d(0,0,0);transform:translate3d(0,0,0)}[data-effect=pure-effect-3] .pure-toggle[data-toggle=left]:checked~.pure-pusher-container .pure-pusher{-webkit-transform:translate3d(100%,0,0);transform:translate3d(100%,0,0)}@media only screen and (min-width:40.063em){[data-effect=pure-effect-3] .pure-toggle[data-toggle=left]:checked~.pure-pusher-container .pure-pusher{-webkit-transform:translate3d(300px,0,0);transform:translate3d(300px,0,0)}}@media only screen and (min-width:64.063em){[data-effect=pure-effect-3] .pure-toggle[data-toggle=left]:checked~.pure-pusher-container .pure-pusher{-webkit-transform:translate3d(300px,0,0);transform:translate3d(300px,0,0)}}[data-effect=pure-effect-3] .pure-toggle[data-toggle=right]:checked~.pure-pusher-container .pure-pusher{-webkit-transform:translate3d(-100%,0,0);transform:translate3d(-100%,0,0)}@media only screen and (min-width:40.063em){[data-effect=pure-effect-3] .pure-toggle[data-toggle=right]:checked~.pure-pusher-container .pure-pusher{-webkit-transform:translate3d(-300px,0,0);transform:translate3d(-300px,0,0)}}@media only screen and (min-width:64.063em){[data-effect=pure-effect-3] .pure-toggle[data-toggle=right]:checked~.pure-pusher-container .pure-pusher{-webkit-transform:translate3d(-300px,0,0);transform:translate3d(-300px,0,0)}}[data-effect=pure-effect-3] .pure-toggle[data-toggle=top]:checked~.pure-pusher-container .pure-pusher{-webkit-transform:translate3d(0,100%,0);transform:translate3d(0,100%,0)}@media only screen and (min-width:40.063em){[data-effect=pure-effect-3] .pure-toggle[data-toggle=top]:checked~.pure-pusher-container .pure-pusher{-webkit-transform:translate3d(0,100%,0);transform:translate3d(0,100%,0)}}@media only screen and (min-width:64.063em){[data-effect=pure-effect-3] .pure-toggle[data-toggle=top]:checked~.pure-pusher-container .pure-pusher{-webkit-transform:translate3d(0,100px,0);transform:translate3d(0,100px,0)}}
+    /* End PureDrawer responsive menu */
 
-        /* Theme styles */
-        * {
-            box-sizing: border-box;
-        }
-        .group:after {
-          content: "";
-          display: table;
-          clear: both;
-      }
-      body {
-        background: {BackgroundColor} url({image:Background Image});
-        color: {TitleColor};
+    /* Social sharing toggle */
+    .social-share {
+      display: inline-block;
+      position: relative;
+    }
+    .icon-share {
+      cursor: pointer;
+    }
+    .social-share-toggle {
+      display: none;
+    }
+    .social-share-buttons {
+      display: none;
+      position: absolute;
+      top: 1.5em;
+      z-index: 10;
+      width: 10em;
+      background-color: {BackgroundColor};
+      padding: 0.5em;
+      border: 1px solid {TitleColor};
+
+    }
+    .social-share-toggle:checked ~ .social-share-buttons {
+      display: block;
+    }
+    /* End social sharing toggle */
+
+    /* Theme styles */
+    * {
+      box-sizing: border-box;
+    }
+    .group:after {
+      content: "";
+      display: table;
+      clear: both;
+    }
+    body {
+      background: {BackgroundColor} url({image:Background Image});
+      color: {TitleColor};
     }
     h1 > a {color:{TitleColor};}
     a {color:{AccentColor}}
 
     /* Header styles */
     header {
-        position: relative;
-        overflow: hidden;
-        height: 100%;
-        height: 100vh;
-        {block:ShowHeaderImage}
-        background: url({HeaderImage}) center center / cover no-repeat;
-        background-size: cover;
-        {/block:ShowHeaderImage}
+      position: relative;
+      overflow: hidden;
+      height: 100%;
+      height: 100vh;
+      {block:ShowHeaderImage}
+      background: url({HeaderImage}) center center / cover no-repeat;
+      background-size: cover;
+      {/block:ShowHeaderImage}
     }
 
     .info-container {
-        position: absolute;
-        bottom: 0;
-        padding-bottom: 2.5em;
-        width: 100%;
-        display: -webkit-box;
-        display: -webkit-flex;
-        display: -ms-flexbox;
-        display: flex;
-        -webkit-box-pack: center;
-        -webkit-justify-content: center;
-        -ms-flex-pack: center;
-        justify-content: center;
+      position: absolute;
+      bottom: 0;
+      padding-bottom: 2.5em;
+      width: 100%;
+      display: -webkit-box;
+      display: -webkit-flex;
+      display: -ms-flexbox;
+      display: flex;
+      -webkit-box-pack: center;
+      -webkit-justify-content: center;
+      -ms-flex-pack: center;
+      justify-content: center;
     }
     .info {
-        background: rgba(0,0,0,0.5);
-        padding: 1em;
-        display: inline-block;
-        width: 80%;
-        text-align: center;
-        color: white;
+      background: rgba(0,0,0,0.5);
+      padding: 1em;
+      display: inline-block;
+      width: 80%;
+      text-align: center;
+      color: white;
     }
     .info a {
-        color: white;
-        text-decoration: none;
+      color: white;
+      text-decoration: none;
     }
     .info h1 {
-        margin: 0;
+      margin: 0;
     }
     .avatar {
-        display: none;
+      display: none;
     }
     /* Header styles end */
 
     /* Font styles */
     html {
-        font-size: 20px;
+      font-size: 20px;
     }
     .tagline {
-        font-size: 1.3rem;
+      font-size: 1.3rem;
     }
     body {
-        font-family: '{select:Body Font}', sans-serif;
-        font-weight: {select:Body Font Weight};
+      font-family: '{select:Body Font}', sans-serif;
+      font-weight: {select:Body Font Weight};
     }
     b, strong {
-        font-weight: {select:Bold Font Weight};
+      font-weight: {select:Bold Font Weight};
     }
     i, em {
-        font-style: italic;
+      font-style: italic;
     }
     h1, h2, h3, h4, h5, h6 {
-        font-family: '{select:Heading Font}', sans-serif;
-        font-weight: {select:Heading Font Weight};
-        color: {TitleColor};
+      font-family: '{select:Heading Font}', sans-serif;
+      font-weight: {select:Heading Font Weight};
+      color: {TitleColor};
     }
     h1 {
-        font-size: 2rem;
+      font-size: 2rem;
     }
     h3 {
-        font-size: 1.2rem;
+      font-size: 1.2rem;
     }
     h3 a {
-        color: {TitleColor};
-        text-decoration: none;
+      color: {TitleColor};
+      text-decoration: none;
     }
     article, aside {
-        line-height: 1.45;
+      line-height: 1.45;
     }
     code {
-        font-family: '{select:Code Font}', monospace;
+      font-family: '{select:Code Font}', monospace;
     }
     .dsq-comment-count {
-        text-transform: uppercase;
-        text-decoration: none;
-        color: {AccentColor};
+      text-transform: uppercase;
+      text-decoration: none;
+      color: {AccentColor};
     }
     .comments-link {
-        text-align: right;
+      text-align: right;
     }
     /* Font styles end */
 
@@ -383,693 +410,704 @@
 
              /* Reusable column setup */
              .col {
-                border:0px solid rgba(0,0,0,0);
-                float:left;
-                -webkit-box-sizing:border-box;
-                -moz-box-sizing:border-box;
-                box-sizing:border-box;
-                -moz-background-clip:padding-box !important;
-                -webkit-background-clip:padding-box !important;
-                background-clip:padding-box !important;
+              border:0px solid rgba(0,0,0,0);
+              float:left;
+              -webkit-box-sizing:border-box;
+              -moz-box-sizing:border-box;
+              box-sizing:border-box;
+              -moz-background-clip:padding-box !important;
+              -webkit-background-clip:padding-box !important;
+              background-clip:padding-box !important;
             }
 
             /* 1. 4 Column Grid 0px - 499px */
 
             .col {
-                margin-left:0%;
-                padding:0 3.125%;
+              margin-left:0%;
+              padding:0 3.125%;
             }
 
             .row .col:first-child {
-                margin-left:0;
+              margin-left:0;
             }
 
             .span_1 {
-                width:25.0%;
+              width:25.0%;
             }
             .span_2, .comments-link, .share {
-                width:50.0%;
+              width:50.0%;
             }
             .span_3 {
-                width:75.0%;
+              width:75.0%;
             }
             .span_4, .main, .post-icon {
-                margin-left:0;
-                width:100%;
+              margin-left:0;
+              width:100%;
             }
 
             /* 2. 12 Column Grid 500px - 1499px */
 
             @media screen and (min-width: 500px) and (max-width: 1499px) {
 
-                .col {
-                    margin-left:0%;
-                    padding:0 0.9%;
-                }
+              .col {
+                margin-left:0%;
+                padding:0 0.9%;
+              }
 
-                .row .col:first-child {
-                    margin-left:0;
-                }
+              .row .col:first-child {
+                margin-left:0;
+              }
 
-                .span_1 {
-                    width:8.33333333333%;
-                }
-                .span_2 {
-                    width:16.6666666667%;
-                }
-                .span_3 {
-                    width:25.0%;
-                }
-                .span_4 {
-                    width:33.3333333333%;
-                }
-                .span_5 {
-                    width:41.6666666667%;
-                }
-                .span_6 {
-                    width:50.0%;
-                }
-                .span_7 {
-                    width:58.3333333333%;
-                }
-                .span_8 {
-                    width:66.6666666667%;
-                }
-                .span_9 {
-                    width:75.0%;
-                }
-                .span_10 {
-                    width:83.3333333333%;
-                }
-                .span_11 {
-                    width:91.6666666667%;
-                }
-                .span_12, article {
-                    margin-left:0;
-                    width:100%;
-                }
+              .span_1 {
+                width:8.33333333333%;
+              }
+              .span_2 {
+                width:16.6666666667%;
+              }
+              .span_3 {
+                width:25.0%;
+              }
+              .span_4 {
+                width:33.3333333333%;
+              }
+              .span_5 {
+                width:41.6666666667%;
+              }
+              .span_6 {
+                width:50.0%;
+              }
+              .span_7 {
+                width:58.3333333333%;
+              }
+              .span_8 {
+                width:66.6666666667%;
+              }
+              .span_9 {
+                width:75.0%;
+              }
+              .span_10 {
+                width:83.3333333333%;
+              }
+              .span_11 {
+                width:91.6666666667%;
+              }
+              .span_12, article {
+                margin-left:0;
+                width:100%;
+              }
             }
 
             /* 3. 12 Column Grid 1500px - Infinity */
 
             @media screen and (min-width: 1500px) {
 
-                .col {
-                    margin-left:0%;
-                    padding:0 0.8%;
-                }
+              .col {
+                margin-left:0%;
+                padding:0 0.8%;
+              }
 
-                .row .col:first-child {
-                    margin-left:0;
-                }
+              .row .col:first-child {
+                margin-left:0;
+              }
 
-                .span_1 {
-                    width:8.33333333333%;
-                }
-                .span_2 {
-                    width:16.6666666667%;
-                }
-                .span_3 {
-                    width:25.0%;
-                }
-                .span_4 {
-                    width:33.3333333333%;
-                }
-                .span_5 {
-                    width:41.6666666667%;
-                }
-                .span_6 {
-                    width:50.0%;
-                }
-                .span_7 {
-                    width:58.3333333333%;
-                }
-                .span_8 {
-                    width:66.6666666667%;
-                }
-                .span_9 {
-                    width:75.0%;
-                }
-                .span_10 {
-                    width:83.3333333333%;
-                }
-                .span_11 {
-                    width:91.6666666667%;
-                }
-                .span_12, article {
-                    margin-left:0;
-                    width:100%;
-                }
+              .span_1 {
+                width:8.33333333333%;
+              }
+              .span_2 {
+                width:16.6666666667%;
+              }
+              .span_3 {
+                width:25.0%;
+              }
+              .span_4 {
+                width:33.3333333333%;
+              }
+              .span_5 {
+                width:41.6666666667%;
+              }
+              .span_6 {
+                width:50.0%;
+              }
+              .span_7 {
+                width:58.3333333333%;
+              }
+              .span_8 {
+                width:66.6666666667%;
+              }
+              .span_9 {
+                width:75.0%;
+              }
+              .span_10 {
+                width:83.3333333333%;
+              }
+              .span_11 {
+                width:91.6666666667%;
+              }
+              .span_12, article {
+                margin-left:0;
+                width:100%;
+              }
             }
 
             /* End grid */
 
             img, .tumblr_audio_player {
-                max-width: 100%;
+              max-width: 100%;
             }
             .video {
-                position: relative;
-                padding-bottom: 56.25%;
-                height: 0;
+              position: relative;
+              padding-bottom: 56.25%;
+              height: 0;
             }
             .video iframe {
-                position: absolute;
-                width: 100%;
-                height: 100%;
-                left: 0;
-                top: 0;
+              position: absolute;
+              width: 100%;
+              height: 100%;
+              left: 0;
+              top: 0;
             }
             aside {
-                overflow-y: auto;
-                padding: 1em 0 1.1em;
-                border-bottom: 1px solid {TitleColor};
+              padding: 1em 0 1.1em;
+              border-bottom: 1px solid {TitleColor};
             }
             .author-avatar {
-                vertical-align: middle;
-                border-radius: 50%;
-                margin-right: 0.5em;
-                float: left;
+              vertical-align: middle;
+              border-radius: 50%;
+              margin-right: 0.5em;
+              float: left;
             }
             .authorship p {
-                position: relative;
-                top: 0.1em;
+              position: relative;
+              top: 0.1em;
             }
             .post-icon, .post-icon {
-                margin: 2em auto 0.5em;
-                text-align: center;
-                display: block;
+              margin: 2em auto 0.5em;
+              text-align: center;
+              display: block;
             }
             .row [class^="icon-"]:before, .row [class*=" icon-"]:before {
-                color: {TitleColor};
+              color: {TitleColor};
             }
             a.link {
-                background-color: {AccentColor};
-                color: {BackgroundColor};
-                text-decoration: none;
-                padding: 0.75em 1em;
-                display: block;
-                font-weight: {select:Bold Font Weight};
+              background-color: {AccentColor};
+              color: {BackgroundColor};
+              text-decoration: none;
+              padding: 0.75em 1em;
+              display: block;
+              font-weight: {select:Bold Font Weight};
             }
             a.link:after {
-                content:">";
-                position: absolute;
-                right: 1.5em;
+              content:">";
+              position: absolute;
+              right: 1.5em;
             }
             pre {
-                background: #fff;
-                padding: 0.5em;
+              background: #fff;
+              padding: 0.5em;
             }
             [type=search] {
-                border-radius: 25px;
-                color: #000;
-                border: 0;
-                -webkit-box-shadow: none;
-                -moz-box-shadow: none;
-                box-shadow: none;
-                padding: 0.1em 0.75em 0.1em 1.75em;
+              border-radius: 25px;
+              color: #000;
+              border: 0;
+              -webkit-box-shadow: none;
+              -moz-box-shadow: none;
+              box-shadow: none;
+              padding: 0.1em 0.75em 0.1em 1.75em;
             }
             [type=search]:focus {
-                outline: 0;
+              outline: 0;
             }
             #search-form {
-                position: relative;
-                margin-bottom: 2em;
+              position: relative;
+              margin-bottom: 2em;
             }
             #search-form .icon-search {
-                position: absolute;
-                left: 0.5em;
-                top: 0.2em;
-                color: #000;
+              position: absolute;
+              left: 0.5em;
+              top: 0.2em;
+              color: #000;
             }
             .pure-drawer {
-                display: flex;
-                flex-direction: column;
-                justify-content: flex-start;
+              display: flex;
+              flex-direction: column;
+              justify-content: flex-start;
             }
             .pure-drawer p {
-                margin: 2em 0;
+              margin: 2em 0;
             }
             hr {
-                width: 100%;
-                display: block;
-                height: 1px;
-                border: 0;
-                border-top: 1px solid #595958;
-                margin: 1em 0;
-                padding: 0;
+              width: 100%;
+              display: block;
+              height: 1px;
+              border: 0;
+              border-top: 1px solid #595958;
+              margin: 1em 0;
+              padding: 0;
             }
-            .share a:link {
-                margin-left: 1em;
-                text-decoration: none;
+            .share a:link, .share > div {
+              margin-left: 1em;
+              text-decoration: none;
             }
-            .share a:first-child {
-                margin-left: 0;
+            .share a:link:first-child, .share > div:first-child {
+              margin-left: 0;
             }
 
             /* Workaround for custom Tumblr like button */
             /* http://stackoverflow.com/a/21715659/800492 */
             .custom-like-button {
-                position: relative;
-                display: block;
-                float: left;
-                width: 22px;
-                height: 20px;
-                cursor: pointer;
-                top: 3px;
-              }
+              position: relative;
+              display: block;
+              float: left;
+              width: 22px;
+              height: 20px;
+              cursor: pointer;
+              top: 3px;
+            }
             .like_button {
-                position: absolute;
-                top: 0;
-                left: 0;
-                right: 0;
-                bottom: 0;
-                width: 100%;
-                height: 100%;
-                opacity: 0;
-                z-index: 10;
+              position: absolute;
+              top: 0;
+              left: 0;
+              right: 0;
+              bottom: 0;
+              width: 100%;
+              height: 100%;
+              opacity: 0;
+              z-index: 10;
             }
             .like_button iframe {
-                width: 100% !important;
-                height: 100% !important;
+              width: 100% !important;
+              height: 100% !important;
             }
             .custom-button {
-                position: absolute;
-                top: 0;
-                left: 0;
-                right: 0;
-                bottom: 0;
-                width: 100%;
-                height: 100%;
-                z-index: 1;
+              position: absolute;
+              top: 0;
+              left: 0;
+              right: 0;
+              bottom: 0;
+              width: 100%;
+              height: 100%;
+              z-index: 1;
             }
             .like_button:hover + .custom-button:before {
-                color: {AccentColor};
-                opacity: 0.75;
+              color: {AccentColor};
+              opacity: 0.75;
             }
             /* Liked State */
             .like_button.liked + .custom-button:before, .like_button:hover.liked + .custom-button:before {
-                color: {AccentColor};
-                opacity: 1;
+              color: {AccentColor};
+              opacity: 1;
             }
             /* End theme styles */
 
             {CustomCSS}
-        </style>
-    </head>
-    <body>
-        <div class="pure-container" data-effect="pure-effect-3">
+          </style>
+        </head>
+        <body>
+          <div class="pure-container" data-effect="pure-effect-3">
             <input type="checkbox" id="pure-toggle-left" class="pure-toggle" data-toggle="left">
             <label class="pure-toggle-label" for="pure-toggle-left" data-toggle-label="left">&#9776;</label>
             <div class="pure-drawer" data-position="left">
-                <form action="/search" method="get" id="search-form" class="group">
-                    <span class="icon-search col post-icon"></span>
-                    <input type="search" name="q" value="{SearchQuery}" placeholder="Search"/>
-                </form>
-                {block:ShowDescription}{block:Description}
-                <hr>
-                <p>{Description}</p>
-                {/block:Description}{/block:ShowDescription}
-                <hr>
-                <nav>
-                    <ul>
-                        {block:HasPages}{block:Pages}<li><a href="{URL}">{Label}</a></li>{/block:Pages}{/block:HasPages}
-                        <li><a href="/archive">{lang:Archive}</a></li>
-                        {block:AskEnabled}<li><a href="/ask">{AskLabel}</a></li>{/block:AskEnabled}
-                    </ul>
-                </nav>
+              <form action="/search" method="get" id="search-form" class="group">
+                <span class="icon-search col post-icon"></span>
+                <input type="search" name="q" value="{SearchQuery}" placeholder="Search"/>
+              </form>
+              {block:ShowDescription}{block:Description}
+              <hr>
+              <p>{Description}</p>
+              {/block:Description}{/block:ShowDescription}
+              <hr>
+              <nav>
+                <ul>
+                  {block:HasPages}{block:Pages}<li><a href="{URL}">{Label}</a></li>{/block:Pages}{/block:HasPages}
+                  <li><a href="/archive">{lang:Archive}</a></li>
+                  {block:AskEnabled}<li><a href="/ask">{AskLabel}</a></li>{/block:AskEnabled}
+                </ul>
+              </nav>
 
             </div>
             <div class="pure-pusher-container">
-                <div class="pure-pusher">
-                    <header>
-                        {block:ShowAvatar}<img src="{PortraitURL-128}" class="avatar">{/block:ShowAvatar}
-                        <div class="info-container">
-                            <div class="info">
-                                {block:ShowTitle}<h1><a href="/">{Title}</a></h1>{/block:ShowTitle}
-                                <div class="tagline">{text:Tagline}</div>
-                            </div>
-                        </div>
-                    </header>
-                    {block:IndexPage}<section class="posts">{/block:IndexPage}
-                    {block:NoSearchResults}<h2>No posts match the query {SearchQuery}</h2>{/block:NoSearchResults}
-                    {block:Posts}
-                    {block:Text}
+              <div class="pure-pusher">
+                <header>
+                  {block:ShowAvatar}<img src="{PortraitURL-128}" class="avatar">{/block:ShowAvatar}
+                  <div class="info-container">
+                    <div class="info">
+                      {block:ShowTitle}<h1><a href="/">{Title}</a></h1>{/block:ShowTitle}
+                      <div class="tagline">{text:Tagline}</div>
+                    </div>
+                  </div>
+                </header>
+                {block:IndexPage}<section class="posts">{/block:IndexPage}
+                {block:NoSearchResults}<h2>No posts match the query {SearchQuery}</h2>{/block:NoSearchResults}
+                {block:Posts}
+                {block:Text}
+                <div class="row">
+                  <span class="icon-text col post-icon"></span>
+                  <div class="col main">
+                    <article>
+                      {block:Title}
+                      <h3><a href="{Permalink}">{Title}</a></h3>
+                      {/block:Title}
+                      <div class="authorship">
+                        <img src="{PostAuthorPortraitURL-30}" alt="Post author avatar" class="author-avatar">
+                        <p>
+                          {block:Date}
+                          {Month} {DayOfMonth}, {Year} {PostAuthorName}
+                          {/block:Date}
+                        </p>
+                      </div>
+                      {Body}
+                    </article>
+                    {/block:Text}
+                    {block:Photo}
                     <div class="row">
-                        <span class="icon-text col post-icon"></span>
-                        <div class="col main">
+                      <span class="icon-photo col post-icon"></span>
+                      <div class="col main">
+                        <article>
+                          <div class="authorship">
+                            <img src="{PostAuthorPortraitURL-30}" alt="Post author avatar" class="author-avatar">
+                            <p>
+                              {block:Date}
+                              {Month} {DayOfMonth}, {Year} {PostAuthorName}
+                              {/block:Date}
+                            </p>
+                          </div>
+                          <img src="{PhotoURL-500}" alt="{PhotoAlt}"/>
+
+                          {block:Caption}
+                          <div class="caption">{Caption}</div>
+                          {/block:Caption}
+                        </article>
+                        {/block:Photo}
+                        {block:Panorama}
+                        <div class="row">
+                          <span class="icon-photo col post-icon"></span>
+                          <div class="col main">
                             <article>
-                                {block:Title}
-                                <h3><a href="{Permalink}">{Title}</a></h3>
-                                {/block:Title}
-                                <div class="authorship">
+                              <div class="authorship">
+                                <img src="{PostAuthorPortraitURL-30}" alt="Post author avatar" class="author-avatar">
+                                <p>
+                                  {block:Date}
+                                  {Month} {DayOfMonth}, {Year} {PostAuthorName}
+                                  {/block:Date}
+                                </p>
+                              </div>
+                              {LinkOpenTag}
+                              <img src="{PhotoURL-Panorama}" alt="{PhotoAlt}"/>
+                              {LinkCloseTag}{block:Caption}
+                              <div class="caption">{Caption}</div>
+                              {/block:Caption}
+                            </article>
+                            {/block:Panorama}
+                            {block:Photoset}
+                            <div class="row">
+                              <span class="icon-photo col post-icon"></span>
+                              <div class="col main">
+                                <article>
+                                  <div class="authorship">
                                     <img src="{PostAuthorPortraitURL-30}" alt="Post author avatar" class="author-avatar">
                                     <p>
-                                        {block:Date}
-                                        {Month} {DayOfMonth}, {Year} {PostAuthorName}
-                                        {/block:Date}
+                                      {block:Date}
+                                      {Month} {DayOfMonth}, {Year} {PostAuthorName}
+                                      {/block:Date}
                                     </p>
-                                </div>
-                                {Body}
-                            </article>
-                            {/block:Text}
-                            {block:Photo}
-                            <div class="row">
-                                <span class="icon-photo col post-icon"></span>
-                                <div class="col main">
+                                  </div>
+                                  {Photoset-500}{block:Caption}
+                                  <div class="caption">{Caption}</div>
+                                  {/block:Caption}
+                                </article>
+                                {/block:Photoset}
+                                {block:Quote}
+                                <div class="row">
+                                  <span class="icon-quote col post-icon"></span>
+                                  <div class="col main">
                                     <article>
-                                        <div class="authorship">
+                                      <div class="authorship">
+                                        <img src="{PostAuthorPortraitURL-30}" alt="Post author avatar" class="author-avatar">
+                                        <p>
+                                          {block:Date}
+                                          {Month} {DayOfMonth}, {Year} {PostAuthorName}
+                                          {/block:Date}
+                                        </p>
+                                      </div>
+                                      &ldquo;{Quote}&rdquo;
+
+                                      {block:Source}
+                                      <div class="source">{Source}</div>
+                                      {/block:Source}
+                                    </article>
+                                    {/block:Quote}
+                                    {block:Link}
+                                    <!-- Links are not taking the full width of the row. -->
+                                    <div class="row">
+                                      <span class="icon-link col post-icon"></span>
+                                      <div class="col main">
+                                        <article>
+                                          <div class="authorship">
                                             <img src="{PostAuthorPortraitURL-30}" alt="Post author avatar" class="author-avatar">
                                             <p>
-                                                {block:Date}
-                                                {Month} {DayOfMonth}, {Year} {PostAuthorName}
-                                                {/block:Date}
+                                              {block:Date}
+                                              {Month} {DayOfMonth}, {Year} {PostAuthorName}
+                                              {/block:Date}
                                             </p>
-                                        </div>
-                                        <img src="{PhotoURL-500}" alt="{PhotoAlt}"/>
+                                          </div>
+                                          <a href="{URL}" class="link" {Target}>{Name}</a>
 
-                                        {block:Caption}
-                                        <div class="caption">{Caption}</div>
-                                        {/block:Caption}
-                                    </article>
-                                    {/block:Photo}
-                                    {block:Panorama}
-                                    <div class="row">
-                                        <span class="icon-photo col post-icon"></span>
-                                        <div class="col main">
+                                          {block:Description}
+                                          <div class="description">{Description}</div>
+                                          {/block:Description}
+                                        </article>
+                                        {/block:Link}
+                                        {block:Chat}
+                                        <div class="row">
+                                          <span class="icon-quote col post-icon"></span>
+                                          <div class="col main">
                                             <article>
+                                              {block:Title}
+                                              <h3><a href="{Permalink}">{Title}</a></h3>
+                                              {/block:Title}
+                                              <div class="authorship">
+                                                <img src="{PostAuthorPortraitURL-30}" alt="Post author avatar" class="author-avatar">
+                                                <p>
+                                                  {block:Date}
+                                                  {Month} {DayOfMonth}, {Year} {PostAuthorName}
+                                                  {/block:Date}
+                                                </p>
+                                              </div>
+
+                                              <ul class="chat">
+                                                {block:Lines}
+
+                                                {block:Label}
+                                                <span class="label">{Label}</span>
+                                                {/block:Label}{Line}
+                                              </li>
+                                              {/block:Lines}
+                                            </ul>
+                                          </article>
+                                          {/block:Chat}
+                                          {block:Answer}
+                                          <div class="row">
+                                            <span class="icon-question col post-icon"></span>
+                                            <div class="col main">
+                                              <article>
                                                 <div class="authorship">
-                                                    <img src="{PostAuthorPortraitURL-30}" alt="Post author avatar" class="author-avatar">
-                                                    <p>
+                                                  <img src="{PostAuthorPortraitURL-30}" alt="Post author avatar" class="author-avatar">
+                                                  <p>
+                                                    {block:Date}
+                                                    {Month} {DayOfMonth}, {Year} {PostAuthorName}
+                                                    {/block:Date}
+                                                  </p>
+                                                </div>
+                                                <div class="question"><div class="asker">{Asker}</div><div class="asker-question">{Question}</div><img class="asker-avatar" src="{AskerPortraitURL-96}" alt=""></div>
+
+                                                {block:Answerer}
+                                                <div class="answer"><div class="answerer">{Answerer}</div><div class="answerer-answer">{Answer}</div><img class="answerer-avatar" src="{AnswererPortraitURL-96}" alt=""></div>
+                                                {/block:Answerer}
+
+                                                <div class="replies">
+                                                  {Replies}
+                                                </div>
+                                              </article>
+                                              {/block:Answer}
+                                              {block:Video}
+                                              <div class="row">
+                                                <span class="icon-video col post-icon"></span>
+                                                <div class="col main">
+                                                  <article>
+                                                    <div class="authorship">
+                                                      <img src="{PostAuthorPortraitURL-30}" alt="Post author avatar" class="author-avatar">
+                                                      <p>
                                                         {block:Date}
                                                         {Month} {DayOfMonth}, {Year} {PostAuthorName}
                                                         {/block:Date}
-                                                    </p>
-                                                </div>
-                                                {LinkOpenTag}
-                                                <img src="{PhotoURL-Panorama}" alt="{PhotoAlt}"/>
-                                                {LinkCloseTag}{block:Caption}
-                                                <div class="caption">{Caption}</div>
-                                                {/block:Caption}
-                                            </article>
-                                            {/block:Panorama}
-                                            {block:Photoset}
-                                            <div class="row">
-                                                <span class="icon-photo col post-icon"></span>
-                                                <div class="col main">
-                                                    <article>
+                                                      </p>
+                                                    </div>
+                                                    <div class="video">{Video-500}</div>
+                                                    {block:Caption}
+                                                    <div class="caption">{Caption}</div>
+                                                    {/block:Caption}
+                                                  </article>
+                                                  {/block:Video}
+                                                  {block:Audio}
+                                                  <div class="row">
+                                                    <span class="icon-audio col post-icon"></span>
+                                                    <div class="col main">
+                                                      <article>
                                                         <div class="authorship">
-                                                            <img src="{PostAuthorPortraitURL-30}" alt="Post author avatar" class="author-avatar">
-                                                            <p>
-                                                                {block:Date}
-                                                                {Month} {DayOfMonth}, {Year} {PostAuthorName}
-                                                                {/block:Date}
-                                                            </p>
+                                                          <img src="{PostAuthorPortraitURL-30}" alt="Post author avatar" class="author-avatar">
+                                                          <p>
+                                                            {block:Date}
+                                                            {Month} {DayOfMonth}, {Year} {PostAuthorName}
+                                                            {/block:Date}
+                                                          </p>
                                                         </div>
-                                                        {Photoset-500}{block:Caption}
+                                                        {AudioEmbed}{block:Caption}
                                                         <div class="caption">{Caption}</div>
                                                         {/block:Caption}
-                                                    </article>
-                                                    {/block:Photoset}
-                                                    {block:Quote}
-                                                    <div class="row">
-                                                        <span class="icon-quote col post-icon"></span>
-                                                        <div class="col main">
-                                                            <article>
-                                                                <div class="authorship">
-                                                                    <img src="{PostAuthorPortraitURL-30}" alt="Post author avatar" class="author-avatar">
-                                                                    <p>
-                                                                        {block:Date}
-                                                                        {Month} {DayOfMonth}, {Year} {PostAuthorName}
-                                                                        {/block:Date}
-                                                                    </p>
-                                                                </div>
-                                                                &ldquo;{Quote}&rdquo;
-
-                                                                {block:Source}
-                                                                <div class="source">{Source}</div>
-                                                                {/block:Source}
-                                                            </article>
-                                                            {/block:Quote}
-                                                            {block:Link}
-                                                            <!-- Links are not taking the full width of the row. -->
-                                                            <div class="row">
-                                                                <span class="icon-link col post-icon"></span>
-                                                                <div class="col main">
-                                                                    <article>
-                                                                        <div class="authorship">
-                                                                            <img src="{PostAuthorPortraitURL-30}" alt="Post author avatar" class="author-avatar">
-                                                                            <p>
-                                                                                {block:Date}
-                                                                                {Month} {DayOfMonth}, {Year} {PostAuthorName}
-                                                                                {/block:Date}
-                                                                            </p>
-                                                                        </div>
-                                                                        <a href="{URL}" class="link" {Target}>{Name}</a>
-
-                                                                        {block:Description}
-                                                                        <div class="description">{Description}</div>
-                                                                        {/block:Description}
-                                                                    </article>
-                                                                    {/block:Link}
-                                                                    {block:Chat}
-                                                                    <div class="row">
-                                                                        <span class="icon-quote col post-icon"></span>
-                                                                        <div class="col main">
-                                                                            <article>
-                                                                                {block:Title}
-                                                                                <h3><a href="{Permalink}">{Title}</a></h3>
-                                                                                {/block:Title}
-                                                                                <div class="authorship">
-                                                                                    <img src="{PostAuthorPortraitURL-30}" alt="Post author avatar" class="author-avatar">
-                                                                                    <p>
-                                                                                        {block:Date}
-                                                                                        {Month} {DayOfMonth}, {Year} {PostAuthorName}
-                                                                                        {/block:Date}
-                                                                                    </p>
-                                                                                </div>
-
-                                                                                <ul class="chat">
-                                                                                    {block:Lines}
-
-                                                                                    {block:Label}
-                                                                                    <span class="label">{Label}</span>
-                                                                                    {/block:Label}{Line}
-                                                                                </li>
-                                                                                {/block:Lines}
-                                                                            </ul>
-                                                                        </article>
-                                                                        {/block:Chat}
-                                                                        {block:Answer}
-                                                                        <div class="row">
-                                                                            <span class="icon-question col post-icon"></span>
-                                                                            <div class="col main">
-                                                                                <article>
-                                                                                    <div class="authorship">
-                                                                                        <img src="{PostAuthorPortraitURL-30}" alt="Post author avatar" class="author-avatar">
-                                                                                        <p>
-                                                                                            {block:Date}
-                                                                                            {Month} {DayOfMonth}, {Year} {PostAuthorName}
-                                                                                            {/block:Date}
-                                                                                        </p>
-                                                                                    </div>
-                                                                                    <div class="question"><div class="asker">{Asker}</div><div class="asker-question">{Question}</div><img class="asker-avatar" src="{AskerPortraitURL-96}" alt=""></div>
-
-                                                                                    {block:Answerer}
-                                                                                    <div class="answer"><div class="answerer">{Answerer}</div><div class="answerer-answer">{Answer}</div><img class="answerer-avatar" src="{AnswererPortraitURL-96}" alt=""></div>
-                                                                                    {/block:Answerer}
-
-                                                                                    <div class="replies">
-                                                                                        {Replies}
-                                                                                    </div>
-                                                                                </article>
-                                                                                {/block:Answer}
-                                                                                {block:Video}
-                                                                                <div class="row">
-                                                                                    <span class="icon-video col post-icon"></span>
-                                                                                    <div class="col main">
-                                                                                        <article>
-                                                                                            <div class="authorship">
-                                                                                                <img src="{PostAuthorPortraitURL-30}" alt="Post author avatar" class="author-avatar">
-                                                                                                <p>
-                                                                                                    {block:Date}
-                                                                                                    {Month} {DayOfMonth}, {Year} {PostAuthorName}
-                                                                                                    {/block:Date}
-                                                                                                </p>
-                                                                                            </div>
-                                                                                            <div class="video">{Video-500}</div>
-                                                                                            {block:Caption}
-                                                                                            <div class="caption">{Caption}</div>
-                                                                                            {/block:Caption}
-                                                                                        </article>
-                                                                                        {/block:Video}
-                                                                                        {block:Audio}
-                                                                                        <div class="row">
-                                                                                            <span class="icon-audio col post-icon"></span>
-                                                                                            <div class="col main">
-                                                                                                <article>
-                                                                                                    <div class="authorship">
-                                                                                                        <img src="{PostAuthorPortraitURL-30}" alt="Post author avatar" class="author-avatar">
-                                                                                                        <p>
-                                                                                                            {block:Date}
-                                                                                                            {Month} {DayOfMonth}, {Year} {PostAuthorName}
-                                                                                                            {/block:Date}
-                                                                                                        </p>
-                                                                                                    </div>
-                                                                                                    {AudioEmbed}{block:Caption}
-                                                                                                    <div class="caption">{Caption}</div>
-                                                                                                    {/block:Caption}
-                                                                                                </article>
-                                                                                                {/block:Audio}
-                                                                                                {block:IndexPage}
-                                                                                                <aside class="row">
-                                                                                                    <div class="col share">
-                                                                                                        <div class="custom-like-button">
-                                                                                                            {LikeButton}
-                                                                                                            <span class="custom-button icon-like"></span>
-                                                                                                        </div>
-                                                                                                        <a href="{ReblogURL}"><span class="icon-reblog"></span></a>
-                                                                                                        <a href="#"><span class="icon-share"></span></a>
-                                                                                                        <a href="{Permalink}#disqus_thread"><span class="icon-comments"></span></a>
-                                                                                                    </div>
-                                                                                                    <div class="col comments-link">
-                                                                                                        <a class="dsq-comment-count" href="{Permalink}#disqus_thread">Comments</a>
-                                                                                                    </div>
-                                                                                            </aside>
-                                                                                        </div>
-                                                                                    </div>
-                                                                                {/block:IndexPage}
-                                                                                {/block:Posts}
-                                                                                {block:IndexPage}
-                                                                                </section>
-                                                                                {/block:IndexPage}
-                                                                                <!-- Comments -->
-                                                                                {block:Posts}{block:Permalink}{block:Date}
-                                                                                {block:IfDisqusShortname}
-                                                                                <aside>
-                                                                                    <div id="disqus_thread"></div>
-                                                                                    <script type="text/javascript">
-                                                                                    /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
+                                                      </article>
+                                                      {/block:Audio}
+                                                      {block:IndexPage}
+                                                      <aside class="row group">
+                                                        <div class="col share">
+                                                          <div class="custom-like-button">
+                                                            {LikeButton}
+                                                            <span class="custom-button icon-like"></span>
+                                                          </div>
+                                                          <a href="{ReblogURL}"><span class="icon-reblog"></span></a>
+                                                          <div class="social-share">
+                                                            <input type="checkbox" id="social-share-toggle" class="social-share-toggle">
+                                                            <label class="icon-share" for="social-share-toggle"></label>
+                                                            <div class="social-share-buttons">
+                                                              Social sharing
+                                                            </div>
+                                                          </div>
+                                                          <a href="{Permalink}#disqus_thread"><span class="icon-comments"></span></a>
+                                                        </div>
+                                                        <div class="col comments-link">
+                                                          <a class="dsq-comment-count" href="{Permalink}#disqus_thread">Comments</a>
+                                                        </div>
+                                                      </aside>
+                                                    </div>
+                                                  </div>
+                                                  {/block:IndexPage}
+                                                  {/block:Posts}
+                                                  {block:IndexPage}
+                                                </section>
+                                                {/block:IndexPage}
+                                                <!-- Comments -->
+                                                {block:Posts}{block:Permalink}{block:Date}
+                                                {block:IfDisqusShortname}
+                                                <aside>
+                                                  <div id="disqus_thread"></div>
+                                                  <script type="text/javascript">
+                                                  /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
                                     var disqus_shortname = '{text:Disqus Shortname}'; // Required - Replace <example> with your forum shortname
                                     var disqus_url = '{Permalink}';
 
                                     /* * * DON'T EDIT BELOW THIS LINE * * */
                                     (function() {
-                                        var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
-                                        dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
-                                        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+                                      var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+                                      dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+                                      (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
                                     })();
-                                </script>
-                                <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
-                                <a href="http://disqus.com" class="dsq-brlink">blog comments powered by <span class="logo-disqus">Disqus</span></a>
-                            </aside>
+                                  </script>
+                                  <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+                                  <a href="http://disqus.com" class="dsq-brlink">blog comments powered by <span class="logo-disqus">Disqus</span></a>
+                                </aside>
 
-                            {/block:IfDisqusShortname}
-                            <aside class="row">
-                                <div class="col share">
+                                {/block:IfDisqusShortname}
+                                <aside class="row group">
+                                  <div class="col share">
                                     <div class="custom-like-button">
-                                        {LikeButton}
-                                        <span class="custom-button icon-like"></span>
+                                      {LikeButton}
+                                      <span class="custom-button icon-like"></span>
                                     </div>
                                     <a href="{ReblogURL}"><span class="icon-reblog"></span></a>
-                                    <a href="#"><span class="icon-share"></span></a>
+                                    <div class="social-share">
+                                      <input type="checkbox" id="social-share-toggle" class="social-share-toggle">
+                                      <label class="icon-share" for="social-share-toggle"></label>
+                                      <div class="social-share-buttons">
+                                        Social sharing
+                                      </div>
+                                    </div>
                                     <a href="{Permalink}#disqus_thread"><span class="icon-comments"></span></a>
-                                </div>
-                            </aside>
-                            {/block:Date}{/block:Permalink}{/block:Posts}
-                            <!-- End comments -->
+                                  </div>
+                                </aside>
+                                {/block:Date}{/block:Permalink}{/block:Posts}
+                                <!-- End comments -->
 
-                            {block:HasTags}
-                            <ul class="tags">
-                                {block:Tags}
-                                <li>
+                                {block:HasTags}
+                                <ul class="tags">
+                                  {block:Tags}
+                                  <li>
                                     <a href="{TagURL}">{Tag}</a>
-                                </li>
-                                {/block:Tags}
-                            </ul>
-                        </div>
-                    </div>
-                    {/block:HasTags}
-                    {block:PermalinkPagination}
-                    <div class="pagination row">
-                        <div class="col main">
-                            {block:PreviousPost}<a class="prev"href="{PreviousPost}">{lang:Previous post}</a>{/block:PreviousPost}
-                            {block:NextPost}<a class="next" href="{NextPost}">{lang:Next post}</a>{/block:NextPost}
-                        </div>
-                    </div>
-                    {/block:PermalinkPagination}
-                    {block:Pagination}
-                    <div class="pagination row">
-                        <div class="col main">
-                            {block:PreviousPage}<a class="prev" href="{PreviousPage}">{lang:Previous}</a>{/block:PreviousPage}
+                                  </li>
+                                  {/block:Tags}
+                                </ul>
+                              </div>
+                            </div>
+                            {/block:HasTags}
+                            {block:PermalinkPagination}
+                            <div class="pagination row">
+                              <div class="col main">
+                                {block:PreviousPost}<a class="prev"href="{PreviousPost}">{lang:Previous post}</a>{/block:PreviousPost}
+                                {block:NextPost}<a class="next" href="{NextPost}">{lang:Next post}</a>{/block:NextPost}
+                              </div>
+                            </div>
+                            {/block:PermalinkPagination}
+                            {block:Pagination}
+                            <div class="pagination row">
+                              <div class="col main">
+                                {block:PreviousPage}<a class="prev" href="{PreviousPage}">{lang:Previous}</a>{/block:PreviousPage}
 
-                            {block:JumpPagination length="5"}
-                            {block:CurrentPage}<span class="current-page">{PageNumber}</span>{/block:CurrentPage}
-                            {block:JumpPage}<a class="jump-page" href="{URL}">{PageNumber}</a>{/block:JumpPage}
-                            {/block:JumpPagination}
+                                {block:JumpPagination length="5"}
+                                {block:CurrentPage}<span class="current-page">{PageNumber}</span>{/block:CurrentPage}
+                                {block:JumpPage}<a class="jump-page" href="{URL}">{PageNumber}</a>{/block:JumpPage}
+                                {/block:JumpPagination}
 
-                            {block:NextPage}<a class="next" href="{NextPage}">{lang:Next}</a>{/block:NextPage}
+                                {block:NextPage}<a class="next" href="{NextPage}">{lang:Next}</a>{/block:NextPage}
+                              </div>
+                            </div>
+                            {/block:Pagination}
+                            <footer class="footer row">
+                              <div class="col main">
+                                <small>{block:ShowTitle}{Title} {/block:ShowTitle}&copy; {CopyrightYears}</small>
+                              </div>
+                            </footer>
+                          </div>
                         </div>
-                    </div>
-                    {/block:Pagination}
-                    <footer class="footer row">
-                        <div class="col main">
-                            <small>{block:ShowTitle}{Title} {/block:ShowTitle}&copy; {CopyrightYears}</small>
-                        </div>
-                    </footer>
-                </div>
-            </div>
-            <label for="pure-toggle-left" class="pure-overlay" data-overlay="left"></label>
-        </div>
+                        <label for="pure-toggle-left" class="pure-overlay" data-overlay="left"></label>
+                      </div>
 
-        <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+                      <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
 
-        <script>
+                      <script>
             // Enter/return to submit search form
             $('#search-form input').keydown(function(e) {
-                if (e.keyCode == 13) {
-                    $('#search-form').submit();
-                }
+              if (e.keyCode == 13) {
+                $('#search-form').submit();
+              }
             });
-        </script>
+          </script>
 
-        <!-- Google Prettify -->
-        <script src="//cdnjs.cloudflare.com/ajax/libs/prettify/r298/prettify.min.js"></script>
-        <script>
-        function styleCode() {
+          <!-- Google Prettify -->
+          <script src="//cdnjs.cloudflare.com/ajax/libs/prettify/r298/prettify.min.js"></script>
+          <script>
+          function styleCode() {
             if (typeof disableStyleCode != 'undefined') { return; }
 
             var a = false;
 
             $('code').each(function() {
-                if (!$(this).hasClass('prettyprint')) {
-                    $(this).addClass('prettyprint');
-                    a = true;
-                }
+              if (!$(this).hasClass('prettyprint')) {
+                $(this).addClass('prettyprint');
+                a = true;
+              }
             });
 
             if (a) { prettyPrint(); }
-        }
+          }
 
-        $(function() {styleCode();});
+          $(function() {styleCode();});
+        </script>
+
+        <!-- Google Analytics -->
+        {block:IfGoogleAnalyticsID}
+        <script>
+        (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+          (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+          m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+        })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+        ga('create', '{text:Google Analytics ID}', 'auto');
+        ga('send', 'pageview');
+
+      </script>
+      {/block:IfGoogleAnalyticsID}
+
+      <!-- Viewport units buggyfill -->
+      <script>
+      !function(a,b){"use strict";"function"==typeof define&&define.amd?define([],b):"object"==typeof exports?module.exports=b():a.viewportUnitsBuggyfill=b()}(this,function(){"use strict";function m(a,b){var c;return function(){var d=this,e=arguments,f=function(){a.apply(d,e)};clearTimeout(c),c=setTimeout(f,b)}}function n(){try{return window.self!==window.top}catch(a){return!0}}function o(c){a||(c===!0&&(c={force:!0}),b=c||{},b.isMobileSafari=k,b.isBadStockAndroid=l,(b.force||k||i||l||j||b.hacks&&b.hacks.required(b))&&(b.hacks&&b.hacks.initialize(b),a=!0,h=document.createElement("style"),h.id="patched-viewport",document.head.appendChild(h),x(function(){var a=m(q,b.refreshDebounceWait||100);window.addEventListener("orientationchange",a,!0),window.addEventListener("pageshow",a,!0),(b.force||i||n())&&(window.addEventListener("resize",a,!0),b._listeningToResize=!0),b.hacks&&b.hacks.initializeEvents(b,q,a),q()})))}function p(){h.textContent=t()}function q(){a&&(r(),setTimeout(function(){p()},1))}function r(){return g=[],e.call(document.styleSheets,function(a){"patched-viewport"!==a.ownerNode.id&&a.cssRules&&(a.media&&a.media.mediaText&&window.matchMedia&&!window.matchMedia(a.media.mediaText).matches||e.call(a.cssRules,s))}),g}function s(a){if(7===a.type){var c;try{c=a.cssText}catch(f){return}return d.lastIndex=0,d.test(c)&&(g.push([a,null,c]),b.hacks&&b.hacks.findDeclarations(g,a,null,c)),void 0}if(!a.style){if(!a.cssRules)return;return e.call(a.cssRules,function(a){s(a)}),void 0}e.call(a.style,function(c){var e=a.style.getPropertyValue(c);d.lastIndex=0,d.test(e)&&(g.push([a,c,e]),b.hacks&&b.hacks.findDeclarations(g,a,c,e))})}function t(){f=w();var c,d,a=[],b=[];return g.forEach(function(e){var f=u.apply(null,e),g=f.selector.length?f.selector.join(" {\n")+" {\n":"",h=new Array(f.selector.length+1).join("\n}");return g&&g===c?(g&&!c&&(c=g,d=h),b.push(f.content),void 0):(b.length&&(a.push(c+b.join("\n")+d),b.length=0),g?(c=g,d=h,b.push(f.content)):(a.push(f.content),c=null,d=null),void 0)}),b.length&&a.push(c+b.join("\n")+d),j&&a.push("* { content: normal !important; }"),a.join("\n\n")}function u(a,c,e){var f,g=[];f=e.replace(d,v),b.hacks&&(f=b.hacks.overwriteDeclaration(a,c,f)),c&&(g.push(a.selectorText),f=c+": "+f+";");for(var h=a.parentRule;h;)g.unshift("@media "+h.media.mediaText),h=h.parentRule;return{selector:g,content:f}}function v(a,b,c){var d=f[c],e=parseFloat(b)/100;return e*d+"px"}function w(){var a=window.innerHeight,b=window.innerWidth;return{vh:a,vw:b,vmax:Math.max(b,a),vmin:Math.min(b,a)}}function x(a){var b=0,c=function(){b--,b||a()};e.call(document.styleSheets,function(a){a.href&&y(a.href)!==y(location.href)&&(b++,z(a.ownerNode,c))}),b||a()}function y(a){return a.slice(0,a.indexOf("/",a.indexOf("://")+3))}function z(a,b){A(a.href,function(){var c=document.createElement("style");c.media=a.media,c.setAttribute("data-href",a.href),c.textContent=this.responseText,a.parentNode.replaceChild(c,a),b()},b)}function A(a,b,c){var d=new XMLHttpRequest;if("withCredentials"in d)d.open("GET",a,!0);else{if("undefined"==typeof XDomainRequest)throw new Error("cross-domain XHR not supported");d=new XDomainRequest,d.open("GET",a)}return d.onload=b,d.onerror=c,d.send(),d}var b,f,g,h,a=!1,c=window.navigator.userAgent,d=/([+-]?[0-9.]+)(vh|vw|vmin|vmax)/g,e=[].forEach,i=!1,j=c.indexOf("Opera Mini")>-1,k=/(iPhone|iPod|iPad).+AppleWebKit/i.test(c)&&function(){var a=/Version\/(\d+)/.exec(window.navigator.userAgent);return a.length>1&&parseInt(a[1])<8}(),l=function(){var a=c.indexOf(" Android ")>-1;if(!a)return!1;var b=c.indexOf("Version/")>-1;if(!b)return!1;var d=parseFloat((c.match("Android ([0-9.]+)")||[])[1]);return 4.4>=d}();return{version:"0.4.2",findProperties:r,getCss:t,init:o,refresh:q}});
     </script>
-
-    <!-- Google Analytics -->
-    {block:IfGoogleAnalyticsID}
-    <script>
-    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-      m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
-
-  ga('create', '{text:Google Analytics ID}', 'auto');
-  ga('send', 'pageview');
-
-</script>
-{/block:IfGoogleAnalyticsID}
-
-<!-- Viewport units buggyfill -->
-<script>
-!function(a,b){"use strict";"function"==typeof define&&define.amd?define([],b):"object"==typeof exports?module.exports=b():a.viewportUnitsBuggyfill=b()}(this,function(){"use strict";function m(a,b){var c;return function(){var d=this,e=arguments,f=function(){a.apply(d,e)};clearTimeout(c),c=setTimeout(f,b)}}function n(){try{return window.self!==window.top}catch(a){return!0}}function o(c){a||(c===!0&&(c={force:!0}),b=c||{},b.isMobileSafari=k,b.isBadStockAndroid=l,(b.force||k||i||l||j||b.hacks&&b.hacks.required(b))&&(b.hacks&&b.hacks.initialize(b),a=!0,h=document.createElement("style"),h.id="patched-viewport",document.head.appendChild(h),x(function(){var a=m(q,b.refreshDebounceWait||100);window.addEventListener("orientationchange",a,!0),window.addEventListener("pageshow",a,!0),(b.force||i||n())&&(window.addEventListener("resize",a,!0),b._listeningToResize=!0),b.hacks&&b.hacks.initializeEvents(b,q,a),q()})))}function p(){h.textContent=t()}function q(){a&&(r(),setTimeout(function(){p()},1))}function r(){return g=[],e.call(document.styleSheets,function(a){"patched-viewport"!==a.ownerNode.id&&a.cssRules&&(a.media&&a.media.mediaText&&window.matchMedia&&!window.matchMedia(a.media.mediaText).matches||e.call(a.cssRules,s))}),g}function s(a){if(7===a.type){var c;try{c=a.cssText}catch(f){return}return d.lastIndex=0,d.test(c)&&(g.push([a,null,c]),b.hacks&&b.hacks.findDeclarations(g,a,null,c)),void 0}if(!a.style){if(!a.cssRules)return;return e.call(a.cssRules,function(a){s(a)}),void 0}e.call(a.style,function(c){var e=a.style.getPropertyValue(c);d.lastIndex=0,d.test(e)&&(g.push([a,c,e]),b.hacks&&b.hacks.findDeclarations(g,a,c,e))})}function t(){f=w();var c,d,a=[],b=[];return g.forEach(function(e){var f=u.apply(null,e),g=f.selector.length?f.selector.join(" {\n")+" {\n":"",h=new Array(f.selector.length+1).join("\n}");return g&&g===c?(g&&!c&&(c=g,d=h),b.push(f.content),void 0):(b.length&&(a.push(c+b.join("\n")+d),b.length=0),g?(c=g,d=h,b.push(f.content)):(a.push(f.content),c=null,d=null),void 0)}),b.length&&a.push(c+b.join("\n")+d),j&&a.push("* { content: normal !important; }"),a.join("\n\n")}function u(a,c,e){var f,g=[];f=e.replace(d,v),b.hacks&&(f=b.hacks.overwriteDeclaration(a,c,f)),c&&(g.push(a.selectorText),f=c+": "+f+";");for(var h=a.parentRule;h;)g.unshift("@media "+h.media.mediaText),h=h.parentRule;return{selector:g,content:f}}function v(a,b,c){var d=f[c],e=parseFloat(b)/100;return e*d+"px"}function w(){var a=window.innerHeight,b=window.innerWidth;return{vh:a,vw:b,vmax:Math.max(b,a),vmin:Math.min(b,a)}}function x(a){var b=0,c=function(){b--,b||a()};e.call(document.styleSheets,function(a){a.href&&y(a.href)!==y(location.href)&&(b++,z(a.ownerNode,c))}),b||a()}function y(a){return a.slice(0,a.indexOf("/",a.indexOf("://")+3))}function z(a,b){A(a.href,function(){var c=document.createElement("style");c.media=a.media,c.setAttribute("data-href",a.href),c.textContent=this.responseText,a.parentNode.replaceChild(c,a),b()},b)}function A(a,b,c){var d=new XMLHttpRequest;if("withCredentials"in d)d.open("GET",a,!0);else{if("undefined"==typeof XDomainRequest)throw new Error("cross-domain XHR not supported");d=new XDomainRequest,d.open("GET",a)}return d.onload=b,d.onerror=c,d.send(),d}var b,f,g,h,a=!1,c=window.navigator.userAgent,d=/([+-]?[0-9.]+)(vh|vw|vmin|vmax)/g,e=[].forEach,i=!1,j=c.indexOf("Opera Mini")>-1,k=/(iPhone|iPod|iPad).+AppleWebKit/i.test(c)&&function(){var a=/Version\/(\d+)/.exec(window.navigator.userAgent);return a.length>1&&parseInt(a[1])<8}(),l=function(){var a=c.indexOf(" Android ")>-1;if(!a)return!1;var b=c.indexOf("Version/")>-1;if(!b)return!1;var d=parseFloat((c.match("Android ([0-9.]+)")||[])[1]);return 4.4>=d}();return{version:"0.4.2",findProperties:r,getCss:t,init:o,refresh:q}});
-</script>
-</body>
-</html>
+  </body>
+  </html>
