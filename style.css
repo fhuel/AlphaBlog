@@ -1,0 +1,399 @@
+/* Utility styles */
+* {
+  box-sizing: border-box;
+}
+.group:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+/* PureDrawer responsive menu */
+html,body{height: 100%;}.pure-container{position:relative;height:100%;-webkit-overflow-scrolling:touch}.pure-toggle{left:-9999px;position:absolute;top:-9999px}.pure-toggle:focus~.pure-toggle-label{color:#fff}.pure-toggle-label{cursor:pointer;display:block;position:fixed;top:15px;z-index:99;color:#fff;font-size:2rem;width:58px;padding:5px;line-height:44px;text-align:center;font-weight:300;transition:all 200ms ease-in-out;-webkit-user-select:none;-moz-user-select:none;-ms-user-select:none;-o-user-select:none;user-select:none;-webkit-tap-highlight-color:rgba(0,0,0,0);text-rendering:geometricPrecision;background:rgba(0,0,0,0.5)}.pure-toggle-label:hover{color:#fff;background:rgba(0,0,0,0.7)}.pure-toggle-label:active{-webkit-tap-highlight-color:rgba(0,0,0,0)}.pure-toggle-label[data-toggle-label=left]{left:15px;right:auto}.pure-toggle-label[data-toggle-label=right]{right:28px;left:auto}.pure-toggle-label[data-toggle-label=top]{}.pure-toggle[data-toggle=left]:checked~.pure-toggle-label:not([data-toggle-label=left]),.pure-toggle[data-toggle=right]:checked~.pure-toggle-label:not([data-toggle-label=right]),.pure-toggle[data-toggle=top]:checked~.pure-toggle-label:not([data-toggle-label=top]){opacity:0;z-index:-1}.pure-toggle[data-toggle=left]:checked~.pure-toggle-label[data-toggle-label=left]{}.pure-toggle[data-toggle=right]:checked~.pure-toggle-label[data-toggle-label=right]{}.pure-toggle[data-toggle=top]:checked~.pure-toggle-label[data-toggle-label=top]{}.pure-drawer{position:fixed;top:0;left:0;z-index:1;height:100%;padding:4em 0.5em 1em;background-color:#10100F;color:#fff;-webkit-transition:all .5s;transition:all .5s;visibility:hidden;width:100%;overflow-y:auto;}@media only screen and (min-width:40.063em){.pure-drawer{width:300px}}@media only screen and (min-width:64.063em){.pure-drawer{width:300px}}.pure-drawer[data-position=right]{left:auto;right:0}.pure-drawer[data-position=top]{height:100%;width:100%}@media only screen and (min-width:40.063em){.pure-drawer[data-position=top]{height:100%}}@media only screen and (min-width:64.063em){.pure-drawer[data-position=top]{height:100px}}.pure-pusher-container{position:relative;height:100%;overflow:hidden}.pure-pusher{background:{BackgroundColor} url({image:Background Image});position:relative;height:100%;overflow-y:auto;left:0;z-index:2;-webkit-transition:-webkit-transform .5s;transition:transform .5s}.pure-overlay{position:fixed;top:0;bottom:0;right:0;width:0;height:0;opacity:0;background-color:rgba(0,0,0,.4);-webkit-transition:opacity .5s .3s;transition:opacity .5s .3s}.pure-toggle[data-toggle=left]:checked~.pure-overlay[data-overlay=left]{left:100%}@media only screen and (min-width:40.063em){.pure-toggle[data-toggle=left]:checked~.pure-overlay[data-overlay=left]{left:300px}}@media only screen and (min-width:64.063em){.pure-toggle[data-toggle=left]:checked~.pure-overlay[data-overlay=left]{left:300px}}.pure-toggle[data-toggle=right]:checked~.pure-overlay[data-overlay=right]{right:100%}@media only screen and (min-width:40.063em){.pure-toggle[data-toggle=right]:checked~.pure-overlay[data-overlay=right]{right:300px}}@media only screen and (min-width:64.063em){.pure-toggle[data-toggle=right]:checked~.pure-overlay[data-overlay=right]{right:300px}}.pure-toggle[data-toggle=top]:checked~.pure-overlay[data-overlay=top]{top:100%}@media only screen and (min-width:40.063em){.pure-toggle[data-toggle=top]:checked~.pure-overlay[data-overlay=top]{top:100%}}@media only screen and (min-width:64.063em){.pure-toggle[data-toggle=top]:checked~.pure-overlay[data-overlay=top]{top:100px}}.pure-toggle[data-toggle=left]:checked~.pure-overlay[data-overlay=left],.pure-toggle[data-toggle=right]:checked~.pure-overlay[data-overlay=right],.pure-toggle[data-toggle=top]:checked~.pure-overlay[data-overlay=top]{width:100%;height:100%;opacity:1;z-index:2;-webkit-transition:opacity .5s .3s;transition:opacity .5s .3s}.no-csstransforms3d .pure-toggle[data-toggle=left]:checked~.pure-pusher-container .pure-pusher{left:100%}@media only screen and (min-width:40.063em){.no-csstransforms3d .pure-toggle[data-toggle=left]:checked~.pure-pusher-container .pure-pusher{left:300px}}@media only screen and (min-width:64.063em){.no-csstransforms3d .pure-toggle[data-toggle=left]:checked~.pure-pusher-container .pure-pusher{left:300px}}.no-csstransforms3d .pure-toggle[data-toggle=right]:checked~.pure-pusher-container .pure-pusher{left:-100%}@media only screen and (min-width:40.063em){.no-csstransforms3d .pure-toggle[data-toggle=right]:checked~.pure-pusher-container .pure-pusher{left:-300px}}@media only screen and (min-width:64.063em){.no-csstransforms3d .pure-toggle[data-toggle=right]:checked~.pure-pusher-container .pure-pusher{left:-300px}}.no-csstransforms3d .pure-toggle[data-toggle=top]:checked~.pure-pusher-container .pure-pusher{top:100%}@media only screen and (min-width:40.063em){.no-csstransforms3d .pure-toggle[data-toggle=top]:checked~.pure-pusher-container .pure-pusher{top:100%}}@media only screen and (min-width:64.063em){.no-csstransforms3d .pure-toggle[data-toggle=top]:checked~.pure-pusher-container .pure-pusher{top:100px}}[data-effect=pure-effect-3] .pure-drawer[data-position=left]{-webkit-transform:translate3d(-50%,0,0);transform:translate3d(-50%,0,0)}[data-effect=pure-effect-3] .pure-drawer[data-position=right]{-webkit-transform:translate3d(50%,0,0);transform:translate3d(50%,0,0)}[data-effect=pure-effect-3] .pure-drawer[data-position=top]{-webkit-transform:translate3d(0,-50%,0);transform:translate3d(0,-50%,0)}[data-effect=pure-effect-3] .pure-toggle[data-toggle=left]:checked~.pure-drawer[data-position=left],[data-effect=pure-effect-3] .pure-toggle[data-toggle=right]:checked~.pure-drawer[data-position=right],[data-effect=pure-effect-3] .pure-toggle[data-toggle=top]:checked~.pure-drawer[data-position=top]{visibility:visible;-webkit-transform:translate3d(0,0,0);transform:translate3d(0,0,0)}[data-effect=pure-effect-3] .pure-toggle[data-toggle=left]:checked~.pure-pusher-container .pure-pusher{-webkit-transform:translate3d(100%,0,0);transform:translate3d(100%,0,0)}@media only screen and (min-width:40.063em){[data-effect=pure-effect-3] .pure-toggle[data-toggle=left]:checked~.pure-pusher-container .pure-pusher{-webkit-transform:translate3d(300px,0,0);transform:translate3d(300px,0,0)}}@media only screen and (min-width:64.063em){[data-effect=pure-effect-3] .pure-toggle[data-toggle=left]:checked~.pure-pusher-container .pure-pusher{-webkit-transform:translate3d(300px,0,0);transform:translate3d(300px,0,0)}}[data-effect=pure-effect-3] .pure-toggle[data-toggle=right]:checked~.pure-pusher-container .pure-pusher{-webkit-transform:translate3d(-100%,0,0);transform:translate3d(-100%,0,0)}@media only screen and (min-width:40.063em){[data-effect=pure-effect-3] .pure-toggle[data-toggle=right]:checked~.pure-pusher-container .pure-pusher{-webkit-transform:translate3d(-300px,0,0);transform:translate3d(-300px,0,0)}}@media only screen and (min-width:64.063em){[data-effect=pure-effect-3] .pure-toggle[data-toggle=right]:checked~.pure-pusher-container .pure-pusher{-webkit-transform:translate3d(-300px,0,0);transform:translate3d(-300px,0,0)}}[data-effect=pure-effect-3] .pure-toggle[data-toggle=top]:checked~.pure-pusher-container .pure-pusher{-webkit-transform:translate3d(0,100%,0);transform:translate3d(0,100%,0)}@media only screen and (min-width:40.063em){[data-effect=pure-effect-3] .pure-toggle[data-toggle=top]:checked~.pure-pusher-container .pure-pusher{-webkit-transform:translate3d(0,100%,0);transform:translate3d(0,100%,0)}}@media only screen and (min-width:64.063em){[data-effect=pure-effect-3] .pure-toggle[data-toggle=top]:checked~.pure-pusher-container .pure-pusher{-webkit-transform:translate3d(0,100px,0);transform:translate3d(0,100px,0)}}
+/* PureDrawer responsive menu end */
+
+/* Grid */
+/*!
+ * Gridpak Beta CSS
+ *
+ * Generator - http://gridpak.com/
+ * Created by @erskinedesign
+ */
+
+ /* Reusable column setup */
+ .col {
+  border:0px solid rgba(0,0,0,0);
+  float:left;
+  -webkit-box-sizing:border-box;
+  -moz-box-sizing:border-box;
+  box-sizing:border-box;
+  -moz-background-clip:padding-box !important;
+  -webkit-background-clip:padding-box !important;
+  background-clip:padding-box !important;
+}
+
+/* 1. 4 Column Grid 0px - 499px */
+
+.col {
+  margin-left:0%;
+  padding:0 3.125%;
+}
+
+.row .col:first-child {
+  margin-left:0;
+}
+
+.span_1 {
+  width:25.0%;
+}
+.span_2, .comments-link, .share {
+  width:50.0%;
+}
+.span_3 {
+  width:75.0%;
+}
+.span_4, .main, .post-icon {
+  margin-left:0;
+  width:100%;
+}
+
+/* 2. 12 Column Grid 500px - 1499px */
+
+@media screen and (min-width: 500px) and (max-width: 1499px) {
+
+  .col {
+    margin-left:0%;
+    padding:0 0.9%;
+  }
+
+  .row .col:first-child {
+    margin-left:0;
+  }
+
+  .span_1 {
+    width:8.33333333333%;
+  }
+  .span_2 {
+    width:16.6666666667%;
+  }
+  .span_3 {
+    width:25.0%;
+  }
+  .span_4 {
+    width:33.3333333333%;
+  }
+  .span_5 {
+    width:41.6666666667%;
+  }
+  .span_6 {
+    width:50.0%;
+  }
+  .span_7 {
+    width:58.3333333333%;
+  }
+  .span_8 {
+    width:66.6666666667%;
+  }
+  .span_9 {
+    width:75.0%;
+  }
+  .span_10 {
+    width:83.3333333333%;
+  }
+  .span_11 {
+    width:91.6666666667%;
+  }
+  .span_12, article {
+    margin-left:0;
+    width:100%;
+  }
+}
+
+/* 3. 12 Column Grid 1500px - Infinity */
+
+@media screen and (min-width: 1500px) {
+
+  .col {
+    margin-left:0%;
+    padding:0 0.8%;
+  }
+
+  .row .col:first-child {
+    margin-left:0;
+  }
+
+  .span_1 {
+    width:8.33333333333%;
+  }
+  .span_2 {
+    width:16.6666666667%;
+  }
+  .span_3 {
+    width:25.0%;
+  }
+  .span_4 {
+    width:33.3333333333%;
+  }
+  .span_5 {
+    width:41.6666666667%;
+  }
+  .span_6 {
+    width:50.0%;
+  }
+  .span_7 {
+    width:58.3333333333%;
+  }
+  .span_8 {
+    width:66.6666666667%;
+  }
+  .span_9 {
+    width:75.0%;
+  }
+  .span_10 {
+    width:83.3333333333%;
+  }
+  .span_11 {
+    width:91.6666666667%;
+  }
+  .span_12, article {
+    margin-left:0;
+    width:100%;
+  }
+}
+/* Grid end */
+
+
+/* Social sharing toggle */
+.social-share {
+  display: inline-block;
+  position: relative;
+}
+.icon-share {
+  cursor: pointer;
+}
+.social-share-toggle {
+  display: none;
+}
+.social-share-buttons {
+  display: none;
+  position: absolute;
+  top: 1.5em;
+  z-index: 10;
+  width: 10em;
+  padding: 0.5em;
+}
+.social-share-toggle:checked ~ .social-share-buttons {
+  display: block;
+}
+/* End social sharing toggle */
+
+/* Header styles */
+header {
+  position: relative;
+  overflow: hidden;
+  height: 15em;
+}
+
+.info-container {
+  position: absolute;
+  bottom: 0;
+  padding-bottom: 2.5em;
+  width: 100%;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+}
+.info {
+  background: rgba(0,0,0,0.5);
+  padding: 1em;
+  display: inline-block;
+  width: 80%;
+  text-align: center;
+  color: white;
+}
+.info a {
+  color: white;
+  text-decoration: none;
+}
+.info h1 {
+  margin: 0;
+}
+.avatar {
+  display: none;
+}
+/* Header styles end */
+
+/* Font styles */
+html {
+  font-size: 20px;
+}
+.tagline {
+  font-size: 1.3rem;
+}
+i, em {
+  font-style: italic;
+}
+h1 {
+  font-size: 2rem;
+}
+h3 {
+  font-size: 1.2rem;
+}
+h3 a {
+  text-decoration: none;
+}
+article, aside {
+  line-height: 1.45;
+}
+.dsq-comment-count {
+  text-transform: uppercase;
+  text-decoration: none;
+}
+/* Font styles end */
+
+.comments-link {
+  text-align: right;
+}
+img, .tumblr_audio_player {
+  max-width: 100%;
+}
+/* Responsive video embeds */
+.video {
+  position: relative;
+  padding-bottom: 56.25%;
+  height: 0;
+}
+.video iframe {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  left: 0;
+  top: 0;
+}
+aside {
+  padding: 1em 0 1.1em;
+}
+.author-avatar {
+  vertical-align: middle;
+  border-radius: 50%;
+  margin-right: 0.5em;
+  float: left;
+}
+.authorship p {
+  position: relative;
+  top: 0.1em;
+}
+.post-icon, .post-icon {
+  margin: 2em auto 0.5em;
+  text-align: center;
+  display: block;
+}
+a.link {
+  text-decoration: none;
+  padding: 0.75em 1em;
+  display: block;
+}
+a.link:after {
+  content:">";
+  position: absolute;
+  right: 1.5em;
+}
+pre {
+  background: #fff;
+  padding: 0.5em;
+}
+[type=search] {
+  border-radius: 25px;
+  color: #000;
+  border: 0;
+  -webkit-box-shadow: none;
+  -moz-box-shadow: none;
+  box-shadow: none;
+  padding: 0.1em 0.75em 0.1em 1.75em;
+}
+[type=search]:focus {
+  outline: 0;
+}
+#search-form {
+  position: relative;
+  margin-bottom: 2em;
+}
+#search-form .icon-search {
+  position: absolute;
+  left: 0.5em;
+  top: 0.2em;
+  color: #000;
+}
+.pure-drawer {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+}
+.pure-drawer p {
+  margin: 2em 0;
+}
+hr {
+  width: 100%;
+  display: block;
+  height: 1px;
+  border: 0;
+  border-top: 1px solid #595958;
+  margin: 1em 0;
+  padding: 0;
+}
+.share a:link, .share > div {
+  margin-left: 1em;
+  text-decoration: none;
+}
+.share a:link:first-child, .share > div:first-child {
+  margin-left: 0;
+}
+
+/* Workaround for custom Tumblr like button */
+/* http://stackoverflow.com/a/21715659/800492 */
+.custom-like-button {
+  position: relative;
+  display: block;
+  float: left;
+  width: 22px;
+  height: 20px;
+  cursor: pointer;
+  top: 3px;
+}
+.like_button {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+  z-index: 10;
+}
+.like_button iframe {
+  width: 100% !important;
+  height: 100% !important;
+}
+.custom-button {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+}
+/* Custom like button hover and active states */
+.like_button:hover + .custom-button:before {
+  opacity: 0.75;
+}
+.like_button.liked + .custom-button:before, .like_button:hover.liked + .custom-button:before {
+  opacity: 1;
+}
