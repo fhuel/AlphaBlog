@@ -321,6 +321,8 @@ pre {
   top: 0.2rem;
   color: #000;
 }
+
+/* Pure Drawer custom styles */
 .pure-drawer {
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -344,6 +346,24 @@ hr {
   margin: 1rem 0;
   padding: 0;
 }
+nav ul {
+  list-style: none;
+  margin: 0;
+  padding-left: 0;
+}
+nav a:link {
+  color: #fff;
+  text-decoration: none;
+  text-transform: uppercase;
+}
+nav li {
+  margin-top: 1em;
+}
+nav li:first-of-type {
+  margin-top: 0;
+}
+/* Pure Drawer custom styles end */
+
 .share a:link, .share > div {
   margin-left: 1rem;
   text-decoration: none;
