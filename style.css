@@ -301,19 +301,21 @@ pre {
   background: #fff;
   padding: 0.5rem;
 }
-[type=search] {
+input[type=search] {
+  box-sizing: border-box;
   border-radius: 25px;
   color: #000;
   border: 0;
   box-shadow: none;
   padding: 0.1rem 0.75rem 0.1rem 1.75rem;
+  width: 100%;
 }
 [type=search]:focus {
   outline: 0;
 }
 #search-form {
   position: relative;
-  margin-bottom: 2rem;
+  margin-bottom: 1rem;
 }
 #search-form .icon-search {
   position: absolute;
