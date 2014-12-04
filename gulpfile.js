@@ -9,7 +9,6 @@ gulp.task('css', function() {
             .pipe(plugins.autoprefixer({
               browsers: ['last 2 versions']
             }))
-            .pipe(plugins.pixrem())
             .pipe(gulp.dest('.'))
             .pipe(gulp.dest('dist'))
             .pipe(plugins.minifyCss({
