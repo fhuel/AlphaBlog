@@ -325,17 +325,6 @@ input[type=search] {
 }
 
 /* Pure Drawer custom styles */
-.pure-drawer {
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-flex-direction: column;
-      -ms-flex-direction: column;
-          flex-direction: column;
-  -webkit-justify-content: flex-start;
-      -ms-flex-pack: start;
-          justify-content: flex-start;
-}
 .pure-drawer p {
   margin: 2rem 0;
 }
@@ -381,6 +370,19 @@ nav li:first-of-type {
 .read_more_container a {
   text-decoration: none;
   text-transform: uppercase;
+}
+
+/* Displays only the first of each call-to-action */
+h4.store, h4.prerelease {
+  display: none;
+  color: #fff;
+}
+h4.store:first-child, h4.prerelease:first-child {
+  display: block;
+}
+
+.store-links a:link, .prerelease-links a:link {
+  display: block;
 }
 
 /* Workaround for custom Tumblr like button */
