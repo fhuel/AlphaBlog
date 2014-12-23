@@ -2,7 +2,7 @@
 * {
   box-sizing: border-box;
 }
-.group:after {
+.row:after, .group:after {
   content: "";
   display: table;
   clear: both;
@@ -57,12 +57,12 @@ html,body{height: 100%;}.pure-container{position:relative;height:100%;-webkit-ov
 
 @media screen and (min-width: 500px) and (max-width: 1499px) {
 
-  .col, header, .header-spacer, .content {
+  .col, header, .header-spacer, .content, .post-icon, .main {
     margin-left:0%;
     padding:0 0.9%;
   }
 
-  header, .content {
+  header, .content, .post-icon, .main {
     border:0px solid rgba(0,0,0,0);
     float:left;
     box-sizing:border-box;
@@ -76,7 +76,7 @@ html,body{height: 100%;}.pure-container{position:relative;height:100%;-webkit-ov
   .span_1 {
     width:8.33333333333%;
   }
-  .span_2 {
+  .span_2, .post-icon {
     width:16.6666666667%;
   }
   .span_3 {
@@ -94,7 +94,7 @@ html,body{height: 100%;}.pure-container{position:relative;height:100%;-webkit-ov
   .span_7 {
     width:58.3333333333%;
   }
-  .span_8, .content {
+  .span_8, .content, .main {
     width:66.6666666667%;
   }
   .span_9 {
@@ -196,6 +196,7 @@ header {
   }
   header {
     position: fixed;
+    top: 0;
   }
 }
 /* Header styles end */
@@ -263,7 +264,7 @@ aside {
   position: relative;
   top: 0.1rem;
 }
-.post-icon, .post-icon {
+.post-icon {
   margin: 2rem auto 0.5rem;
   text-align: center;
   display: block;
@@ -336,6 +337,7 @@ nav li:first-of-type {
 }
 /* Pure Drawer custom styles end */
 
+/* Post styles */
 .share > a:link, .share > div {
   margin-left: 1rem;
   text-decoration: none;
@@ -352,6 +354,19 @@ nav li:first-of-type {
   text-decoration: none;
   text-transform: uppercase;
 }
+
+@media screen and (min-width: 500px) and (max-width: 1499px) {
+  .post-icon {
+    text-align: right;
+    margin-top: 1.55rem;
+  }
+  .read_more_container {
+    text-align: right;
+    position: absolute;
+    right: 12.33333333%;
+  }
+}
+/* Post styles end */
 
 /* Displays only the first of each call-to-action */
 h4.store, h4.prerelease {
