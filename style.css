@@ -139,11 +139,12 @@ html,body{height: 100%;}.pure-container{position:relative;height:100%;-webkit-ov
   position: absolute;
   top: 1.5rem;
   z-index: 10;
-  width: 10rem;
+  width: 9rem;
   padding: 0.5rem;
 }
 .social-share-toggle:checked ~ .social-share-buttons {
-  display: block;
+  display: flex;
+  justify-content: space-around;
 }
 /* End social sharing toggle */
 
@@ -223,6 +224,9 @@ article, aside {
 }
 .dsq-comment-count {
   text-transform: uppercase;
+  text-decoration: none;
+}
+[class^="icon-"], [class*=" icon-"] {
   text-decoration: none;
 }
 /* Font styles end */
@@ -332,7 +336,7 @@ nav li:first-of-type {
 }
 /* Pure Drawer custom styles end */
 
-.share a:link, .share > div {
+.share > a:link, .share > div {
   margin-left: 1rem;
   text-decoration: none;
 }
