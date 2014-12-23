@@ -206,18 +206,18 @@
     <style>
     /* Icon font */
     @font-face {
-      font-family: 'PowerUp Tumblr';
-      src:url('http://static.tumblr.com/vz1s3fz/T89nft5on/powerup-tumblr.eot?8adbdn');
-      src:url('http://static.tumblr.com/vz1s3fz/T89nft5on/powerup-tumblr.eot?8adbdn') format('embedded-opentype'),
-      url('data:application/x-font-woff;charset=utf-8;base64,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') format('woff'),
-      url('http://static.tumblr.com/vz1s3fz/jzKnft5os/powerup-tumblr.ttf?8adbdn') format('truetype'),
-      url('http://static.tumblr.com/vz1s3fz/K0gnft5oz/powerup-tumblr.svg?8adbdn#icomoon') format('svg');
+      font-family: 'AlphaBlog Icons';
+      src:url('http://static.tumblr.com/vz1s3fz/T89nft5on/alphablog-icons.eot?8adbdn');
+      src:url('http://static.tumblr.com/vz1s3fz/T89nft5on/alphablog-icons.eot?8adbdn') format('embedded-opentype'),
+      url('data:application/x-font-woff;charset=utf-8;base64,AAEAAAALAIAAAwAwT1MvMg6SAzsAAAC8AAAAYGNtYXAaVcxoAAABHAAAAExnYXNwAAAAEAAAAWgAAAAIZ2x5ZhDujfAAAAFwAAAUZGhlYWQFy+0cAAAV1AAAADZoaGVhCQAFjgAAFgwAAAAkaG10eFNJA8UAABYwAAAAWGxvY2EtmCiIAAAWiAAAAC5tYXhwACMBNgAAFrgAAAAgbmFtZVcZpu4AABbYAAABRXBvc3QAAwAAAAAYIAAAACAAAwQAAZAABQAAApkCzAAAAI8CmQLMAAAB6wAzAQkAAAAAAAAAAAAAAAAAAAABEAAAAAAAAAAAAAAAAAAAAABAAADmEQPA/8D/wAPAAEAAAAABAAAAAAAAAAAAAAAgAAAAAAACAAAAAwAAABQAAwABAAAAFAAEADgAAAAKAAgAAgACAAEAIOYR//3//wAAAAAAIOYA//3//wAB/+MaBAADAAEAAAAAAAAAAAAAAAEAAf//AA8AAQAAAAAAAAAAAAIAADc5AQAAAAABAAAAAAAAAAAAAgAANzkBAAAAAAEAAAAAAAAAAAACAAA3OQEAAAAAAQB3ADAEaAN4AAgAACUHETchFxEHIQFz/PwB+fzQ/dvvvwKZr6/+5L4AAAABAFAAOQPDA1sACAAAJQE1Nxc3FxUBAgr+Rtzd3d3+RzkBkfmYhYWY+f5vAAIAeQAwBR4DTgAJABMAAAERIRczESMJASMFETMJATMRIScjBHD94LK3rgEKAQmu/W6v/vb+9q8CHK+3ATsBvrP+9f71AQsEAQsBDP70/kOyAAAAAAEAR//5A9kDnABbAAABIgYHDgEHJT4BNTwBNTwBNSUeARceATMyNjc+ATU0JicuASMiBgcOARUUFhUFLgEnLgEjIgYHDgEVFBYXHgEzMjY3PgE3BRQGFRQWFx4BMzI2Nz4BNTQmJy4BIwM1EB4ODhkL/sYBAQE8CxkNDR0PIjwWFxkZFxY8IiI7FxYaAf7ECxkNDR0QIjsXFhoaFhc7Ig4aDQwXCgFFARoWFzsiIjwWFxkZFxY8IgFABgYFEAqfAwYDBAYDBAcDoQkPBQUFGhYWPCEiPBYWGhoWFjwiAwgDoQkPBQUFGRcWOyIiOxYXGQQEBAwIpQIEAyE8FhYaGhYWPCEiPBYWGgAAAAACAAD/zQP9A8oALgBIAAAFJw4BBw4BIyImJy4BNTQ2Nz4BMzIWFx4BFRQGBw4BBxceAQcOAQ8BDgEHBiYnMQM0JicuASMiBgcOARUUFhceATMyNjc+ATUxA3rxGTYdHT0gV5g5OUJCOTmYV1eZOTlCCQgIFw/zBAEDAw0KJAoUCgkQBL8sJiZmOjpmJiYsLCYmZjo6ZiYmLDHzERkJCQlCOjmaWFeaOTpCQjo5mlcfOxwcNBj0BRAJChQKJQkOAwMBBAJVOmcmJi0tJiZnOjtnJiYtLSYmZzsAAAAABAAr/8kEwgOKAB8AOgBVAHAAABMhMhYXHgEVERQGBw4BIyEHJyMiJicuATURNDY3PgEzExQWFx4BMzI2Nz4BNTQmJy4BIyIGBw4BFTkBIRQWFx4BMzI2Nz4BNTQmJy4BIyIGBw4BFTkBIRQWFx4BMzI2Nz4BNTQmJy4BIyIGBw4BFTkBlgPBFyYPDhERDg8nFv3ny31gFicODxERDg8mF3kMCwsdEREcCwsMDAsLHBERHQsLDAElDQsKHhARHQsKDAwKCx0REB4KCw0BJgwLCx0RER0KCwwMCwodEREdCwsMA4oRDg8nFv3EFicPDhGvrxEODycWAjwWJw8OEf5mEh4MCwwMCwweEhIfCwsMDAsLHxISHgwLDAwLDB4SEh8LCwwMCwsfEhIeDAsMDAsMHhISHwsLDAwLCx8SAAIATACDBSoDEQCZATMAACUzOgE3MjYzPgEzLgEnLgEnIyImJy4BNTQ2Nz4BOwEyFhceARcxMjAxHgEXHgEXHgEXHgExOAExOAExHgEXHgEVFAYHDgEHFAYjHgEXHgE7AT4BNz4BNTQmJy4BJy4BJy4BJy4BJy4BJyI0MSY0Jy4BJy4BJy4BJy4BJzAiMSYiIy4BIzgBMS4BJy4BKwEiBgcOARUUFhceATMBIyIGIw4BByIGIx4BFx4BFzMyFhceARUUBgcOASsBIiYnLgEnMTgBMS4BJy4BJy4BJy4BMTQwMTgBMS4BJy4BNTQ2Nz4BNzQ2NS4BJy4BKwEOAQcOARUUFhceARceARceARceARceARcUMjEUFjMeARceARceARceARcUMjEyFjMeARc4ATMeARceATsBMjY3PgE1NCYnLgEjAYe/BgwGBgwGAwUCFigREh0MeSI9FxcaGhcXPSLRDx4ODRoKAQIEAgIDAgMFAQIBCAsEAwUEBAQKBwEBCRILChYLQAYKAwMEBAMDCgYBAwEBAwEBAgIBAgEBAQENIRMTKhgDBQMDBgMBAQIBAwUDCRMKChQKv0FzKysxMSsrc0ECaL8GDAYGDAYDBQIWJxIRHgx5Ij0XFhsbFhc9ItEPHg4OGQsCBAICAwIDBQIBAgcLBAQEBAQDCwcBCBILChYMPwYKAwQDAwQDCgYBAgIBAwEBAgECAgEBAQENIRITKxcDBgMDBgMBAQIBAwUCAQkTCgoUCr9BcysrMTErK3NBgwECAQENIRITKhgbFxg/JCQ/FxgbBgUGDwoCBAICAwIEBgIDAgsXDA0aDg4aDAwXCgEBCAsEBAQPHxARIRIRIhAQIA8CBgMCBgICBQICBQIBAQEBFicQERoKAQMBAQIBAQECAwQBAQI0LCx4Q0R3LSwzAo4BAQEBAg0gExMqFxsYFz8kJD8YFxsFBgUQCQMDAgIEAQQGAwICAQoXDQwbDg0aDAwXCgEBAQcLBAQFDyAQECIREiEREB8PAwYCAwUDAgQDAgQCAQECFicREBsKAQIBAQIBAQEBAQEDAwIBATMsLXdEQ3gsLDQAAwBZAB4FLAN1AAgAJQA+AAAlIxEhEScBJwEDIgYHDgEVERQWFx4BMyEyNjc+ATURNCYnLgEjIRMyNjc+ATU0JicuASMiBgcOARUUFhceATMBFVID/5z+zLL+1V0TIw0NDw8NDSMTBBUTIw0NDw8NDSMT++vWGSsQEBMTEBArGRkrEBATExAQKxmIAoP+2KX+qI7+ygLtDw0NIhT9ZxMjDQ0PDw0NIxMCmRQiDQ0P/lUSEBErGBkrEBATExAQKxkYKxEQEgAAAAAEAGIAGQSQA20ABgAiAD4AWgAAEzMXEQcjESU0JicuAScHHgEXHgEVFAYHDgEHFz4BNz4BNTEjNCYnLgEnBx4BFx4BFRQGBw4BBxc+ATc+ATUxJwceARceARUUBgcOAQcXPgE3PgE1NCYnLgEnMWLj9vHoBC4ZFhdCKT0kOBMUFRUUEzgkPSlCFxYZrBEREC8dPRglDQ0ODg0NJRg9HS8QERH3PgwTBwYHBwYHEww+ERwKCgoKCgocEQEX5AMf4/6orD52NjZhKT0jUy4uZjU2ZS4uUyM9KWA2Nnc+LFUmJ0UdPBg3Hx9DJCRDHx84FzwdRSYnVC23PQwbEA8iEhIiDxAbDD0RKhcXMxsbMhgXKRIAAAAD////4gPPA7EAHABEAF4AABMBPgEzMhYXAR4BFRQGBwEOASMiJicBLgE1NDY3BTMmNjc+ATU0JicuASMiBgcOAQcXPgE3PgEzMhYXHgEVFAYHDgEXMQcUFhceATMyNjc+ATU0JicuASMiBgcOARUxMwE4GUEiIkEaATcaGhoa/skaQSIiQRn+yBoaGhoBiFsDHhMTIRYSEzMeFCQQEBwMOQcOCAgRCgsRBgYHIBESGwUWCQkIFw0OFgkICgoICRYODRcICQkCRgE4GhkZGv7IGkAiIkEa/skaGhoaATcaQSIhQRqxHy0VFS4hHy0PDw4JCAkXDzQHDAQFBQYGBRELFCUVFjUklw4XCQkKCgkJFw4OGAkJCgoJCRgOAAQAVgDqBQgCqgAiAEUAaACLAAABDgEHDgEVFBYXHgEzMjY3PgE1NCYnLgEjIgYHNDY3PgE3JyEOAQcOARUUFhceATMyNjc+ATU0JicuASMiBgc0Njc+ATcnEz4BNz4BNTQmJy4BIyIGBw4BFRQWFx4BMzoBNxQGBw4BBxchPgE3PgE1NCYnLgEjIgYHDgEVFBYXHgEzOgE3FAYHDgEHFwEILUMWFhYPEA8tHhYkDQ0ODw0NJBUCBwINDg4pGykBKS1DFhYWDxAPLR4WJA0NDxANDSQVAgcCDg0OKRwq/C1DFhcVDw8QLR4VJA4NDg8NDiMVAwYCDQ4OKRspASktRBYWFQ8PDy4eFSQNDQ8PDQ4kFAMGAw4ODikbKQKVFTchIUwqKD4VFhYPDQ4nGBUjDAwOAQEaKxIRHgxUFTchIUwqKD4VFhYPDQ4nGBUjDAwOAQEaKxIRHgxU/mkWNiEhTCsnPhYVFw8ODiYYFiMMDA0BGisREh0MVRY2ISFMKyc+FhUXDw4OJhgWIwwMDQEaKxESHQxVAAAAAAMAAv/JA/kDwAAcAC4AMgAAEw4BFRQWHwEeATMyNjcBPgE1NCYvAS4BIyIGBwEBBxc3PgEnLgExJzAmJyYGBzEBAyUneAcIBwipBxIJChEHAdwHBwcHqgcSCQkSB/4lAoZk7mQNAwMECaoMCQoYDf02MgEg7gEtCBEJChEIqQcHBwcB2wcSCQkSB6oHBwcH/iUChmTuZA0ZCQoLqgoDAwMN/Tf+3zPuAAwARQARBT8DgwAcACEAJgArADAANQA6AD4AQwBIAE0AUgAAEyEyFhceARURFAYHDgEjISImJy4BNRE0Njc+ATMHFTM1Ix0BMzUjJRUzNSMdATM1IwUVMzUjIRUzNSMHJRElFxUzNSMhFTM1IyUVMzUjIRUzNSOnBDYUJA0NEBANDSQU+8oVIw4NDw8NDiMVMZOTk5MEBZOTk5P7+5OTBAWTk9D+UAGw0JOT+/uTkwQFk5P7+5OTA4MQDQ0kFP1RFCMODQ8PDQ4jFAKvFCQNDRBiYmKTYmKTYmKTYmKTYmJiYjf5/g3672JiYmKTYmJiYgAAAAALAA//twNeA7cACgASABsAMABDAGIAbQCOAJoArQDCAAAlFRQjIic1NjMyFRcVIzU0MzIVJTM1IxUzETMREzMRIxUGIyInJj0BIxUUFxYzMjcVNzU0JyYjIgc1IxEzNRYzMjc2NTc1IxQHBiMiPQEzNTQnJiMiBwYdARQXFjMyNzY3NjUBNTQjIh0BFDMyNQEUBwYHBgcGIyInJicmJyY1NDc2NzY3NjMyFxYXFhcWFQEzBxUjNSYnJiczFxcVFAcGIyInJj0BNDc2MzIXFhU3ESM1BiMiJyY9ATMVFBUWMzI3NTMCKxYODAwOFsEzGRr92D2yPDmlMjISDwoCATIEBxocH/UFCh8dGDMzGhsfCgXBNAEEExpmEBYmJxYQEBcnKRUKAgH+pBgZGRgBmw8IGRkhadTUaSEaGQgPDwgZGiFp1NRpIRoZBw/9xjpFOQgbFRA9KPoQFScmFhAQFiYnFRDANB4dGggENAIKEBE08HkmDawMJgEaGicnfTY2/rsBRf67ARrYGAwCEtDfHA4VIx9UcSoPIB98/oUbHx8QKQYIHgUVKDE7LRUeHhUtYy0VHR4QDwUcAgp4Jyd4KCj+U4ZCIhcXAwwMAxcXIkCIhUMhFxcEDAwEFxchQIgC2eSbmypPOzCWKGQvFR0dFi5kLRUeHhUtXP7jHyMVDh3h0hICDBjaAAAABAASAAADmgO3AEEAYACNAJoAAAEUFxYXFhcWFxYVFAcGBwYjIicmJyY1NDc2NzY3JicmNTQ3BiMiJyY1NDc2NzY3NjsBByMWFxYVFAcGBwYHBgcGFScyNzY3NjU0JyYnJicmIyIHBgcGFRQXFhcWFxYXFjMTMjc2NzY3NjU0JyYnJicmJyYnJicmJyYnJiMiBwYHBgcGBwYVFBcWFxYXFjMBMxUjFSM1IzUzNTMVAaQSExoaGRoSExwpT1BbS0JBIRUaGSpLnBIJCQwaDVQ6OhQVJCw8PUDuTksqFhUODhMUFBQODlMVFxcPHgoJEhIfHiQYGBcOGwYGDAwSERkaHgEhHh8aGhAPBAQEBAsLBgYQEAUFExMCCRIeHh4fIBgYDw8UFCAgJCQlAc95eTx6ejwB8BUTFBMTFxclJC0zMEUhIRgXNyMoLignGy4LGBISGBQcAjc3VS8sLB8lExIyJCgoNCkhIRQUERESExM3CQoPITohJicjJBgXCwsTIjoaHR4dHhcXDw/+DQcIDw8aGyQODg0LCg0OBgcNDQQDDg4BAQQECgsQEBobIigeHxEQCQgB9T59fT58fAAAAQAZAEkDngMlADsAAAEGBxYVFAcGBwYHBgcGIyInFjMyNyYnJicWMzI3JicmPQEWFyYnJjU0NxYXFhcmNTQ3NjMyFzY3Bgc2NwOeJzYBFhYsLD0+VlZim4EUGYBlPDAvEhMQGRhAKionLCYWFhlFY2NyBTY2TVA2PzcWPDY1As44KAgQSkpKREQ0NR8fUwJPASMkOAMGDTMyQwIVAhkpKDAyK1UzNAUVFU02NjsMIUIkBhcAAQA2AAACJAO3ABcAAAEVIyIHBh0BMwcjESMRIzUzNTQ3NjMyFwIkWjEREacWka+Skjs8Y1QuA7CXFBUpbKn+TgGyqXxrOjsHAAAAAAgAAAAABG4DtwAQACEAZgB3AIIAowCuAMkAAAEUBwYjIicmNTQ3NjMyFxYVJTIXFhUUBwYjIicmNTQ3NjMlFAcGBxYVFAcGBwYHBiMiJyYnJicmNTQ3JicmNTQ3NjMyFzY/ATY3Nh8BNjc2MzIXFhUUBwYjIicmNScHFhc2MzIXFhUDIgcGFRQXFjMyNzY1NCcmIwEUFzY3JiMiBwYVATY3NjU0JyYnJicmIyIHBgcGBwYVFBcWFxYXFjMyNzY3EzY1NCcmIyIHFhcFNjMyFxYVFAcGKwEiJyY1NDc2MzIXFjsBMjcB2xcXICEXGBgYICAXFwEHIBcYGBcgIBgXGBcgAYwSEh0CJydKR1xbZGVcW0dKJycDHBARJiU2MCWNxU0CCAcJxg0aGyAsHx8fHywsHx+0Q7uFJTI1Jia3GhISEhIaGhISEhIa/HUdHEsVGiMZGQNTQCIiIiJAQlVWXV5WVUJAIiIiIkBCVVZeXVZVQqIhGRkjHBZLG/6uBgkJBwYGOX4BfTkGBgYJCgYsawFsLAGQIBcXFxcgIRcXFxchTxcXISAXFxcXICEXFwckHR4RExBFPz4wLxkZGRkvMD4+RhAWER0dIjUmJiBbA/IIBAQBLxwSEh8fLCwgHx8eLCvRCFchJiY1AaUSExkaEhMTEhoZExL+WycZSzwOGRkj/p8qNTU6OjQ1KisXFxcXKyo1NDo6NTUqKxcXFxcrAR4aKSMZGRA8TNIGBgcJCgY4OAYKCQcGBiwsAAAAAQAAAAAAAPyvNbpfDzz1AAsEAAAAAADQt9RPAAAAANC31E////+3BT8DygAAAAgAAgAAAAAAAAABAAADwP/AAAAFt///AAAFPwABAAAAAAAAAAAAAAAAAAAAFgAAAAAAAAAAAAAAAAIAAAAE2wB3BEAAUAW3AHkERABHBAAAAAUcACsFcwBMBa8AWQT0AGID1f//BVcAVgQAAAIFrwBFBAAADwO3ABIDtwAZAkkANgRuAAAAAAAAAAoAFAAeADQASgB0APoBaAIGA5wEAASKBRgF5AY4BrIHtgiUCO4JFAoyAAAAAQAAABYBNAAMAAAAAAACAAAAAAAAAAAAAAAAAAAAAAAAAA4ArgABAAAAAAABAA4AAAABAAAAAAACAA4ARwABAAAAAAADAA4AJAABAAAAAAAEAA4AVQABAAAAAAAFABYADgABAAAAAAAGAAcAMgABAAAAAAAKADQAYwADAAEECQABAA4AAAADAAEECQACAA4ARwADAAEECQADAA4AJAADAAEECQAEAA4AVQADAAEECQAFABYADgADAAEECQAGAA4AOQADAAEECQAKADQAYwBpAGMAbwBtAG8AbwBuAFYAZQByAHMAaQBvAG4AIAAxAC4AMABpAGMAbwBtAG8AbwBuaWNvbW9vbgBpAGMAbwBtAG8AbwBuAFIAZQBnAHUAbABhAHIAaQBjAG8AbQBvAG8AbgBGAG8AbgB0ACAAZwBlAG4AZQByAGEAdABlAGQAIABiAHkAIABJAGMAbwBNAG8AbwBuAC4AAAAAAwAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==') format('woff'),
+      url('http://static.tumblr.com/vz1s3fz/jzKnft5os/alphablog-icons.ttf?8adbdn') format('truetype'),
+      url('http://static.tumblr.com/vz1s3fz/K0gnft5oz/alphablog-icons.svg?8adbdn#icomoon') format('svg');
       font-weight: normal;
       font-style: normal;
     }
 
     [class^="icon-"], [class*=" icon-"] {
-      font-family: 'PowerUp Tumblr';
+      font-family: 'AlphaBlog Icons';
       speak: none;
       font-style: normal;
       font-weight: normal;
@@ -230,6 +230,21 @@
       -moz-osx-font-smoothing: grayscale;
     }
 
+    .icon-youtube:before {
+      content: "\e60d";
+    }
+    .icon-google-plus:before {
+      content: "\e60e";
+    }
+    .icon-twitter:before {
+      content: "\e60f";
+    }
+    .icon-facebook:before {
+      content: "\e610";
+    }
+    .icon-reddit:before {
+      content: "\e611";
+    }
     .icon-comments:before {
       content: "\e600";
     }
@@ -648,7 +663,10 @@
                                                     <input type="checkbox" id="social-share-toggle-{PostID}" class="social-share-toggle">
                                                     <label class="icon-share" for="social-share-toggle-{PostID}"></label>
                                                     <div class="social-share-buttons">
-                                                      Social sharing
+                                                      <a href="https://www.facebook.com/sharer/sharer.php?u={URLEncodedPermalink}"><span class="icon-facebook"></span></a>
+                                                      <a href="https://twitter.com/home?status={block:Title}{PlaintextTitle}%20{/block:Title}{block:Caption}{PlaintextCaption}%20{/block:Caption}{block:IfName}{PlaintextName}%20{/block:IfName}{block:IfQuestion}{PlaintextQuestion}%20{/block:IfQuestion}{URLEncodedPermalink}"><span class="icon-twitter"></span></a>
+                                                      <a href="https://plus.google.com/share?url={URLEncodedPermalink}"><span class="icon-google-plus"></span></a>
+                                                      <a href="http://reddit.com/submit?url={URLEncodedPermalink}{block:Title}&title={PlaintextTitle}{/block:Title}{block:Caption}&title={PlaintextCaption}{/block:Caption}{block:IfName}&title={PlaintextName}{/block:IfName}{block:IfQuestion}&title={PlaintextQuestion}{/block:IfQuestion}"><span class="icon-reddit"></span></a>
                                                     </div>
                                                   </div>
                                                   <a href="{Permalink}#disqus_thread"><span class="icon-comments"></span></a>
@@ -658,11 +676,29 @@
                                           </div>
                                           {/block:IndexPage}
                                           {/block:Posts}
-                                          {block:IndexPage}
                                         </section>
-                                        {/block:IndexPage}
                                         <!-- Comments -->
                                         {block:Posts}{block:Permalink}{block:Date}
+                                        <aside class="row group">
+                                          <div class="col share">
+                                            <div class="custom-like-button">
+                                              {LikeButton}
+                                              <span class="custom-button icon-like"></span>
+                                            </div>
+                                            <a href="{ReblogURL}"><span class="icon-reblog"></span></a>
+                                            <div class="social-share">
+                                              <input type="checkbox" id="social-share-toggle-{PostID}" class="social-share-toggle">
+                                              <label class="icon-share" for="social-share-toggle-{PostID}"></label>
+                                              <div class="social-share-buttons">
+                                                <a href="https://www.facebook.com/sharer/sharer.php?u={URLEncodedPermalink}"><span class="icon-facebook"></span></a>
+                                                <a href="https://twitter.com/home?status={block:Title}{PlaintextTitle}%20{/block:Title}{block:Caption}{PlaintextCaption}%20{/block:Caption}{block:IfName}{PlaintextName}%20{/block:IfName}{block:IfQuestion}{PlaintextQuestion}%20{/block:IfQuestion}{URLEncodedPermalink}"><span class="icon-twitter"></span></a>
+                                                <a href="https://plus.google.com/share?url={URLEncodedPermalink}"><span class="icon-google-plus"></span></a>
+                                                <a href="http://reddit.com/submit?url={URLEncodedPermalink}{block:Title}&title={PlaintextTitle}{/block:Title}{block:Caption}&title={PlaintextCaption}{/block:Caption}{block:IfName}&title={PlaintextName}{/block:IfName}{block:IfQuestion}&title={PlaintextQuestion}{/block:IfQuestion}"><span class="icon-reddit"></span></a>
+                                              </div>
+                                            </div>
+                                            <a href="{Permalink}#disqus_thread"><span class="icon-comments"></span></a>
+                                          </div>
+                                        </aside>
                                         {block:IfDisqusShortname}
                                         <aside>
                                           <div id="disqus_thread"></div>
@@ -683,23 +719,6 @@
                                 </aside>
 
                                 {/block:IfDisqusShortname}
-                                <aside class="row group">
-                                  <div class="col share">
-                                    <div class="custom-like-button">
-                                      {LikeButton}
-                                      <span class="custom-button icon-like"></span>
-                                    </div>
-                                    <a href="{ReblogURL}"><span class="icon-reblog"></span></a>
-                                    <div class="social-share">
-                                      <input type="checkbox" id="social-share-toggle-{PostID}" class="social-share-toggle">
-                                      <label class="icon-share" for="social-share-toggle-{PostID}"></label>
-                                      <div class="social-share-buttons">
-                                        Social sharing
-                                      </div>
-                                    </div>
-                                    <a href="{Permalink}#disqus_thread"><span class="icon-comments"></span></a>
-                                  </div>
-                                </aside>
                                 {/block:Date}{/block:Permalink}{/block:Posts}
                                 <!-- End comments -->
 
