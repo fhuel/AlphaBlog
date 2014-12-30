@@ -25,3 +25,42 @@ $('#search-form input').keydown(function(e) {
     $('#search-form').submit();
   }
 });
+
+// Determines which transition event this browser has. Useful for the header
+// position fix.
+function whichTransitionEvent(){
+    var t;
+    var el = document.createElement('fakeelement');
+    var transitions = {
+      'transition':'transitionend',
+      'OTransition':'oTransitionEnd',
+      'MozTransition':'transitionend',
+      'WebkitTransition':'webkitTransitionEnd'
+    }
+
+    for(t in transitions){
+        if( el.style[t] !== undefined ){
+            return transitions[t];
+        }
+    }
+}
+
+// The drawer's transform causes the fixed header in the medium layout to
+// become fixed relative to the parent rather than the window. This switches
+// that element to absolute positioning and positions based on the container's
+// scroll position. The inline styles are removed when the drawer is closed.
+var headerEl = document.querySelectorAll('header')[0];
+var pusherEl = document.querySelectorAll('.pure-pusher')[0];
+var drawerToggleEl = document.querySelectorAll('#pure-toggle-left')[0];
+
+drawerToggleEl.addEventListener('change', function toggleHeaderPosition(){
+  if (drawerToggleEl.checked && window.innerWidth >= 500 && window.innerWidth <= 1499) {
+    headerEl.style.position = 'absolute';
+    headerEl.style.top = pusherEl.scrollTop + 'px';
+  } else {
+    pusherEl.addEventListener(whichTransitionEvent(), function unsetHeaderInlineStyles(e){
+      headerEl.removeAttribute('style');
+      e.target.removeEventListener(e.type, arguments.callee);
+    });
+  }
+});
