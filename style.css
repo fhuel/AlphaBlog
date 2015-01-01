@@ -53,9 +53,9 @@ html,body{height: 100%;}.pure-container{position:relative;height:100%;-webkit-ov
   width:100%;
 }
 
-/* 2. 12 Column Grid 500px - 1499px */
+/* 2. 12 Column Grid 850px - 1499px */
 
-@media screen and (min-width: 500px) and (max-width: 1499px) {
+@media screen and (min-width: 850px) and (max-width: 1499px) {
 
   .col, header, .header-spacer, .content, .post-icon, .main {
     margin-left:0%;
@@ -186,7 +186,7 @@ header {
   display: none;
 }
 
-@media screen and (min-width: 500px) and (max-width: 1499px) {
+@media screen and (min-width: 850px) and (max-width: 1499px) {
   .header-spacer {
     height: 100%;
     border:0px solid rgba(0,0,0,0);
@@ -353,7 +353,7 @@ nav li:first-of-type {
   text-transform: uppercase;
 }
 
-@media screen and (min-width: 500px) and (max-width: 1499px) {
+@media screen and (min-width: 850px) and (max-width: 1499px) {
   .post-icon {
     text-align: right;
     margin-top: 1.55rem;
