@@ -53,11 +53,15 @@ html,body{height: 100%;}.pure-container{position:relative;height:100%;-webkit-ov
   width:100%;
 }
 
+.col.share {
+  padding-left: 0;
+}
+
 /* 2. 12 Column Grid 850px - 1499px */
 
 @media screen and (min-width: 850px) and (max-width: 1499px) {
 
-  .col, header, .header-spacer, .content, .post-icon, .main {
+  .col, header, .header-spacer, .content, .post-icon, .main, .col.share {
     margin-left:0%;
     padding:0 0.9%;
   }
@@ -116,7 +120,7 @@ html,body{height: 100%;}.pure-container{position:relative;height:100%;-webkit-ov
 
 @media screen and (min-width: 1500px) {
 
-  .col {
+  .col, .col.share {
     margin-left:0%;
     padding:0 0.8%;
   }
