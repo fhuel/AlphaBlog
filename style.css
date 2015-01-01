@@ -257,8 +257,6 @@ aside {
 .author-avatar {
   vertical-align: middle;
   border-radius: 50%;
-  margin-right: 0.5rem;
-  float: left;
 }
 .authorship p {
   position: relative;
