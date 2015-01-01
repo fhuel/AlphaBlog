@@ -202,6 +202,15 @@ header {
     position: fixed;
     top: 0;
   }
+  .info-container {
+    width: 94.6%
+  }
+}
+@media screen and (min-width: 1500px) {
+  .info-container {
+    /* todo: fix this value to fit inside the header */
+    width: 98.4%
+  }
 }
 /* Header styles end */
 
