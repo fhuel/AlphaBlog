@@ -390,27 +390,27 @@
       <div class="store-links">
         {block:IfURLAmazonAppStore}
         <h4 class="store">Get your copy on</h4>
-          <a href="{text:URL Amazon App Store}">Amazon</a>
+        <a href="{text:URL Amazon App Store}">Amazon</a>
         {/block:IfURLAmazonAppStore}
         {block:IfURLAppleAppStore}
         <h4 class="store">Get your copy on</h4>
-          <a href="{text:URL Apple App Store}">Apple</a>
+        <a href="{text:URL Apple App Store}">Apple</a>
         {/block:IfURLAppleAppStore}
         {block:IfURLGooglePlayStore}
         <h4 class="store">Get your copy on</h4>
-          <a href="{text:URL Google Play Store}">Google Play</a>
+        <a href="{text:URL Google Play Store}">Google Play</a>
         {/block:IfURLGooglePlayStore}
         {block:IfURLItchio}
         <h4 class="store">Get your copy on</h4>
-          <a href="{text:URL Itchio}">Itch.io</a>
+        <a href="{text:URL Itchio}">Itch.io</a>
         {/block:IfURLItchio}
         {block:IfURLSteamStore}
         <h4 class="store">Get your copy on</h4>
-          <a href="{text:URL Steam Store}">Steam Store</a>
+        <a href="{text:URL Steam Store}">Steam Store</a>
         {/block:IfURLSteamStore}
         {block:IfURLWindowsPhone}
         <h4 class="store">Get your copy on</h4>
-          <a href="{text:URL Windows Phone}">Windows Phone</a>
+        <a href="{text:URL Windows Phone}">Windows Phone</a>
         {/block:IfURLWindowsPhone}
       </div>
 
@@ -418,15 +418,15 @@
       <div class="prerelease-links">
         {block:IfURLKickstarter}
         <h4 class="prerelease">Help make it happen on</h4>
-          <a href="{text:URL Kickstarter}">Kickstarter</a>
+        <a href="{text:URL Kickstarter}">Kickstarter</a>
         {/block:IfURLKickstarter}
         {block:IfURLIndieGogo}
         <h4 class="prerelease">Help make it happen on</h4>
-          <a href="{text:URL IndieGogo}">IndieGogo</a>
+        <a href="{text:URL IndieGogo}">IndieGogo</a>
         {/block:IfURLIndieGogo}
         {block:IfURLSteamGreenlight}
         <h4 class="prerelease">Help make it happen on</h4>
-          <a href="{text:URL Steam Greenlight}">Steam Greenlight</a>
+        <a href="{text:URL Steam Greenlight}">Steam Greenlight</a>
         {/block:IfURLSteamGreenlight}
       </div>
     </div>
@@ -443,152 +443,134 @@
         </header>
         <div class="header-spacer"></div>
         <section class="content">
-        {block:NoSearchResults}<h2>No posts match the query {SearchQuery}</h2>{/block:NoSearchResults}
-        {block:Posts}
-        {block:Text}
-        <div class="row">
-          <span class="icon-text col post-icon"></span>
-          <div class="col main">
-            <article>
-              {block:Title}
-              <h3><a href="{Permalink}">{Title}</a></h3>
-              {/block:Title}
-              <div class="authorship">
-                <p>
-                  {block:Date}
-                  {Month} {DayOfMonth}, {Year} by <img src="{PostAuthorPortraitURL-30}" alt="Post author avatar" class="author-avatar"> {PostAuthorName}
-                  {/block:Date}
-                </p>
-              </div>
-              {Body}
-            </article>
-            {/block:Text}
-            {block:Photo}
-            <div class="row">
-              <span class="icon-photo col post-icon"></span>
-              <div class="col main">
-                <article>
-                  <div class="authorship">
-                    <p>
-                      {block:Date}
-                      {Month} {DayOfMonth}, {Year} by <img src="{PostAuthorPortraitURL-30}" alt="Post author avatar" class="author-avatar"> {PostAuthorName}
-                      {/block:Date}
-                    </p>
-                  </div>
-                  <img src="{PhotoURL-500}" alt="{PhotoAlt}"/>
+          {block:NoSearchResults}<h2>No posts match the query {SearchQuery}</h2>{/block:NoSearchResults}
+          {block:Posts}
+          {block:Text}
+          <div class="row">
+            <span class="icon-text col post-icon"></span>
+            <div class="col main">
+              <article>
+                {block:Title}
+                <h3><a href="{Permalink}">{Title}</a></h3>
+                {/block:Title}
+                <div class="authorship">
+                  <p>
+                    {block:Date}
+                    {Month} {DayOfMonth}, {Year} by <img src="{PostAuthorPortraitURL-30}" alt="Post author avatar" class="author-avatar"> {PostAuthorName}
+                    {/block:Date}
+                  </p>
+                </div>
+                {Body}
+                <p class="permalink-container"><a href="{Permalink}">Permalink</a></p>
+              </article>
+              {/block:Text}
+              {block:Photo}
+              <div class="row">
+                <span class="icon-photo col post-icon"></span>
+                <div class="col main">
+                  <article>
+                    <div class="authorship">
+                      <p>
+                        {block:Date}
+                        {Month} {DayOfMonth}, {Year} by <img src="{PostAuthorPortraitURL-30}" alt="Post author avatar" class="author-avatar"> {PostAuthorName}
+                        {/block:Date}
+                      </p>
+                    </div>
+                    <img src="{PhotoURL-500}" alt="{PhotoAlt}"/>
 
-                  {block:Caption}
-                  <div class="caption">{Caption}</div>
-                  {/block:Caption}
-                </article>
-                {/block:Photo}
-                {block:Panorama}
-                <div class="row">
-                  <span class="icon-photo col post-icon"></span>
-                  <div class="col main">
-                    <article>
-                      <div class="authorship">
-                        <p>
-                          {block:Date}
-                          {Month} {DayOfMonth}, {Year} by <img src="{PostAuthorPortraitURL-30}" alt="Post author avatar" class="author-avatar"> {PostAuthorName}
-                          {/block:Date}
-                        </p>
-                      </div>
-                      {LinkOpenTag}
-                      <img src="{PhotoURL-Panorama}" alt="{PhotoAlt}"/>
-                      {LinkCloseTag}{block:Caption}
-                      <div class="caption">{Caption}</div>
-                      {/block:Caption}
-                    </article>
-                    {/block:Panorama}
-                    {block:Photoset}
-                    <div class="row">
-                      <span class="icon-photo col post-icon"></span>
-                      <div class="col main">
-                        <article>
-                          <div class="authorship">
-                            <p>
-                              {block:Date}
-                              {Month} {DayOfMonth}, {Year} by <img src="{PostAuthorPortraitURL-30}" alt="Post author avatar" class="author-avatar"> {PostAuthorName}
-                              {/block:Date}
-                            </p>
-                          </div>
-                          {Photoset-500}{block:Caption}
-                          <div class="caption">{Caption}</div>
-                          {/block:Caption}
-                        </article>
-                        {/block:Photoset}
-                        {block:Quote}
-                        <div class="row">
-                          <span class="icon-quote col post-icon"></span>
-                          <div class="col main">
-                            <article>
-                              <div class="authorship">
-                                <p>
-                                  {block:Date}
-                                  {Month} {DayOfMonth}, {Year} by <img src="{PostAuthorPortraitURL-30}" alt="Post author avatar" class="author-avatar"> {PostAuthorName}
-                                  {/block:Date}
-                                </p>
-                              </div>
-                              &ldquo;{Quote}&rdquo;
+                    {block:Caption}
+                    <div class="caption">{Caption}</div>
+                    {/block:Caption}
+                    <p class="permalink-container"><a href="{Permalink}">Permalink</a></p>
+                  </article>
+                  {/block:Photo}
+                  {block:Panorama}
+                  <div class="row">
+                    <span class="icon-photo col post-icon"></span>
+                    <div class="col main">
+                      <article>
+                        <div class="authorship">
+                          <p>
+                            {block:Date}
+                            {Month} {DayOfMonth}, {Year} by <img src="{PostAuthorPortraitURL-30}" alt="Post author avatar" class="author-avatar"> {PostAuthorName}
+                            {/block:Date}
+                          </p>
+                        </div>
+                        {LinkOpenTag}
+                        <img src="{PhotoURL-Panorama}" alt="{PhotoAlt}"/>
+                        {LinkCloseTag}{block:Caption}
+                        <div class="caption">{Caption}</div>
+                        {/block:Caption}
+                        <p class="permalink-container"><a href="{Permalink}">Permalink</a></p>
+                      </article>
+                      {/block:Panorama}
+                      {block:Photoset}
+                      <div class="row">
+                        <span class="icon-photo col post-icon"></span>
+                        <div class="col main">
+                          <article>
+                            <div class="authorship">
+                              <p>
+                                {block:Date}
+                                {Month} {DayOfMonth}, {Year} by <img src="{PostAuthorPortraitURL-30}" alt="Post author avatar" class="author-avatar"> {PostAuthorName}
+                                {/block:Date}
+                              </p>
+                            </div>
+                            {Photoset-500}{block:Caption}
+                            <div class="caption">{Caption}</div>
+                            {/block:Caption}
+                            <p class="permalink-container"><a href="{Permalink}">Permalink</a></p>
+                          </article>
+                          {/block:Photoset}
+                          {block:Quote}
+                          <div class="row">
+                            <span class="icon-quote col post-icon"></span>
+                            <div class="col main">
+                              <article>
+                                <div class="authorship">
+                                  <p>
+                                    {block:Date}
+                                    {Month} {DayOfMonth}, {Year} by <img src="{PostAuthorPortraitURL-30}" alt="Post author avatar" class="author-avatar"> {PostAuthorName}
+                                    {/block:Date}
+                                  </p>
+                                </div>
+                                &ldquo;{Quote}&rdquo;
 
-                              {block:Source}
-                              <div class="source">{Source}</div>
-                              {/block:Source}
-                            </article>
-                            {/block:Quote}
-                            {block:Link}
-                            <!-- Links are not taking the full width of the row. -->
-                            <div class="row">
-                              <span class="icon-link col post-icon"></span>
-                              <div class="col main">
-                                <article>
-                                  <div class="authorship">
-                                    <p>
-                                      {block:Date}
-                                      {Month} {DayOfMonth}, {Year} by <img src="{PostAuthorPortraitURL-30}" alt="Post author avatar" class="author-avatar"> {PostAuthorName}
-                                      {/block:Date}
-                                    </p>
-                                  </div>
-                                  <a href="{URL}" class="link" {Target}>{Name}</a>
+                                {block:Source}
+                                <div class="source">{Source}</div>
+                                {/block:Source}
+                                <p class="permalink-container"><a href="{Permalink}">Permalink</a></p>
+                              </article>
+                              {/block:Quote}
+                              {block:Link}
+                              <!-- Links are not taking the full width of the row. -->
+                              <div class="row">
+                                <span class="icon-link col post-icon"></span>
+                                <div class="col main">
+                                  <article>
+                                    <div class="authorship">
+                                      <p>
+                                        {block:Date}
+                                        {Month} {DayOfMonth}, {Year} by <img src="{PostAuthorPortraitURL-30}" alt="Post author avatar" class="author-avatar"> {PostAuthorName}
+                                        {/block:Date}
+                                      </p>
+                                    </div>
+                                    <a href="{URL}" class="link" {Target}>{Name}</a>
 
-                                  {block:Description}
-                                  <div class="description">{Description}</div>
-                                  {/block:Description}
-                                </article>
-                                {/block:Link}
-                                {block:Chat}
-                                <div class="row">
-                                  <span class="icon-quote col post-icon"></span>
-                                  <div class="col main">
-                                    <article>
-                                      {block:Title}
-                                      <h3><a href="{Permalink}">{Title}</a></h3>
-                                      {/block:Title}
-                                      <div class="authorship">
-                                        <p>
-                                          {block:Date}
-                                          {Month} {DayOfMonth}, {Year} by <img src="{PostAuthorPortraitURL-30}" alt="Post author avatar" class="author-avatar"> {PostAuthorName}
-                                          {/block:Date}
-                                        </p>
-                                      </div>
-
-                                      <ul class="chat">
-                                        {block:Lines}
-
-                                        {block:Label}
-                                        <span class="label">{Label}</span>
-                                        {/block:Label}{Line}
-                                      </li>
-                                      {/block:Lines}
-                                    </ul>
+                                    {block:Description}
+                                    <div class="description">{Description}</div>
+                                    {/block:Description}
+                                    <p class="permalink-container"><a href="{Permalink}">Permalink</a></p>
                                   </article>
-                                  {/block:Chat}
-                                  {block:Answer}
+                                  {/block:Link}
+                                  {block:Chat}
                                   <div class="row">
-                                    <span class="icon-question col post-icon"></span>
+                                    <span class="icon-quote col post-icon"></span>
                                     <div class="col main">
                                       <article>
+                                        {block:Title}
+                                        <h3><a href="{Permalink}">{Title}</a></h3>
+                                        {/block:Title}
                                         <div class="authorship">
                                           <p>
                                             {block:Date}
@@ -596,109 +578,135 @@
                                             {/block:Date}
                                           </p>
                                         </div>
-                                        <div class="question"><div class="asker">{Asker}</div><div class="asker-question">{Question}</div><img class="asker-avatar" src="{AskerPortraitURL-96}" alt=""></div>
 
-                                        {block:Answerer}
-                                        <div class="answer"><div class="answerer">{Answerer}</div><div class="answerer-answer">{Answer}</div><img class="answerer-avatar" src="{AnswererPortraitURL-96}" alt=""></div>
-                                        {/block:Answerer}
+                                        <ul class="chat">
+                                          {block:Lines}
 
-                                        <div class="replies">
-                                          {Replies}
-                                        </div>
-                                      </article>
-                                      {/block:Answer}
-                                      {block:Video}
-                                      <div class="row">
-                                        <span class="icon-video col post-icon"></span>
-                                        <div class="col main">
-                                          <article>
-                                            <div class="authorship">
-                                              <p>
-                                                {block:Date}
-                                                {Month} {DayOfMonth}, {Year} by <img src="{PostAuthorPortraitURL-30}" alt="Post author avatar" class="author-avatar"> {PostAuthorName}
-                                                {/block:Date}
-                                              </p>
-                                            </div>
-                                            <div class="video">{Video-500}</div>
-                                            {block:Caption}
-                                            <div class="caption">{Caption}</div>
-                                            {/block:Caption}
-                                          </article>
-                                          {/block:Video}
-                                          {block:Audio}
-                                          <div class="row">
-                                            <span class="icon-audio col post-icon"></span>
-                                            <div class="col main">
-                                              <article>
-                                                <div class="authorship">
-                                                  <p>
-                                                    {block:Date}
-                                                    {Month} {DayOfMonth}, {Year} by <img src="{PostAuthorPortraitURL-30}" alt="Post author avatar" class="author-avatar"> {PostAuthorName}
-                                                    {/block:Date}
-                                                  </p>
-                                                </div>
-                                                {AudioEmbed}{block:Caption}
-                                                <div class="caption">{Caption}</div>
-                                                {/block:Caption}
-                                              </article>
-                                              {/block:Audio}
-                                              {block:IndexPage}
-                                              <aside class="row group">
-                                                <div class="col share">
-                                                  <div class="custom-like-button">
-                                                    {LikeButton}
-                                                    <span class="custom-button icon-like"></span>
-                                                  </div>
-                                                  <a href="{ReblogURL}"><span class="icon-reblog"></span></a>
-                                                  <div class="social-share">
-                                                    <input type="checkbox" id="social-share-toggle-{PostID}" class="social-share-toggle">
-                                                    <label class="icon-share" for="social-share-toggle-{PostID}"></label>
-                                                    <div class="social-share-buttons">
-                                                      <a href="https://www.facebook.com/sharer/sharer.php?u={URLEncodedPermalink}"><span class="icon-facebook"></span></a>
-                                                      <a href="https://twitter.com/home?status={block:Title}{PlaintextTitle}%20{/block:Title}{block:Caption}{PlaintextCaption}%20{/block:Caption}{block:IfName}{PlaintextName}%20{/block:IfName}{block:IfQuestion}{PlaintextQuestion}%20{/block:IfQuestion}{URLEncodedPermalink}"><span class="icon-twitter"></span></a>
-                                                      <a href="https://plus.google.com/share?url={URLEncodedPermalink}"><span class="icon-google-plus"></span></a>
-                                                      <a href="http://reddit.com/submit?url={URLEncodedPermalink}{block:Title}&title={PlaintextTitle}{/block:Title}{block:Caption}&title={PlaintextCaption}{/block:Caption}{block:IfName}&title={PlaintextName}{/block:IfName}{block:IfQuestion}&title={PlaintextQuestion}{/block:IfQuestion}"><span class="icon-reddit"></span></a>
-                                                    </div>
-                                                  </div>
-                                                  <a href="{Permalink}#disqus_thread"><span class="icon-comments"></span></a>
-                                                </div>
-                                              </aside>
-                                            </div>
+                                          {block:Label}
+                                          <span class="label">{Label}</span>
+                                          {/block:Label}{Line}
+                                        </li>
+                                        {/block:Lines}
+                                      </ul>
+                                      <p class="permalink-container"><a href="{Permalink}">Permalink</a></p>
+                                    </article>
+                                    {/block:Chat}
+                                    {block:Answer}
+                                    <div class="row">
+                                      <span class="icon-question col post-icon"></span>
+                                      <div class="col main">
+                                        <article>
+                                          <div class="authorship">
+                                            <p>
+                                              {block:Date}
+                                              {Month} {DayOfMonth}, {Year} by <img src="{PostAuthorPortraitURL-30}" alt="Post author avatar" class="author-avatar"> {PostAuthorName}
+                                              {/block:Date}
+                                            </p>
                                           </div>
-                                          {/block:IndexPage}
-                                          {/block:Posts}
-                                        </section>
-                                        <!-- Comments -->
-                                        {block:Posts}{block:Permalink}{block:Date}
-                                        <aside class="row group">
-                                          <div class="col share">
-                                            <div class="custom-like-button">
-                                              {LikeButton}
-                                              <span class="custom-button icon-like"></span>
-                                            </div>
-                                            <a href="{ReblogURL}"><span class="icon-reblog"></span></a>
-                                            <div class="social-share">
-                                              <input type="checkbox" id="social-share-toggle-{PostID}" class="social-share-toggle">
-                                              <label class="icon-share" for="social-share-toggle-{PostID}"></label>
-                                              <div class="social-share-buttons">
-                                                <a href="https://www.facebook.com/sharer/sharer.php?u={URLEncodedPermalink}"><span class="icon-facebook"></span></a>
-                                                <a href="https://twitter.com/home?status={block:Title}{PlaintextTitle}%20{/block:Title}{block:Caption}{PlaintextCaption}%20{/block:Caption}{block:IfName}{PlaintextName}%20{/block:IfName}{block:IfQuestion}{PlaintextQuestion}%20{/block:IfQuestion}{URLEncodedPermalink}"><span class="icon-twitter"></span></a>
-                                                <a href="https://plus.google.com/share?url={URLEncodedPermalink}"><span class="icon-google-plus"></span></a>
-                                                <a href="http://reddit.com/submit?url={URLEncodedPermalink}{block:Title}&title={PlaintextTitle}{/block:Title}{block:Caption}&title={PlaintextCaption}{/block:Caption}{block:IfName}&title={PlaintextName}{/block:IfName}{block:IfQuestion}&title={PlaintextQuestion}{/block:IfQuestion}"><span class="icon-reddit"></span></a>
+                                          <div class="question"><div class="asker">{Asker}</div><div class="asker-question">{Question}</div><img class="asker-avatar" src="{AskerPortraitURL-96}" alt=""></div>
+
+                                          {block:Answerer}
+                                          <div class="answer"><div class="answerer">{Answerer}</div><div class="answerer-answer">{Answer}</div><img class="answerer-avatar" src="{AnswererPortraitURL-96}" alt=""></div>
+                                          {/block:Answerer}
+
+                                          <div class="replies">
+                                            {Replies}
+                                          </div>
+                                          <p class="permalink-container"><a href="{Permalink}">Permalink</a></p>
+                                        </article>
+                                        {/block:Answer}
+                                        {block:Video}
+                                        <div class="row">
+                                          <span class="icon-video col post-icon"></span>
+                                          <div class="col main">
+                                            <article>
+                                              <div class="authorship">
+                                                <p>
+                                                  {block:Date}
+                                                  {Month} {DayOfMonth}, {Year} by <img src="{PostAuthorPortraitURL-30}" alt="Post author avatar" class="author-avatar"> {PostAuthorName}
+                                                  {/block:Date}
+                                                </p>
+                                              </div>
+                                              <div class="video">{Video-500}</div>
+                                              {block:Caption}
+                                              <div class="caption">{Caption}</div>
+                                              {/block:Caption}
+                                              <p class="permalink-container"><a href="{Permalink}">Permalink</a></p>
+                                            </article>
+                                            {/block:Video}
+                                            {block:Audio}
+                                            <div class="row">
+                                              <span class="icon-audio col post-icon"></span>
+                                              <div class="col main">
+                                                <article>
+                                                  <div class="authorship">
+                                                    <p>
+                                                      {block:Date}
+                                                      {Month} {DayOfMonth}, {Year} by <img src="{PostAuthorPortraitURL-30}" alt="Post author avatar" class="author-avatar"> {PostAuthorName}
+                                                      {/block:Date}
+                                                    </p>
+                                                  </div>
+                                                  {AudioEmbed}{block:Caption}
+                                                  <div class="caption">{Caption}</div>
+                                                  {/block:Caption}
+                                                  <p class="permalink-container"><a href="{Permalink}">Permalink</a></p>
+                                                </article>
+                                                {/block:Audio}
+                                                {block:IndexPage}
+                                                <aside class="row group">
+                                                  <div class="col share">
+                                                    <div class="custom-like-button">
+                                                      {LikeButton}
+                                                      <span class="custom-button icon-like"></span>
+                                                    </div>
+                                                    <a href="{ReblogURL}"><span class="icon-reblog"></span></a>
+                                                    <div class="social-share">
+                                                      <input type="checkbox" id="social-share-toggle-{PostID}" class="social-share-toggle">
+                                                      <label class="icon-share" for="social-share-toggle-{PostID}"></label>
+                                                      <div class="social-share-buttons">
+                                                        <a href="https://www.facebook.com/sharer/sharer.php?u={URLEncodedPermalink}"><span class="icon-facebook"></span></a>
+                                                        <a href="https://twitter.com/home?status={block:Title}{PlaintextTitle}%20{/block:Title}{block:Caption}{PlaintextCaption}%20{/block:Caption}{block:IfName}{PlaintextName}%20{/block:IfName}{block:IfQuestion}{PlaintextQuestion}%20{/block:IfQuestion}{URLEncodedPermalink}"><span class="icon-twitter"></span></a>
+                                                        <a href="https://plus.google.com/share?url={URLEncodedPermalink}"><span class="icon-google-plus"></span></a>
+                                                        <a href="http://reddit.com/submit?url={URLEncodedPermalink}{block:Title}&title={PlaintextTitle}{/block:Title}{block:Caption}&title={PlaintextCaption}{/block:Caption}{block:IfName}&title={PlaintextName}{/block:IfName}{block:IfQuestion}&title={PlaintextQuestion}{/block:IfQuestion}"><span class="icon-reddit"></span></a>
+                                                      </div>
+                                                    </div>
+                                                    <a href="{Permalink}#disqus_thread"><span class="icon-comments"></span></a>
+                                                  </div>
+                                                </aside>
                                               </div>
                                             </div>
-                                            <a href="{Permalink}#disqus_thread"><span class="icon-comments"></span></a>
-                                          </div>
-                                        </aside>
-                                        {block:IfDisqusShortname}
-                                        <aside>
-                                          <div id="disqus_thread"></div>
-                                          <script type="text/javascript">
-                                          /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
-                                    var disqus_shortname = '{text:Disqus Shortname}'; // Required - Replace <example> with your forum shortname
+                                            {/block:IndexPage}
+                                            {/block:Posts}
+                                          </section>
+                                          <!-- Comments -->
+                                          {block:Posts}{block:Permalink}{block:Date}
+                                          <aside class="row group">
+                                            <div class="col share">
+                                              <div class="custom-like-button">
+                                                {LikeButton}
+                                                <span class="custom-button icon-like"></span>
+                                              </div>
+                                              <a href="{ReblogURL}"><span class="icon-reblog"></span></a>
+                                              <div class="social-share">
+                                                <input type="checkbox" id="social-share-toggle-{PostID}" class="social-share-toggle">
+                                                <label class="icon-share" for="social-share-toggle-{PostID}"></label>
+                                                <div class="social-share-buttons">
+                                                  <a href="https://www.facebook.com/sharer/sharer.php?u={URLEncodedPermalink}"><span class="icon-facebook"></span></a>
+                                                  <a href="https://twitter.com/home?status={block:Title}{PlaintextTitle}%20{/block:Title}{block:Caption}{PlaintextCaption}%20{/block:Caption}{block:IfName}{PlaintextName}%20{/block:IfName}{block:IfQuestion}{PlaintextQuestion}%20{/block:IfQuestion}{URLEncodedPermalink}"><span class="icon-twitter"></span></a>
+                                                  <a href="https://plus.google.com/share?url={URLEncodedPermalink}"><span class="icon-google-plus"></span></a>
+                                                  <a href="http://reddit.com/submit?url={URLEncodedPermalink}{block:Title}&title={PlaintextTitle}{/block:Title}{block:Caption}&title={PlaintextCaption}{/block:Caption}{block:IfName}&title={PlaintextName}{/block:IfName}{block:IfQuestion}&title={PlaintextQuestion}{/block:IfQuestion}"><span class="icon-reddit"></span></a>
+                                                </div>
+                                              </div>
+                                              <a href="{Permalink}#disqus_thread"><span class="icon-comments"></span></a>
+                                            </div>
+                                          </aside>
+                                          {block:IfDisqusShortname}
+                                          <aside>
+                                            <div id="disqus_thread"></div>
+                                            <script type="text/javascript">
+                                    var disqus_shortname = '{text:Disqus Shortname}';
                                     var disqus_url = '{Permalink}';
 
-                                    /* * * DON'T EDIT BELOW THIS LINE * * */
                                     (function() {
                                       var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
                                       dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';

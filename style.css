@@ -343,14 +343,18 @@ nav li:first-of-type {
 .share a:link:first-child, .share > div:first-child {
   margin-left: 0;
 }
-.read_more_container {
+.read_more_container, .permalink-container {
   text-align: right;
   position: absolute;
   right: 1em;
 }
-.read_more_container a {
+.read_more_container a, .permalink-container a {
   text-decoration: none;
   text-transform: uppercase;
+}
+/* Ensures the PERMALINK link is not displayed if we have a READ MORE link*/
+.read_more_container + .permalink-container {
+  display: none;
 }
 
 @media screen and (min-width: 850px) and (max-width: 1499px) {
@@ -361,7 +365,7 @@ nav li:first-of-type {
   .post-icon.icon-text {
     margin-top: 1.55rem;
   }
-  .read_more_container {
+  .read_more_container, .permalink-container {
     text-align: right;
     position: absolute;
     right: 12.33333333%;
