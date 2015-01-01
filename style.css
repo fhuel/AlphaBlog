@@ -251,6 +251,7 @@ img, .tumblr_audio_player {
   left: 0;
   top: 0;
 }
+
 aside {
   padding: 1rem 0 1.1rem;
 }
@@ -261,6 +262,9 @@ aside {
 .authorship p {
   position: relative;
   top: 0.1rem;
+}
+.authorship a {
+  text-decoration: none;
 }
 .post-icon {
   margin: 2rem auto 0.5rem;
