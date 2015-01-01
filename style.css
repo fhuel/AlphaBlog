@@ -188,28 +188,34 @@ header {
 }
 .avatar {
   display: none;
+  border-radius: 50%;
+  width: 100px;
 }
 
 @media screen and (min-width: 850px) and (max-width: 1499px) {
   .header-spacer {
     height: 100%;
-    border:0px solid rgba(0,0,0,0);
-    float:left;
-    box-sizing:border-box;
-    background-clip:padding-box !important;
+    border: 0px solid rgba(0,0,0,0);
+    float: left;
+    background-clip: padding-box !important;
   }
   header {
     position: fixed;
     top: 0;
   }
   .info-container {
-    width: 94.6%
+    width: 94.6%;
   }
 }
 @media screen and (min-width: 1500px) {
   .info-container {
     /* todo: fix this value to fit inside the header */
-    width: 98.4%
+    width: 98.4%;
+  }
+}
+@media screen and (min-width: 850px) {
+  .avatar {
+    display: inline-block;
   }
 }
 /* Header styles end */
