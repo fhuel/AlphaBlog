@@ -54,7 +54,7 @@ var pusherEl = document.querySelectorAll('.pure-pusher')[0];
 var drawerToggleEl = document.querySelectorAll('#pure-toggle-left')[0];
 
 drawerToggleEl.addEventListener('change', function toggleHeaderPosition(){
-  if (drawerToggleEl.checked && window.innerWidth >= 500 && window.innerWidth <= 1499) {
+  if (drawerToggleEl.checked && window.innerWidth >= 850 && window.innerWidth <= 1499) {
     headerEl.style.position = 'absolute';
     headerEl.style.top = pusherEl.scrollTop + 'px';
   } else {
