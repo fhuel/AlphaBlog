@@ -351,13 +351,9 @@
       color: {BackgroundColor};
       font-weight: {select:Bold Font Weight};
     }
-    .like_button:hover + .custom-button:before {
+    /* Post icon hover and active color */
+    .like_button:hover + .custom-button:before, .like_button.liked + .custom-button:before, .like_button:hover.liked + .custom-button:before, .share span:hover:before, .share label:hover:before, .social-share-toggle:checked + label:before {
       color: {AccentColor};
-    }
-    /* Liked State */
-    .like_button.liked + .custom-button:before, .like_button:hover.liked + .custom-button:before {
-      color: {AccentColor};
-      opacity: 1;
     }
     /* End theme styles */
 
@@ -441,7 +437,6 @@
             </div>
           </div>
         </header>
-        <div class="header-spacer"></div>
         <section class="content">
           {block:NoSearchResults}<h2>No posts match the query {SearchQuery}</h2>{/block:NoSearchResults}
           {block:Posts}

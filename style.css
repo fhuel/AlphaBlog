@@ -446,9 +446,9 @@ h4.store:first-child, h4.prerelease:first-child {
   z-index: 1;
 }
 /* Custom like button hover and active states */
-.like_button:hover + .custom-button:before {
+.like_button:hover + .custom-button:before, .share span:hover, .share label:hover {
   opacity: 0.75;
 }
-.like_button.liked + .custom-button:before, .like_button:hover.liked + .custom-button:before {
+.like_button.liked + .custom-button:before, .like_button:hover.liked + .custom-button:before, .social-share-toggle:checked + label, .share a:active span {
   opacity: 1;
 }
