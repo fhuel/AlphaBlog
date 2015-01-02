@@ -647,7 +647,6 @@
                                                   {block:IndexPage}<p class="permalink-container"><a href="{Permalink}">Permalink</a></p>{/block:IndexPage}
                                                 </article>
                                                 {/block:Audio}
-                                                {block:IndexPage}
                                                 <aside class="row group">
                                                   <div class="col share">
                                                     <div class="custom-like-button">
@@ -668,53 +667,35 @@
                                                     <a href="{Permalink}#disqus_thread"><span class="icon-comments"></span></a>
                                                   </div>
                                                 </aside>
+                                            {block:IndexPage}
                                               </div>
                                             </div>
                                             {/block:IndexPage}
                                             {/block:Posts}
-                                          </section>
-                                          <!-- Comments -->
-                                          {block:Posts}{block:Permalink}{block:Date}
-                                          <aside class="row group">
-                                            <div class="col share">
-                                              <div class="custom-like-button">
-                                                {LikeButton}
-                                                <span class="custom-button icon-like"></span>
+                                                <!-- Comments -->
+                                                {block:Posts}{block:Permalink}{block:Date}
+                                                {block:IfDisqusShortname}
+                                                <aside>
+                                                  <div id="disqus_thread"></div>
+                                                  <script type="text/javascript">
+                                                    var disqus_shortname = '{text:Disqus Shortname}';
+                                                    var disqus_url = '{Permalink}';
+
+                                                    (function() {
+                                                      var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+                                                      dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+                                                      (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+                                                    })();
+                                                  </script>
+                                                  <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+                                                  <a href="http://disqus.com" class="dsq-brlink">blog comments powered by <span class="logo-disqus">Disqus</span></a>
+                                                </aside>
                                               </div>
-                                              <a href="{ReblogURL}"><span class="icon-reblog"></span></a>
-                                              <div class="social-share">
-                                                <input type="checkbox" id="social-share-toggle-{PostID}" class="social-share-toggle">
-                                                <label class="icon-share" for="social-share-toggle-{PostID}"></label>
-                                                <div class="social-share-buttons">
-                                                  <a href="https://www.facebook.com/sharer/sharer.php?u={URLEncodedPermalink}"><span class="icon-facebook"></span></a>
-                                                  <a href="https://twitter.com/home?status={block:Title}{PlaintextTitle}%20{/block:Title}{block:Caption}{PlaintextCaption}%20{/block:Caption}{block:IfName}{PlaintextName}%20{/block:IfName}{block:IfQuestion}{PlaintextQuestion}%20{/block:IfQuestion}{URLEncodedPermalink}"><span class="icon-twitter"></span></a>
-                                                  <a href="https://plus.google.com/share?url={URLEncodedPermalink}"><span class="icon-google-plus"></span></a>
-                                                  <a href="http://reddit.com/submit?url={URLEncodedPermalink}{block:Title}&title={PlaintextTitle}{/block:Title}{block:Caption}&title={PlaintextCaption}{/block:Caption}{block:IfName}&title={PlaintextName}{/block:IfName}{block:IfQuestion}&title={PlaintextQuestion}{/block:IfQuestion}"><span class="icon-reddit"></span></a>
-                                                </div>
-                                              </div>
-                                              <a href="{Permalink}#disqus_thread"><span class="icon-comments"></span></a>
                                             </div>
-                                          </aside>
-                                          {block:IfDisqusShortname}
-                                          <aside>
-                                            <div id="disqus_thread"></div>
-                                            <script type="text/javascript">
-                                    var disqus_shortname = '{text:Disqus Shortname}';
-                                    var disqus_url = '{Permalink}';
-
-                                    (function() {
-                                      var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
-                                      dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
-                                      (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
-                                    })();
-                                  </script>
-                                  <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
-                                  <a href="http://disqus.com" class="dsq-brlink">blog comments powered by <span class="logo-disqus">Disqus</span></a>
-                                </aside>
-
-                                {/block:IfDisqusShortname}
-                                {/block:Date}{/block:Permalink}{/block:Posts}
-                                <!-- End comments -->
+                                            {/block:IfDisqusShortname}
+                                            {/block:Date}{/block:Permalink}{/block:Posts}
+                                            <!-- End comments -->
+                                          </section>
 
                                 {block:HasTags}
                                 <ul class="tags">
