@@ -157,6 +157,9 @@ html,body{height: 100%;}.pure-container{position:relative;height:100%;-webkit-ov
   width: 9rem;
   padding: 0.5rem;
 }
+.social-share-buttons a {
+  text-decoration: none;
+}
 .social-share-toggle:checked ~ .social-share-buttons {
   display: flex;
   justify-content: space-around;
