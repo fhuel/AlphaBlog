@@ -8,7 +8,7 @@
 
   <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/normalize/3.0.1/normalize.min.css" type="text/css" media="all">
   <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/prettify/r298/prettify.min.css">
-  <link rel="stylesheet" href="http://static.tumblr.com/vz1s3fz/BGNnhkjrn/style.css">
+  <link rel="stylesheet" href="http://static.tumblr.com/vz1s3fz/enZnhkklo/style.css">
 
   <link rel="alternate" type="application/rss+xml" href="{RSS}">
 
@@ -456,7 +456,7 @@
                   </p>
                 </div>
                 {Body}
-                <p class="permalink-container"><a href="{Permalink}">Permalink</a></p>
+                {block:IndexPage}<p class="permalink-container"><a href="{Permalink}">Permalink</a></p>{/block:IndexPage}
               </article>
               {/block:Text}
               {block:Photo}
@@ -476,7 +476,7 @@
                     {block:Caption}
                     <div class="caption">{Caption}</div>
                     {/block:Caption}
-                    <p class="permalink-container"><a href="{Permalink}">Permalink</a></p>
+                    {block:IndexPage}<p class="permalink-container"><a href="{Permalink}">Permalink</a></p>{/block:IndexPage}
                   </article>
                   {/block:Photo}
                   {block:Panorama}
@@ -496,7 +496,7 @@
                         {LinkCloseTag}{block:Caption}
                         <div class="caption">{Caption}</div>
                         {/block:Caption}
-                        <p class="permalink-container"><a href="{Permalink}">Permalink</a></p>
+                        {block:IndexPage}<p class="permalink-container"><a href="{Permalink}">Permalink</a></p>{/block:IndexPage}
                       </article>
                       {/block:Panorama}
                       {block:Photoset}
@@ -514,7 +514,7 @@
                             {Photoset-500}{block:Caption}
                             <div class="caption">{Caption}</div>
                             {/block:Caption}
-                            <p class="permalink-container"><a href="{Permalink}">Permalink</a></p>
+                            {block:IndexPage}<p class="permalink-container"><a href="{Permalink}">Permalink</a></p>{/block:IndexPage}
                           </article>
                           {/block:Photoset}
                           {block:Quote}
@@ -534,7 +534,7 @@
                                 {block:Source}
                                 <div class="source">{Source}</div>
                                 {/block:Source}
-                                <p class="permalink-container"><a href="{Permalink}">Permalink</a></p>
+                                {block:IndexPage}<p class="permalink-container"><a href="{Permalink}">Permalink</a></p>{/block:IndexPage}
                               </article>
                               {/block:Quote}
                               {block:Link}
@@ -555,7 +555,7 @@
                                     {block:Description}
                                     <div class="description">{Description}</div>
                                     {/block:Description}
-                                    <p class="permalink-container"><a href="{Permalink}">Permalink</a></p>
+                                    {block:IndexPage}<p class="permalink-container"><a href="{Permalink}">Permalink</a></p>{/block:IndexPage}
                                   </article>
                                   {/block:Link}
                                   {block:Chat}
@@ -583,7 +583,7 @@
                                         </li>
                                         {/block:Lines}
                                       </ul>
-                                      <p class="permalink-container"><a href="{Permalink}">Permalink</a></p>
+                                      {block:IndexPage}<p class="permalink-container"><a href="{Permalink}">Permalink</a></p>{/block:IndexPage}
                                     </article>
                                     {/block:Chat}
                                     {block:Answer}
@@ -607,7 +607,7 @@
                                           <div class="replies">
                                             {Replies}
                                           </div>
-                                          <p class="permalink-container"><a href="{Permalink}">Permalink</a></p>
+                                          {block:IndexPage}<p class="permalink-container"><a href="{Permalink}">Permalink</a></p>{/block:IndexPage}
                                         </article>
                                         {/block:Answer}
                                         {block:Video}
@@ -626,7 +626,7 @@
                                               {block:Caption}
                                               <div class="caption">{Caption}</div>
                                               {/block:Caption}
-                                              <p class="permalink-container"><a href="{Permalink}">Permalink</a></p>
+                                              {block:IndexPage}<p class="permalink-container"><a href="{Permalink}">Permalink</a></p>{/block:IndexPage}
                                             </article>
                                             {/block:Video}
                                             {block:Audio}
@@ -644,7 +644,7 @@
                                                   {AudioEmbed}{block:Caption}
                                                   <div class="caption">{Caption}</div>
                                                   {/block:Caption}
-                                                  <p class="permalink-container"><a href="{Permalink}">Permalink</a></p>
+                                                  {block:IndexPage}<p class="permalink-container"><a href="{Permalink}">Permalink</a></p>{/block:IndexPage}
                                                 </article>
                                                 {/block:Audio}
                                                 {block:IndexPage}
