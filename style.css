@@ -509,7 +509,7 @@ h4.store:first-child, h4.prerelease:first-child {
   display: block;
 }
 
-.store-links a:link, .prerelease-links a:link {
+.store-links a, .prerelease-links a {
   display: block;
   color: #fff;
 }
