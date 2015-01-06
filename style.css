@@ -468,6 +468,7 @@ h4.store:first-child, h4.prerelease:first-child {
 
 .store-links a:link, .prerelease-links a:link {
   display: block;
+  color: #fff;
 }
 
 /* Workaround for custom Tumblr like button */
