@@ -1,10 +1,15 @@
 var gulp = require('gulp');
 var gulpLoadPlugins = require('gulp-load-plugins');
 var plugins = gulpLoadPlugins();
+var del = require('del');
 
 gulp.task('default', ['css', 'js', 'fonts']);
 
-gulp.task('css', function() {
+gulp.task('clean', function(cb) {
+  del(['dist/**'], cb);
+});
+
+gulp.task('css', ['clean'], function() {
   return gulp.src('style.css')
             .pipe(plugins.autoprefixer({
               browsers: ['last 2 versions']
@@ -19,7 +24,7 @@ gulp.task('css', function() {
             .pipe(gulp.dest('dist'));
 });
 
-gulp.task('js', function() {
+gulp.task('js', ['clean'], function() {
   return gulp.src('scripts.js')
             .pipe(gulp.dest('dist'))
             .pipe(plugins.uglify())
@@ -27,7 +32,7 @@ gulp.task('js', function() {
             .pipe(gulp.dest('dist'));
 });
 
-gulp.task('fonts', function() {
+gulp.task('fonts', ['clean'], function() {
   return gulp.src('fonts/*')
             .pipe(gulp.dest('dist/fonts'));
 });
