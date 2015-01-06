@@ -416,7 +416,7 @@ nav li:first-of-type {
   .read_more_container, .permalink-container {
     text-align: right;
     position: absolute;
-    right: 12.33333333%;
+    right: 13%;
   }
 }
 /* Post styles end */
