@@ -14,7 +14,6 @@ gulp.task('css', ['clean'], function() {
             .pipe(plugins.autoprefixer({
               browsers: ['last 2 versions']
             }))
-            .pipe(gulp.dest('.'))
             .pipe(gulp.dest('dist'))
             .pipe(plugins.minifyCss({
               noRebase: true,
