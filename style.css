@@ -59,9 +59,9 @@ html,body{height: 100%;}.pure-container{position:relative;height:100%;-webkit-ov
 
 /* 2. 12 Column Grid 850px - 1499px */
 
-@media screen and (min-width: 850px) and (max-width: 1499px) {
+@media screen and (min-width: 850px) {
 
-  .col, header, .header-spacer, .content, .post-icon, .main, .col.share {
+  .col, header, .content, .post-icon, .main, .col.share {
     margin-left:0%;
     padding:0 0.9%;
   }
@@ -94,7 +94,7 @@ html,body{height: 100%;}.pure-container{position:relative;height:100%;-webkit-ov
   .span_3 {
     width:25.0%;
   }
-  .span_4, header, .header-spacer {
+  .span_4, header{
     width:33.3333333333%;
   }
   .span_5 {
@@ -129,22 +129,21 @@ html,body{height: 100%;}.pure-container{position:relative;height:100%;-webkit-ov
   .row .pagination .main {
     width: 100%;
   }
+
+  .content {
+    margin-left: 33%;
+  }
 }
 
 /* 3. 12 Column Grid 1500px - Infinity */
 
 @media screen and (min-width: 1500px) {
 
-  .col, .col.share {
-    margin-left:0%;
+  .col, .content, .post-icon, .main, .col.share {
     padding:0 0.8%;
   }
-}
-
-/* Applies to everything larger than the small layout */
-@media screen and (min-width: 850px) {
-  .content {
-    margin-left: 33%;
+  .col, .post-icon, .main, .col.share {
+    margin-left:0%;
   }
 }
 /* Grid end */
@@ -217,13 +216,7 @@ header {
   width: 100px;
 }
 
-@media screen and (min-width: 850px) and (max-width: 1499px) {
-  .header-spacer {
-    height: 100%;
-    border: 0px solid rgba(0,0,0,0);
-    float: left;
-    background-clip: padding-box !important;
-  }
+@media screen and (min-width: 850px) {
   header {
     position: fixed;
     top: 0;
@@ -405,7 +398,7 @@ nav li:first-of-type {
   display: none;
 }
 
-@media screen and (min-width: 850px) and (max-width: 1499px) {
+@media screen and (min-width: 850px) {
   .post-icon {
     text-align: right;
     margin-top: 1.35rem;
