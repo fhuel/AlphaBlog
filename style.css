@@ -73,8 +73,12 @@ html,body{height: 100%;}.pure-container{position:relative;height:100%;-webkit-ov
     background-clip:padding-box !important;
   }
 
-  .pagination, .footer {
+  .pagination.row, .footer.row {
     margin-left: 44.76%;
+  }
+
+  .row .pagination {
+    margin-left: 0;
   }
 
   .row .col:first-child {
@@ -117,6 +121,13 @@ html,body{height: 100%;}.pure-container{position:relative;height:100%;-webkit-ov
   .span_12, article {
     margin-left:0;
     width:100%;
+  }
+
+  .pagination .main, .footer .main {
+    width:78%;
+  }
+  .row .pagination .main {
+    width: 100%;
   }
 }
 
@@ -409,6 +420,42 @@ nav li:first-of-type {
   }
 }
 /* Post styles end */
+
+/* Pagination styles */
+ul.pagination {
+  display: inline-block;
+  list-style-type: none;
+  padding: 0.2rem;
+}
+.pagination li {
+  display: inline-block;
+}
+.pagination.row {
+  text-align: center;
+}
+.pagination a {
+  text-decoration: none;
+  display: inline-block;
+}
+.pagination a, .current-page {
+  padding: 1rem;
+}
+li.jump-page, li.current-page {
+  display: none;
+}
+@media screen and (min-width: 850px) {
+  li.jump-page {
+    display: inline;
+  }
+  li.current-page {
+    display: inline-block;
+  }
+  .pagination a, .current-page {
+    padding: 0 0.4rem 0.1rem;
+  }
+
+}
+/* Pagination styles end*/
 
 /* Displays only the first of each call-to-action */
 h4.store, h4.prerelease {

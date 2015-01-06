@@ -8,7 +8,7 @@
 
   <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/normalize/3.0.1/normalize.min.css" type="text/css" media="all">
   <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/prettify/r298/prettify.min.css">
-  <link rel="stylesheet" href="http://static.tumblr.com/vz1s3fz/enZnhkklo/style.css">
+  <link rel="stylesheet" href="http://static.tumblr.com/vz1s3fz/MGFnhrfff/style.css">
 
   <link rel="alternate" type="application/rss+xml" href="{RSS}">
 
@@ -355,6 +355,17 @@
     .like_button:hover + .custom-button:before, .like_button.liked + .custom-button:before, .like_button:hover.liked + .custom-button:before, .share span:hover:before, .share label:hover:before, .social-share-toggle:checked + label:before {
       color: {AccentColor};
     }
+    /* Pagination */
+    ul.pagination {
+      background: {TitleColor};
+      color: {BackgroundColor};
+    }
+    .pagination a {
+      color: {BackgroundColor};
+    }
+    .current-page {
+      background-color: {AccentColor};
+    }
     /* End theme styles */
 
     {CustomCSS}
@@ -672,6 +683,20 @@
                                             </div>
                                             {/block:IndexPage}
                                             {/block:Posts}
+                                            {block:PermalinkPagination}
+                                            <div class="pagination row">
+                                              <div class="col main">
+                                                <ul class="pagination">
+                                                  {block:PreviousPost}
+                                                  <li><a class="prev"href="{PreviousPost}">&#65513;{lang:Older}</li></a>
+                                                  {/block:PreviousPost}
+                                                  {block:NextPost}
+                                                  <li><a class="next" href="{NextPost}">{lang:Newer}&#65515;</a></li>
+                                                  {/block:NextPost}
+                                                </ul>
+                                              </div>
+                                            </div>
+                                            {/block:PermalinkPagination}
                                                 <!-- Comments -->
                                                 {block:Posts}{block:Permalink}{block:Date}
                                                 {block:IfDisqusShortname}
@@ -708,25 +733,27 @@
                               </div>
                             </div>
                             {/block:HasTags}
-                            {block:PermalinkPagination}
-                            <div class="pagination row">
-                              <div class="col main">
-                                {block:PreviousPost}<a class="prev"href="{PreviousPost}">{lang:Previous post}</a>{/block:PreviousPost}
-                                {block:NextPost}<a class="next" href="{NextPost}">{lang:Next post}</a>{/block:NextPost}
-                              </div>
-                            </div>
-                            {/block:PermalinkPagination}
                             {block:Pagination}
                             <div class="pagination row">
                               <div class="col main">
-                                {block:PreviousPage}<a class="prev" href="{PreviousPage}">{lang:Previous}</a>{/block:PreviousPage}
+                                <ul class="pagination">
+                                  {block:PreviousPage}
+                                  <li><a class="prev" href="{PreviousPage}">&#65513; {lang:Older}</a></li>
+                                  {/block:PreviousPage}
 
-                                {block:JumpPagination length="5"}
-                                {block:CurrentPage}<span class="current-page">{PageNumber}</span>{/block:CurrentPage}
-                                {block:JumpPage}<a class="jump-page" href="{URL}">{PageNumber}</a>{/block:JumpPage}
-                                {/block:JumpPagination}
+                                  {block:JumpPagination length="5"}
+                                  {block:CurrentPage}
+                                  <li class="current-page">{PageNumber}</li>
+                                  {/block:CurrentPage}
+                                  {block:JumpPage}
+                                  <li class="jump-page"><a href="{URL}">{PageNumber}</a></li>
+                                  {/block:JumpPage}
+                                  {/block:JumpPagination}
 
-                                {block:NextPage}<a class="next" href="{NextPage}">{lang:Next}</a>{/block:NextPage}
+                                  {block:NextPage}
+                                  <li><a class="next" href="{NextPage}">{lang:Newer} &#65515;</a></li>
+                                  {/block:NextPage}
+                                </ul>
                               </div>
                             </div>
                             {/block:Pagination}
