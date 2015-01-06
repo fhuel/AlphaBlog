@@ -99,7 +99,9 @@
   <meta name="text:URL Google Play Store" content="" />
   <meta name="text:URL IndieGogo" content="" />
   <meta name="text:URL Itchio" content="" />
+  <meta name="text:URL iTunes" content="" />
   <meta name="text:URL Kickstarter" content="" />
+  <meta name="text:URL Kindle Fire App Store" content="" />
   <meta name="text:URL Steam Greenlight" content="" />
   <meta name="text:URL Steam Store" content="" />
   <meta name="text:URL Windows Phone Store" content="" />
@@ -397,43 +399,51 @@
       <div class="store-links">
         {block:IfURLAmazonAppStore}
         <h4 class="store">Get your copy on</h4>
-        <a href="{text:URL Amazon App Store}">Amazon</a>
+        <a href="{text:URL Amazon App Store}"><img src="http://static.tumblr.com/vz1s3fz/jranhrova/amazon.svg" alt="Buy on the Amazon App Store"></a>
         {/block:IfURLAmazonAppStore}
         {block:IfURLAppleAppStore}
         <h4 class="store">Get your copy on</h4>
-        <a href="{text:URL Apple App Store}">Apple</a>
+        <a href="{text:URL Apple App Store}"><img src="http://static.tumblr.com/vz1s3fz/fKMnhroxo/appstore.svg" alt="Buy on the Apple App Store"></a>
         {/block:IfURLAppleAppStore}
         {block:IfURLGooglePlayStore}
         <h4 class="store">Get your copy on</h4>
-        <a href="{text:URL Google Play Store}">Google Play</a>
+        <a href="{text:URL Google Play Store}"><img src="http://static.tumblr.com/vz1s3fz/vnFnhrp0t/googleplay.svg" alt="Buy on the Google Play Store"></a>
         {/block:IfURLGooglePlayStore}
         {block:IfURLItchio}
         <h4 class="store">Get your copy on</h4>
-        <a href="{text:URL Itchio}">Itch.io</a>
+        <a href="{text:URL Itchio}"><img src="http://static.tumblr.com/vz1s3fz/CgXnhrp80/itch.io.svg" alt="Buy on Itch.io"></a>
         {/block:IfURLItchio}
+        {block:IfURLiTunes}
+        <h4 class="store">Get your copy on</h4>
+        <a href="{text:URL iTunes}"><img src="http://static.tumblr.com/vz1s3fz/AkSnhrpb6/itunes.svg" alt="Buy on iTunes"></a>
+        {/block:IfURLiTunes}
+        {block:IfURLKindleFireAppStore}
+        <h4 class="store">Get your copy on</h4>
+        <a href="{text:URL Kindle Fire App Store}"><img src="http://static.tumblr.com/vz1s3fz/oMNnhrpfy/kindle.svg" alt="Buy on the Kindle Fire App Store"></a>
+        {/block:IfURLKindleFireAppStore}
         {block:IfURLSteamStore}
         <h4 class="store">Get your copy on</h4>
-        <a href="{text:URL Steam Store}">Steam Store</a>
+        <a href="{text:URL Steam Store}"><img src="http://static.tumblr.com/vz1s3fz/8FPnhrpj5/steam.svg" alt="Buy on Steam"></a>
         {/block:IfURLSteamStore}
-        {block:IfURLWindowsPhone}
+        <!-- {block:IfURLWindowsPhone}
         <h4 class="store">Get your copy on</h4>
-        <a href="{text:URL Windows Phone}">Windows Phone</a>
-        {/block:IfURLWindowsPhone}
+        <a href="{text:URL Windows Phone}"><img src="http://static.tumblr.com/vz1s3fz/fKMnhroxo/appstore.svg" alt="Buy on the Apple App Store"></a>
+        {/block:IfURLWindowsPhone} -->
       </div>
 
       <!-- Pre-release -->
       <div class="prerelease-links">
         {block:IfURLKickstarter}
         <h4 class="prerelease">Help make it happen on</h4>
-        <a href="{text:URL Kickstarter}">Kickstarter</a>
+        <a href="{text:URL Kickstarter}"><img src="http://static.tumblr.com/vz1s3fz/P7Nnhrpeh/kickstarter.svg" alt="Support on Kickstarter"></a>
         {/block:IfURLKickstarter}
         {block:IfURLIndieGogo}
         <h4 class="prerelease">Help make it happen on</h4>
-        <a href="{text:URL IndieGogo}">IndieGogo</a>
+        <a href="{text:URL IndieGogo}"><img src="http://static.tumblr.com/vz1s3fz/HdMnhrp6a/indiegogo.svg" alt="Support on IndieGogo"></a>
         {/block:IfURLIndieGogo}
         {block:IfURLSteamGreenlight}
         <h4 class="prerelease">Help make it happen on</h4>
-        <a href="{text:URL Steam Greenlight}">Steam Greenlight</a>
+        <a href="{text:URL Steam Greenlight}"><img src="http://static.tumblr.com/vz1s3fz/qrVnhrp22/greenlight.svg" alt="Support on Steam Greenlight"></a>
         {/block:IfURLSteamGreenlight}
       </div>
     </div>
