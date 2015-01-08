@@ -104,7 +104,8 @@
   <meta name="text:URL Kindle Fire App Store" content="" />
   <meta name="text:URL Steam Greenlight" content="" />
   <meta name="text:URL Steam Store" content="" />
-  <!-- <meta name="text:URL Windows Phone Store" content="" /> -->
+  <meta name="text:URL Windows Phone" content="" />
+  <meta name="text:URL Windows Store" content="" />
 
   <!-- Body font selection -->
   <meta name="select:Body Font" content="Source Sans Pro">
@@ -428,10 +429,14 @@
         <h4 class="store">Get your copy on</h4>
         <a href="{text:URL Steam Store}"><img src="http://static.tumblr.com/vz1s3fz/8FPnhrpj5/steam.svg" alt="Buy on Steam"></a>
         {/block:IfURLSteamStore}
-        <!-- {block:IfURLWindowsPhone}
+        {block:IfURLWindowsPhone}
         <h4 class="store">Get your copy on</h4>
-        <a href="{text:URL Windows Phone}"><img src="http://static.tumblr.com/vz1s3fz/fKMnhroxo/appstore.svg" alt="Buy on the Apple App Store"></a>
-        {/block:IfURLWindowsPhone} -->
+        <a href="{text:URL Windows Phone}"><img src="http://static.tumblr.com/vz1s3fz/fRsnhvm9w/windows-phone.svg" alt="Buy on the Windows Phone Store"></a>
+        {/block:IfURLWindowsPhone}
+        {block:IfURLWindowsStore}
+        <h4 class="store">Get your copy on</h4>
+        <a href="{text:URL Windows Store}"><img src="http://static.tumblr.com/vz1s3fz/0ccnhvma0/windows-store.svg" alt="Buy on the Windows Store"></a>
+        {/block:IfURLWindowsStore}
       </div>
 
       <!-- Pre-release -->
