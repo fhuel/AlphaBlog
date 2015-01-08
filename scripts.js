@@ -45,6 +45,34 @@ function whichTransitionEvent(){
     }
 }
 
+// Debounce function for resize listener
+function debounce(delay, callback, accumulateData) {
+    var timeout = null;
+    var theData = [];
+    return function () {
+        // accumulate arguments in case caller is interested
+        // in that data
+        if (accumulateData) {
+            var arr = [];
+            for (var i = 0; i < arguments.length; ++i)
+                arr.push(arguments[i]);
+            theData.push(arr);
+        }
+
+        // if a timeout has been registered before then
+        // cancel it so that we can setup a fresh timeout
+        if (timeout) {
+            clearTimeout(timeout);
+        }
+        var args = arguments;
+        timeout = setTimeout(function () {
+            callback.apply((accumulateData) ? { data: theData } : null, args);
+            theData = []; // clear the data array
+            timeout = null;
+        }, delay);
+    };
+}
+
 // The drawer's transform causes the fixed header in the medium layout to
 // become fixed relative to the parent rather than the window. This switches
 // that element to absolute positioning and positions based on the container's
@@ -53,10 +81,14 @@ var headerEl = document.querySelectorAll('header')[0];
 var pusherEl = document.querySelectorAll('.pure-pusher')[0];
 var drawerToggleEl = document.querySelectorAll('#pure-toggle-left')[0];
 
+function attachHeader() {
+  headerEl.style.position = 'absolute';
+  headerEl.style.top = pusherEl.scrollTop + 'px';
+}
+
 drawerToggleEl.addEventListener('change', function toggleHeaderPosition(){
   if (drawerToggleEl.checked && window.innerWidth >= 850 && window.innerWidth <= 1499) {
-    headerEl.style.position = 'absolute';
-    headerEl.style.top = pusherEl.scrollTop + 'px';
+    attachHeader();
   } else {
     pusherEl.addEventListener(whichTransitionEvent(), function unsetHeaderInlineStyles(e){
       headerEl.removeAttribute('style');
@@ -64,3 +96,17 @@ drawerToggleEl.addEventListener('change', function toggleHeaderPosition(){
     });
   }
 });
+
+window.addEventListener('resize', debounce(100, function() {
+  if (drawerToggleEl.checked && window.innerWidth >= 850 && window.innerWidth <= 1499) {
+    attachHeader();
+  } else {
+    headerEl.removeAttribute('style');
+  }
+  if (drawerToggleEl.checked && window.innerWidth > 1499) {
+    pusherEl.style.WebkitTransform = 'none';
+    pusherEl.style.transform = 'none';
+  } else {
+    pusherEl.removeAttribute('style');
+  }
+}));
