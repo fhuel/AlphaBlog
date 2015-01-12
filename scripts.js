@@ -110,3 +110,21 @@ window.addEventListener('resize', debounce(100, function() {
     pusherEl.removeAttribute('style');
   }
 }));
+
+
+// Closes a social toggle if anything else in the document is clicked
+var socialToggles = document.getElementsByClassName('social-share-toggle');
+
+for (var i=0;i<socialToggles.length;i++) {
+  socialToggles[i].addEventListener('change', function bindCloseEvent(e) {
+    var clickedToggle = e.target;
+    if (clickedToggle.checked) {
+      document.body.addEventListener('click', function(e) {
+        if (e.target !== clickedToggle && e.target !== clickedToggle.nextElementSibling) {
+         clickedToggle.checked = false;
+         document.body.removeEventListener(e.type, arguments.callee);
+        }
+      });
+    }
+  });
+}
