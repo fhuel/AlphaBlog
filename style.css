@@ -337,7 +337,7 @@ img, .tumblr_audio_player {
 aside {
   padding: 1rem 0 0.5rem;
 }
-.author-avatar {
+.author-avatar, .asker-avatar {
   vertical-align: middle;
   border-radius: 50%;
 }
@@ -355,13 +355,16 @@ aside {
 }
 a.link {
   text-decoration: none;
-  padding: 0.75rem 1rem;
+  padding: 0.75rem 2.5rem 0.75rem 1rem;
   display: block;
+  position: relative;
 }
 a.link:after {
   content:">";
   position: absolute;
   right: 1.5rem;
+  top: 50%;
+  transform: translateY(-50%);
 }
 pre {
   background: #fff;
@@ -438,6 +441,31 @@ nav li:first-of-type {
   text-decoration: none;
   text-transform: uppercase;
 }
+/* Question*/
+.question-row {
+  display: flex;
+  align-items: center;
+  margin-top: 1.25rem;
+}
+.avatar-container {
+  flex-grow: 0;
+  margin-right: 15px;
+}
+.question {
+  flex-grow: 100000;
+  padding: 0.15rem 0.5rem;
+  position: relative;
+}
+.question:after{
+  border-width: 6px;
+  border-style: solid;
+  position: absolute;
+  left: -12px;
+  content: "";
+  top: 50%;
+  transform: translateY(-50%);
+}
+
 /* Ensures the PERMALINK link is not displayed if we have a READ MORE link*/
 .read_more_container + .permalink-container {
   display: none;

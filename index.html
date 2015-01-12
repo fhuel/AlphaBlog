@@ -8,7 +8,7 @@
 
   <link rel="stylesheet" href="http://static.tumblr.com/vz1s3fz/LoJnhroow/normalize.min.css" type="text/css" media="all">
   <link rel="stylesheet" href="http://static.tumblr.com/vz1s3fz/Enhnhroo7/prettify.min.css">
-  <link rel="stylesheet" href="http://static.tumblr.com/vz1s3fz/Lkeni2zj9/style.min.css">
+  <link rel="stylesheet" href="http://static.tumblr.com/vz1s3fz/A8Lni36e7/style.min.css">
 
   <link rel="alternate" type="application/rss+xml" href="{RSS}">
 
@@ -341,6 +341,9 @@
     nav a:link {
       font-weight: {select:Heading Font Weight};
     }
+    .question:after {
+      border-color: rgba(0, 0, 0, 0) {AccentColor} rgba(0, 0, 0, 0) rgba(0, 0, 0, 0);
+    }
     /* Font styles end */
 
     aside {
@@ -349,7 +352,7 @@
     .row [class^="icon-"]:before, .row [class*=" icon-"]:before {
       color: {TitleColor};
     }
-    a.link {
+    a.link, .question {
       background-color: {AccentColor};
       color: {BackgroundColor};
       font-weight: {select:Bold Font Weight};
@@ -622,6 +625,12 @@
                                       <span class="icon-question col post-icon"></span>
                                       <div class="col main">
                                         <article>
+                                          <div class="question-row">
+                                            <div class="avatar-container">
+                                              <img class="asker-avatar" src="{AskerPortraitURL-30}" alt="Asker avatar">
+                                            </div>
+                                            <div class="question">{Question}</div>
+                                          </div>
                                           <div class="authorship">
                                             <p>
                                               {block:Date}
@@ -629,12 +638,9 @@
                                               {/block:Date}
                                             </p>
                                           </div>
-                                          <div class="question"><div class="asker">{Asker}</div><div class="asker-question">{Question}</div><img class="asker-avatar" src="{AskerPortraitURL-96}" alt=""></div>
-
                                           {block:Answerer}
-                                          <div class="answer"><div class="answerer">{Answerer}</div><div class="answerer-answer">{Answer}</div><img class="answerer-avatar" src="{AnswererPortraitURL-96}" alt=""></div>
+                                          {Answer}
                                           {/block:Answerer}
-
                                           <div class="replies">
                                             {Replies}
                                           </div>
