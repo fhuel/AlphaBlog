@@ -8,7 +8,7 @@
 
   <link rel="stylesheet" href="http://static.tumblr.com/vz1s3fz/LoJnhroow/normalize.min.css" type="text/css" media="all">
   <link rel="stylesheet" href="http://static.tumblr.com/vz1s3fz/Enhnhroo7/prettify.min.css">
-  <link rel="stylesheet" href="http://static.tumblr.com/vz1s3fz/l35nhrjbu/style.css">
+  <link rel="stylesheet" href="http://static.tumblr.com/vz1s3fz/eeani2w8v/style.css">
 
   <link rel="alternate" type="application/rss+xml" href="{RSS}">
 
@@ -362,15 +362,17 @@
       color: {AccentColor};
     }
     /* Pagination */
-    ul.pagination {
-      background: {TitleColor};
-      color: {BackgroundColor};
-    }
     .pagination a {
+      background: {TitleColor};
       color: {BackgroundColor};
     }
     .current-page {
       background-color: {AccentColor};
+    }
+    @media (min-width: 850px) {
+      ul.pagination {
+        background: {TitleColor};
+      }
     }
     /* End theme styles */
 
@@ -704,12 +706,12 @@
                                             {block:PermalinkPagination}
                                             <div class="pagination row">
                                               <div class="col main">
-                                                <ul class="pagination">
+                                                <ul class="pagination group">
                                                   {block:PreviousPost}
-                                                  <li><a class="prev"href="{PreviousPost}">&#65513;{lang:Older}</li></a>
+                                                  <li class="prev"><a href="{PreviousPost}">&#65513;{lang:Older}</li></a>
                                                   {/block:PreviousPost}
                                                   {block:NextPost}
-                                                  <li><a class="next" href="{NextPost}">{lang:Newer}&#65515;</a></li>
+                                                  <li class="next"><a href="{NextPost}">{lang:Newer}&#65515;</a></li>
                                                   {/block:NextPost}
                                                 </ul>
                                               </div>
@@ -754,9 +756,9 @@
                             {block:Pagination}
                             <div class="pagination row">
                               <div class="col main">
-                                <ul class="pagination">
+                                <ul class="pagination group">
                                   {block:PreviousPage}
-                                  <li><a class="prev" href="{PreviousPage}">&#65513; {lang:Older}</a></li>
+                                  <li class="prev"><a href="{PreviousPage}">&#65513; {lang:Older}</a></li>
                                   {/block:PreviousPage}
 
                                   {block:JumpPagination length="5"}
@@ -769,7 +771,7 @@
                                   {/block:JumpPagination}
 
                                   {block:NextPage}
-                                  <li><a class="next" href="{NextPage}">{lang:Newer} &#65515;</a></li>
+                                  <li class="next"><a href="{NextPage}">{lang:Newer} &#65515;</a></li>
                                   {/block:NextPage}
                                 </ul>
                               </div>

@@ -469,6 +469,8 @@ ul.pagination {
   display: inline-block;
   list-style-type: none;
   padding: 0.2rem;
+  width: 100%;
+  position: relative;
 }
 .pagination li {
   display: inline-block;
@@ -479,6 +481,7 @@ ul.pagination {
 .pagination a {
   text-decoration: none;
   display: inline-block;
+  background:
 }
 .pagination a, .current-page {
   padding: 1rem;
@@ -486,7 +489,16 @@ ul.pagination {
 li.jump-page, li.current-page {
   display: none;
 }
+.prev {
+  float: left;
+}
+.next {
+  float: right;
+}
 @media screen and (min-width: 850px) {
+  ul.pagination {
+    width: auto;
+  }
   li.jump-page {
     display: inline;
   }
@@ -496,7 +508,9 @@ li.jump-page, li.current-page {
   .pagination a, .current-page {
     padding: 0 0.4rem 0.1rem;
   }
-
+  .next, .prev {
+    float: none;
+  }
 }
 /* Pagination styles end*/
 
