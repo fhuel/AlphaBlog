@@ -411,7 +411,7 @@ nav ul {
   margin: 0;
   padding-left: 0;
 }
-nav a:link {
+nav a {
   color: #fff;
   text-decoration: none;
   text-transform: uppercase;
