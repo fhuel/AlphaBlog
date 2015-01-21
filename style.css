@@ -476,8 +476,11 @@ nav li:first-of-type {
     text-align: right;
     margin-top: 1.35rem;
   }
-  .post-icon.icon-text {
+  .post-icon.icon-text.titled {
     margin-top: 1.55rem;
+  }
+  .post-icon.icon-question {
+    margin-top: 1.67rem;
   }
   .read_more_container, .permalink-container {
     text-align: right;
