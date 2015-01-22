@@ -17,9 +17,9 @@ We welcome your feedback, complaints, high-fives, and critiques. Feel free to em
 We've made installing the theme as simple as we possibly can.
 
 1. Log in to Tumblr.
-1. Customize the blog where you'd like to install the theme.
+1. Customize the blog where you'd like to install the theme.<br>
 ![Customize your Tumblr blog](https://www.dropbox.com/s/bc1tez0o92kykcb/Tumblr%20customize.png?raw=1)
-1. Under Custom theme, click Edit HTML.
+1. Under Custom theme, click Edit HTML.<br>
 ![Edit theme HTML in Tumblr](https://www.dropbox.com/s/jjom5448bkh4hj4/Tumblr%20edit%20theme.png?raw=1)
 1. Unzip the theme package.
 1. Open the index.html file.
