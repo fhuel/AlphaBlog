@@ -705,7 +705,7 @@
                                                         <a href="http://reddit.com/submit?url={URLEncodedPermalink}{block:Title}&title={PlaintextTitle}{/block:Title}{block:Caption}&title={PlaintextCaption}{/block:Caption}{block:IfName}&title={PlaintextName}{/block:IfName}{block:IfQuestion}&title={PlaintextQuestion}{/block:IfQuestion}"><span class="icon-reddit"></span></a>
                                                       </div>
                                                     </div>
-                                                    <a href="{Permalink}#disqus_thread"><span class="icon-comments"></span></a>
+                                                    {block:IfDisqusShortname}{block:IndexPage}<a href="{Permalink}#disqus_thread"><span class="icon-comments"></span></a>{/block:IndexPage}{/block:IfDisqusShortname}
                                                   </div>
                                                 </aside>
                                             {block:IndexPage}
