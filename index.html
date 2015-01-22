@@ -109,6 +109,11 @@
   <meta name="text:URL Windows Phone" content="" />
   <meta name="text:URL Windows Store" content="" />
 
+  <!-- Social links -->
+  <meta name="text:Social Link Facebook" content="" />
+  <meta name="text:Social Link Twitter" content="" />
+  <meta name="text:Social Link Google Plus" content="" />
+
   <!-- Body font selection -->
   <meta name="select:Body Font" content="Source Sans Pro">
   <meta name="select:Body Font" content="Open Sans">
@@ -461,6 +466,33 @@
         <h4 class="prerelease">Help make it happen on</h4>
         <a href="{text:URL Steam Greenlight}"><img src="http://static.tumblr.com/vz1s3fz/WbYnil4me/greenlight.svg" alt="Support on Steam Greenlight"></a>
         {/block:IfURLSteamGreenlight}
+      </div>
+
+      <div class="social-links">
+        {block:IfSocialLinkFacebook}
+        <h4 class="follow">Follow Us On</h4>
+        {/block:IfSocialLinkFacebook}
+        {block:IfSocialLinkTwitter}
+        <h4 class="follow">Follow Us On</h4>
+        {/block:IfSocialLinkTwitter}
+        {block:IfSocialLinkGooglePlus}
+        <h4 class="follow">Follow Us On</h4>
+        {/block:IfSocialLinkGooglePlus}
+        {block:IfSocialLinkFacebook}
+        <a href="{text:Social Link Facebook}">
+          <span class="icon-facebook"></span>
+        </a>
+        {/block:IfSocialLinkFacebook}
+        {block:IfSocialLinkTwitter}
+        <a href="{text:Social Link Twitter}">
+          <span class="icon-twitter"></span>
+        </a>
+        {/block:IfSocialLinkTwitter}
+        {block:IfSocialLinkGooglePlus}
+        <a href="{text:Social Link Google Plus}">
+          <span class="icon-google-plus"></span>
+        </a>
+        {/block:IfSocialLinkGooglePlus}
       </div>
     </div>
     <div class="pure-pusher-container">
