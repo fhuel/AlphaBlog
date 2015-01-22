@@ -464,7 +464,7 @@ nav li:first-of-type {
 .read_more_container, .permalink-container {
   text-align: right;
   position: absolute;
-  right: 1em;
+  right: 3.25%;
 }
 .read_more_container a, .permalink-container a {
   text-decoration: none;
