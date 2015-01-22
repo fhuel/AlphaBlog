@@ -493,6 +493,8 @@ nav li:first-of-type {
     right: 7.5%;
   }
 }
+
+.tag { background: #fff; }
 /* Post styles end */
 
 /* Pagination styles */
