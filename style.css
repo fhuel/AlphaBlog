@@ -176,10 +176,10 @@ html,body{height: 100%;}.pure-container{position:relative;height:100%;-webkit-ov
     width: 47%;
   }
   .pagination.row, .footer.row {
-    margin-left: 61.76%;
+    margin-left: 60.3%;
   }
   .pagination .main, .footer .main {
-    width:82.3%;
+    width: 83.3%;
   }
   #search-form {
     margin-top: 1.2rem;
