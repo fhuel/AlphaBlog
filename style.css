@@ -566,17 +566,37 @@ li.jump-page, li.current-page {
 /* Pagination styles end*/
 
 /* Displays only the first of each call-to-action */
-h4.store, h4.prerelease {
+.store, .prerelease, .follow {
   display: none;
   color: #fff;
 }
-h4.store:first-child, h4.prerelease:first-child {
+.store:first-child, .prerelease:first-child, .follow:first-child {
   display: block;
 }
 
 .store-links a, .prerelease-links a {
   display: block;
   color: #fff;
+}
+
+/* Social links styling */
+.social-links a {
+  padding: 0.2rem;
+  background: #1A1919;
+  color: #fff;
+  text-decoration: none;
+  border-radius: 50%;
+  font-size: 1.5em;
+  display: inline-block;
+  min-width: 1.5em;
+  text-align: center;
+}
+.social-links a + a {
+  margin-left: 0.75rem;
+}
+.social-links span {
+  position: relative;
+  top: 0.12em;
 }
 
 /* Workaround for custom Tumblr like button */
