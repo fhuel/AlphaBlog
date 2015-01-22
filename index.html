@@ -90,7 +90,9 @@
   {/block:Posts}
   {/block:PermalinkPage}
   <meta property="og:url" content="{Permalink}"/>
-  <meta property="fb:admins" content="{text:Facebook Admins}"/>
+  {block:IfFacebookAdmins1}<meta property="fb:admins" content="{text:Facebook Admins 1}"/>{/block:IfFacebookAdmins1}
+  {block:IfFacebookAdmins2}<meta property="fb:admins" content="{text:Facebook Admins 2}"/>{/block:IfFacebookAdmins2}
+  {block:IfFacebookAdmins3}<meta property="fb:admins" content="{text:Facebook Admins 3}"/>{/block:IfFacebookAdmins3}
   <meta property="og:locale" content="en_US"/>
 
   <!-- Custom variables -->
@@ -181,7 +183,9 @@
   <meta name="select:Code Font" content="Inconsolata">
   <meta name="select:Code Font" content="Anonymous Pro">
 
-  <meta name="text:Facebook Admins" content=""/>
+  <meta name="text:Facebook Admins 1" content=""/>
+  <meta name="text:Facebook Admins 2" content=""/>
+  <meta name="text:Facebook Admins 3" content=""/>
   <meta name="text:Disqus Shortname" content="" />
   <meta name="text:Google Analytics ID" content="" />
 
