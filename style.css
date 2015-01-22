@@ -57,7 +57,7 @@ html,body{height: 100%;}.pure-container{position:relative;height:100%;-webkit-ov
   padding-left: 0;
 }
 
-.content > .row + .row {
+.content > .row {
   margin-top: 0.5rem;
 }
 
@@ -146,7 +146,7 @@ html,body{height: 100%;}.pure-container{position:relative;height:100%;-webkit-ov
     margin-left: 33%;
   }
 
-  .content > .row + .row {
+  .content > .row {
     margin-top: 8rem;
   }
 }
@@ -420,6 +420,11 @@ input[type=search] {
 /* Pure Drawer custom styles */
 .pure-drawer p {
   margin: 2rem 0;
+  line-height: 1.75;
+  padding: 1rem 0.3rem;
+}
+.pure-drawer h4 {
+  margin-top: 3rem;
 }
 hr {
   width: 100%;
