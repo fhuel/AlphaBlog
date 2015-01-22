@@ -57,6 +57,18 @@ html,body{height: 100%;}.pure-container{position:relative;height:100%;-webkit-ov
   padding-left: 0;
 }
 
+.content > .row + .row {
+  margin-top: 0.5rem;
+}
+
+.pure-drawer {
+  padding: 4rem 1rem 1rem 1rem;
+}
+#search-form {
+  position: relative;
+  margin: 0 0 2.5rem;
+}
+
 /* 2. 12 Column Grid 850px - 1499px */
 
 @media screen and (min-width: 850px) {
@@ -133,6 +145,10 @@ html,body{height: 100%;}.pure-container{position:relative;height:100%;-webkit-ov
   .content {
     margin-left: 33%;
   }
+
+  .content > .row + .row {
+    margin-top: 8rem;
+  }
 }
 
 /* 3. 12 Column Grid 1500px - Infinity */
@@ -165,18 +181,21 @@ html,body{height: 100%;}.pure-container{position:relative;height:100%;-webkit-ov
   .pagination .main, .footer .main {
     width:82.3%;
   }
+  #search-form {
+    margin-top: 1.2rem;
+  }
   /* Always display drawer open in large layout */
   .pure-toggle-label {
     display: none;
   }
   .pure-drawer {
-    padding-top: 1rem;
     visibility: visible;
     position: fixed;
     width: 20%;
     top: 0;
     left: 0;
     z-index: 10;
+    padding-top: 1rem;
   }
   [data-effect=pure-effect-3] .pure-drawer[data-position=left] {
     -webkit-transform: none;
@@ -188,6 +207,9 @@ html,body{height: 100%;}.pure-container{position:relative;height:100%;-webkit-ov
   }
   .pure-overlay {
     display: none;
+  }
+  #search-form {
+    margin-top: 1.2rem;
   }
   /* Always display drawer open in large layout end */
 }
@@ -286,7 +308,7 @@ header {
 
 /* Font styles */
 html {
-  font-size: 20px;
+  font-size: 18px;
 }
 .tagline {
   font-size: 1.3rem;
@@ -304,7 +326,10 @@ h3 a {
   text-decoration: none;
 }
 article, aside {
-  line-height: 1.45;
+  line-height: 1.555555556;
+}
+.authorship, .pure-drawer {
+  font-size: 0.888888889rem;
 }
 .dsq-comment-count {
   text-transform: uppercase;
@@ -341,10 +366,12 @@ aside {
 .author-avatar, .asker-avatar {
   vertical-align: middle;
   border-radius: 50%;
+  margin: 0 0.2rem 0 0.4rem;
 }
 .authorship p {
   position: relative;
   top: 0.1rem;
+  margin: 0.5rem 0;
 }
 .authorship a {
   text-decoration: none;
@@ -383,10 +410,6 @@ input[type=search] {
 [type=search]:focus {
   outline: 0;
 }
-#search-form {
-  position: relative;
-  margin-bottom: 1rem;
-}
 #search-form .icon-search {
   position: absolute;
   left: 0.5rem;
@@ -410,7 +433,7 @@ hr {
 nav ul {
   list-style: none;
   margin: 0;
-  padding-left: 0;
+  padding: 0.5rem 0;
 }
 nav a {
   color: #fff;
@@ -418,7 +441,7 @@ nav a {
   text-transform: uppercase;
 }
 nav li {
-  margin-top: 1em;
+  margin: 1rem 0 0 0.5rem;
 }
 nav li:first-of-type {
   margin-top: 0;
@@ -475,10 +498,10 @@ nav li:first-of-type {
 @media screen and (min-width: 850px) {
   .post-icon {
     text-align: right;
-    margin-top: 1.35rem;
+    margin-top: 0.9rem;
   }
   .post-icon.icon-text.titled {
-    margin-top: 1.55rem;
+    margin-top: 1.65rem;
   }
   .post-icon.icon-question {
     margin-top: 1.67rem;
@@ -530,9 +553,6 @@ li.jump-page, li.current-page {
   float: right;
 }
 @media screen and (min-width: 850px) {
-  ul.pagination {
-    width: auto;
-  }
   li.jump-page {
     display: inline;
   }
@@ -541,9 +561,6 @@ li.jump-page, li.current-page {
   }
   .pagination a, .current-page {
     padding: 0 0.4rem 0.1rem;
-  }
-  .next, .prev {
-    float: none;
   }
 }
 /* Pagination styles end*/
