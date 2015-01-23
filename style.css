@@ -249,6 +249,7 @@ header {
   position: relative;
   overflow: hidden;
   height: 15rem;
+  z-index: 2;
 }
 
 .info-container {
