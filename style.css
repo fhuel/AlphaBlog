@@ -42,7 +42,7 @@ html,body{height: 100%;}.pure-container{position:relative;height:100%;-webkit-ov
 .span_1 {
   width:25.0%;
 }
-.span_2, .comments-link {
+.span_2, .comments-link, .share {
   width:50.0%;
 }
 .span_3 {
@@ -51,10 +51,6 @@ html,body{height: 100%;}.pure-container{position:relative;height:100%;-webkit-ov
 .span_4, .main, .post-icon {
   margin-left:0;
   width:100%;
-}
-
-.share {
-  width: 60%;
 }
 
 .col.share {
