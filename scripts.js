@@ -86,6 +86,16 @@ function attachHeader() {
   headerEl.style.top = pusherEl.scrollTop + 'px';
 }
 
+/*@cc_on
+
+  @if (@_jscript_version >= 10)
+    attachHeader = function() {
+      headerEl.style.left = '300px';
+    };
+  @end
+
+@*/
+
 drawerToggleEl.addEventListener('change', function toggleHeaderPosition(){
   if (drawerToggleEl.checked && window.innerWidth >= 850 && window.innerWidth <= 1499) {
     attachHeader();
