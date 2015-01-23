@@ -26,7 +26,7 @@ gulp.task('css', ['clean'], function() {
 gulp.task('js', ['clean'], function() {
   return gulp.src('scripts.js')
             .pipe(gulp.dest('dist'))
-            .pipe(plugins.uglify())
+            .pipe(plugins.uglify({preserveComments: 'some'}))
             .pipe(plugins.rename({extname: '.min.js'}))
             .pipe(gulp.dest('dist'));
 });
