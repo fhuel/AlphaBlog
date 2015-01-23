@@ -3,13 +3,16 @@ var gulpLoadPlugins = require('gulp-load-plugins');
 var plugins = gulpLoadPlugins();
 var del = require('del');
 
-gulp.task('default', ['css', 'js', 'fonts']);
+gulp.task('default', ['css', 'js', 'fonts', 'copyTheme']);
 
 gulp.task('clean', function(cb) {
   del(['dist/**'], cb);
 });
 
-gulp.task('css', ['clean'], function() {
+gulp.task('css', ['copyCSS', 'minifyCSS']);
+gulp.task('js', ['copyJS', 'minifyJS']);
+
+gulp.task('minifyCSS', ['clean'], function() {
   return gulp.src('style.css')
             .pipe(plugins.autoprefixer({
               browsers: ['last 2 versions']
@@ -23,11 +26,26 @@ gulp.task('css', ['clean'], function() {
             .pipe(gulp.dest('dist'));
 });
 
-gulp.task('js', ['clean'], function() {
+gulp.task('copyCSS', ['clean'], function() {
+  return gulp.src('css/*')
+            .pipe(gulp.dest('dist/styles'));
+});
+
+gulp.task('minifyJS', ['clean'], function() {
   return gulp.src('scripts.js')
             .pipe(gulp.dest('dist'))
             .pipe(plugins.uglify({preserveComments: 'some'}))
             .pipe(plugins.rename({extname: '.min.js'}))
+            .pipe(gulp.dest('dist'));
+});
+
+gulp.task('copyJS', ['clean'], function() {
+  return gulp.src('js/*')
+            .pipe(gulp.dest('dist/sripts'));
+});
+
+gulp.task('copyTheme', ['clean'], function() {
+  return gulp.src('index.html')
             .pipe(gulp.dest('dist'));
 });
 
