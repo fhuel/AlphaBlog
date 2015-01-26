@@ -3,7 +3,10 @@ var gulpLoadPlugins = require('gulp-load-plugins');
 var plugins = gulpLoadPlugins();
 var del = require('del');
 
-gulp.task('default', ['css', 'js', 'fonts', 'copyTheme']);
+var version;
+
+gulp.task('default', ['bundle']);
+gulp.task('build', ['css', 'js', 'fonts', 'copyTheme']);
 
 gulp.task('clean', function(cb) {
   del(['dist/**'], cb);
@@ -52,4 +55,19 @@ gulp.task('copyTheme', ['clean'], function() {
 gulp.task('fonts', ['clean'], function() {
   return gulp.src('fonts/*')
             .pipe(gulp.dest('dist/fonts'));
+});
+
+gulp.task('bundle', ['build'], function() {
+  var target =  gulp.src('dist/**');
+  return gulp.src('index.html')
+            .pipe(plugins.prompt.prompt({
+              type: 'input',
+              name: 'version',
+              message: 'Enter the version number: '
+            }, function(res) {
+              if (res.version) {
+                target.pipe(plugins.zip('alphablog-' + res.version + '.zip'))
+                      .pipe(gulp.dest('dist'));
+              }
+            }));
 });
