@@ -244,6 +244,48 @@ html,body{height: 100%;}.pure-container{position:relative;height:100%;-webkit-ov
 }
 /* End social sharing toggle */
 
+/* Hamburger icon */
+.pure-toggle-label {
+  height: 2.3rem;
+}
+.pure-toggle-label span, .pure-toggle-label span:before, .pure-toggle-label span:after {
+  cursor: pointer;
+  border-radius: 1px;
+  height: 5px;
+  width: 35px;
+  background: white;
+  position: absolute;
+  display: block;
+  content: '';
+}
+.pure-toggle-label span {
+  left: 0.6rem;
+  top: 1rem;
+}
+.pure-toggle-label span:before {
+  top: -10px;
+}
+.pure-toggle-label span:after {
+  top: 10px;
+}
+
+.pure-toggle-label span, .pure-toggle-label span:before, .pure-toggle-label span:after {
+  transition: all 500ms ease-in-out;
+}
+.pure-toggle:checked ~ .pure-toggle-label span {
+  background-color: transparent;
+}
+.pure-toggle:checked ~ .pure-toggle-label span:before, .pure-toggle:checked ~ .pure-toggle-label span:after {
+  top: 0;
+}
+.pure-toggle:checked ~ .pure-toggle-label span:before {
+  transform: rotate(45deg);
+}
+.pure-toggle:checked ~ .pure-toggle-label span:after {
+  transform: rotate(-45deg);
+}
+/* Hamburger icon end*/
+
 /* Header styles */
 header {
   position: relative;
