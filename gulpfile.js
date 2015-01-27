@@ -44,7 +44,7 @@ gulp.task('minifyJS', ['clean'], function() {
 
 gulp.task('copyJS', ['clean'], function() {
   return gulp.src('js/*')
-            .pipe(gulp.dest('dist/sripts'));
+            .pipe(gulp.dest('dist/scripts'));
 });
 
 gulp.task('copyTheme', ['clean'], function() {
