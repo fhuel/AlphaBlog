@@ -6,7 +6,7 @@ var del = require('del');
 var version;
 
 gulp.task('default', ['bundle']);
-gulp.task('build', ['css', 'js', 'fonts', 'copyTheme']);
+gulp.task('build', ['css', 'js', 'fonts', 'copyTheme', 'copyDocs']);
 
 gulp.task('clean', function(cb) {
   del(['dist/**'], cb);
@@ -55,6 +55,12 @@ gulp.task('copyTheme', ['clean'], function() {
 gulp.task('fonts', ['clean'], function() {
   return gulp.src('fonts/*')
             .pipe(gulp.dest('dist/fonts'));
+});
+
+gulp.task('copyDocs', ['clean'], function() {
+  return gulp.src('../documentation/index.html')
+            .pipe(plugins.rename('readme.html'))
+            .pipe(gulp.dest('dist/'));
 });
 
 gulp.task('bundle', ['build'], function() {
