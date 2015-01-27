@@ -618,6 +618,9 @@ li.jump-page, li.current-page {
   display: none;
   color: #fff;
 }
+.store, .prerelease {
+  text-align: left;
+}
 .store:first-child, .prerelease:first-child, .follow:first-child {
   display: block;
 }
@@ -625,6 +628,10 @@ li.jump-page, li.current-page {
 .store-links a, .prerelease-links a {
   display: block;
   color: #fff;
+}
+
+.store-links, .prerelease-links {
+  text-align: center;
 }
 
 /* Social links styling */
