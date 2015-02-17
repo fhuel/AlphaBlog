@@ -238,7 +238,14 @@ html,body{height: 100%;}.pure-container{position:relative;height:100%;-webkit-ov
 .social-share-buttons a {
   text-decoration: none;
 }
+.no-flexbox .social-share-buttons a {
+  margin-right: 1em;
+}
+.no-flexbox .social-share-buttons a:last-child {
+  margin-right: 0;
+}
 .social-share-toggle:checked ~ .social-share-buttons {
+  display: block;
   display: flex;
   justify-content: space-around;
 }
@@ -299,11 +306,7 @@ header {
   bottom: 0;
   padding-bottom: 2.5rem;
   width: 100%;
-  display: -webkit-flex;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-justify-content: center;
-  -ms-flex-pack: center;
   justify-content: center;
 }
 .info {
